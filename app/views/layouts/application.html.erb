@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cpc</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="wrapper">
+		<!--  Header start-->
+		<div id="header">
+			
+			<%= link_to image_tag("/assets/front-end-images/logo.png", alt: "CPC Advertising"), 'http://rubyonrails.org/' %>
+
+			<div class="headerright">
+				<!--  Top serch sec start-->
+				<div class="tpsrc">
+					<div id="user_nav">
+						<% if current_user %>
+						    Signed in as <strong><%= current_user.name %></strong>!
+						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+						<% else %>
+							<div class="srctxt">Already Member? <span>Login here:</span></div>
+							<div class="tpfrmsec">
+								<input name="" type="text" class="headtopinput" /> 
+								<input name="" type="text" class="headtopinput" /> 
+								<input name="" type="button" class="tplogin" value="Login" />
+							</div>
+						<% end %>
+						
+					</div>
+				
+				
+					
+				</div>
+				
+				<!--  Top menu start-->
+				<div class="tpmenu">
+					<ul id="gooeymenu1" class="gelbuttonmenu">
+						<li><a href="#" title="Home">Home</a></li>
+						<li><a href="#" title="PROMOTE OFFERS">PROMOTE OFFERS</a></li>
+						<li><a href="#" title="LIST AN OFFER">LIST AN OFFER</a></li>
+						<li><a href="#" title="YOUR OFFERS">YOUR OFFERS</a></li>
+					</ul>
+					
+					<script>
+					gooeymenu.setup({id:'gooeymenu1', selectitem:0})
+					</script>
+					
+				</div>
+			</div>
+		</div>
+		<!--  Header End-->
+		
+		
+		<%= yield %>
+		
+		
+		<!--  Footer Start-->
+		<div id="footer">
+			All Rights Reserved Copyright © 2012
+			<div class="sntoolboxbt">
+				<a title="Follow Us on Facebook" href="#" target="_blank">
+					<span class="facebook"></span>
+				</a>
+				<a title="Twitter" href="#" target="_blank">
+					<span class="twitter"></span>
+				</a>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
