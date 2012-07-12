@@ -224,3 +224,59 @@ padding:66px 0
 	color:#4e4e4e;
 	padding:10px 0
 }
+
+.lhscontainer{
+width:280px;
+float:left;
+padding:20px;
+}
+
+.lhs{
+width:260px;
+border:1px dashed #999;
+margin:0px 10px;;
+float:left;
+clear:left;
+padding-left:10px;
+}
+
+.lhs h6{
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#325190;
+}
+
+.lhs p{ float:left;  clear:left; margin:10px 0 0}
+.lhs ul{ margin:10px 0 0; padding:0; list-style-type:none}
+.lhs li{ margin-bottom:14px; font-weight:bold; float:left; width:150px; font-family:Arial, Helvetica, sans-serif}
+
+.lhs li ul{ margin:10px 0 0; padding:0; list-style-type:none}
+.lhs li ul li{ margin-bottom:14px; font-weight:bold; background:url(/assets/front-end-images/arrow_inner.png) no-repeat 0 0.2em; padding-left:20px; float:left; font-family:Arial, Helvetica, sans-serif}
+.lhs ul a{color:#000; text-decoration:none;}
+.lhs li a:hover{color:#999; none;}
+
+.rhs{
+width:550px;
+float:left;
+border:1px dashed #999999;
+margin-top:20px;
+padding:10px;
+
+}
+.rhs p{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+margin:0px;
+}
+.rhs h6{
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#000000;
+margin:0px;
+}
+
+.imgr{
+float:left;
+margin-right:10px;
+}

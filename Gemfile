@@ -37,6 +37,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 gem 'pg'
-gem 'omniauth'
+
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'

@@ -17,16 +17,27 @@
 				<!--  Top serch sec start-->
 				<div class="tpsrc">
 					<div id="user_nav">
+						<%= current_admin_user %>
 						<% if current_user %>
 						    Signed in as <strong><%= current_user.name %></strong>!
 						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
 						<% else %>
+							
+							<% if current_admin_user %>
+							
+							<% else %>
+							
 							<div class="srctxt">Already Member? <span>Login here:</span></div>
 							<div class="tpfrmsec">
 								<input name="" type="text" class="headtopinput" /> 
 								<input name="" type="text" class="headtopinput" /> 
 								<input name="" type="button" class="tplogin" value="Login" />
 							</div>
+
+							<% end %>						
+						
+						
+							
 						<% end %>
 						
 					</div>

@@ -1,4 +1,17 @@
 CpcadvApp::Application.routes.draw do
+  
+  get "admin_user/index"
+  
+  get "admin_user/login"
+  
+  post "admin_user/login"
+
+  get "admin_user/logout"
+
+  get "admin_user/change_password"
+
+  get "admin_user/forgot_password"
+
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
@@ -53,6 +66,17 @@ CpcadvApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
+  
+  #admin_root :to => 'AdminUser#index'
+  
+  get "admin" => "AdminUser#login", :as => "admin"
+  post  "admin" => "AdminUser#login", :as => "admin"
+  
+  get "admin" => "AdminUser#index", :as => "admin/index"
+  
+ 
+
+
 
   # See how all your routes lay out with "rake routes"
 
