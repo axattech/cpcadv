@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @member.username %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @member.email %>
+</p>
+
+
+<p>
+  <b>Country:</b>
+  
+  <td><%= Country.getcountryname(@member.country_id).country %></td>
+
+  
+</p>
+
+<p>
+  <b>Provider:</b>
+  <%= @member.provider %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @member.status %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

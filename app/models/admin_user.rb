@@ -12,10 +12,7 @@ class AdminUser < ActiveRecord::Base
     
       user = find_by_email(email)
       
-      #user1 = BCrypt::Engine.hash_secret(password, user.salt_password)
-      
-      user1 = user.hashed_password
-      
+    
       if user && user.hashed_password == BCrypt::Engine.hash_secret(password, user.salt_password)
         user
       else

@@ -54,7 +54,9 @@
 						<li><a href="#" title="YOUR OFFERS">YOUR OFFERS</a></li>
 					</ul>
 					
-					
+					<script>
+					gooeymenu.setup({id:'gooeymenu1', selectitem:0})
+					</script>
 					
 				</div>
 			</div>

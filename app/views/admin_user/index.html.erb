@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Welcome</title>
-       <%= stylesheet_link_tag    "admin_user", :media => "all" %>
+       <%= stylesheet_link_tag    "application", :media => "all" %>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
         <script src="js/gooeymenu.js"></script>
         <link rel="stylesheet" type="text/css" href="css/gooeymenu.css" />
@@ -21,16 +21,29 @@
                     <div class="tpsrc"></div>
                     <!--  Top menu start-->
                     
-                    <div class="tpmenu-rht"><strong>Credits</strong>: 500  <img src="images/user-icon.png" alt="" class="imgsz"/> Name of User</div>
+                    <div class="tpmenu-rht"><strong>Welcome Admin!</strong><img src="images/user-icon.png" alt="" class="imgsz"/>
+                    	<%= link_to "Log out", log_out_path %>
+					</div>
+					
                 </div>
             </div>
             <!--  Header End-->
             <div class="mainfrmcontainera">
-                <div class="lhscontainer">
+              <div class="lhscontainer">
+              	 
                     <div class="lhs">
-                        <h6>Sort Offers</h6>
+                      
                         <ul>
-                            <li><a href="#">Latest Offers First</a></li>
+                        	 <li>
+                        	 		
+                        	 	
+                        	 	
+                        	 	<a href="/members">List Users</a>
+                        	 	
+                        	 	
+                        	 	
+                        	 </li>
+                           <!--   <li><a href="#">Latest Offers First</a></li>
                             <li><a href="#">Offers expiring soon</a></li>
                             <li><a href="#">Highest Credits Per Click</a></li>
                             <li><a href="#">Latest Offers First</a></li>
@@ -42,7 +55,10 @@
                                 </ul>
                             </li>
                         </ul>
+                        --->
                     </div>
+                    
+                    
                 </div>
                 <div class="rhscontent">
                     <h6>Welcome To CPC Dashboard</h6>

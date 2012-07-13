@@ -1,6 +1,8 @@
 class AdminUserController < ApplicationController
   
-  def index
+  layout false
+  
+   def index
     if session[:admin_user_id]
       nil
     else
@@ -15,11 +17,10 @@ class AdminUserController < ApplicationController
       
         user = AdminUser.authenticate(params[:email], params[:password])
         if user
-          session[:admin_user_id] = user.id    
-           
-          flash.now.alert =  user1   
+          session[:admin_user_id] = user.id        
           
-          redirect_to :controller=>'admin_user', :action=>'index'
+          redirect_to :controller=>'AdminUser', :action=>'index'
+          
 
         else
         flash.now.alert = "Invalid email or password"
@@ -30,6 +31,11 @@ class AdminUserController < ApplicationController
   end
 
   def logout
+        
+  session[:admin_user_id] = nil
+  
+  redirect_to admin_url
+    
   end
 
   def change_password

@@ -1,0 +1,29 @@
+  <%= stylesheet_link_tag    "admin_user", :media => "all" %>
+
+<h1>List of users</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>   
+    <th>Country</th>
+    <th>Provider</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%= member.username %></td>
+    <td><%= member.email %></td>    
+    <td><%= Country.getcountryname(member.country_id).country %></td>
+    <td><%= member.provider %></td>
+    <td><%= member.status %></td>
+   <!-- <td><%= link_to 'Show', member %></td>  -->     
+  </tr>
+<% end %>
+</table>
+
+<br />

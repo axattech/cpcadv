@@ -295,19 +295,6 @@ font-size:18px;
 font-weight:bold;
 }
 
-.headerright-mid{
-  float:right;
-  width:740px;
-}
-.tpmenu-mid{
-  float: left;
-  margin-top:25px
-}
-.tpmenu-rht{
-  float: right;
-  margin-top:29px
-}
-
 
 .imgsz{
 margin-right:10px;

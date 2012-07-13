@@ -1,16 +1,26 @@
 CpcadvApp::Application.routes.draw do
   
-  get "admin_user/index"
+  resources :members
+
+  #match "admin/index" => "AdminUser#index", :as => "admin/dashboard"
   
-  get "admin_user/login"
+  #g 'admin/dashboard', to: 'AdminUser#index'
   
-  post "admin_user/login"
+  
+  get "admin/dashboard" => "AdminUser#index"
 
-  get "admin_user/logout"
+  get "admin/members" => "Members#index"
+    #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
+  #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
 
-  get "admin_user/change_password"
+  
+  
 
-  get "admin_user/forgot_password"
+  #get "admin_user/logout"
+
+  #get "admin_user/change_password"
+
+  #get "admin_user/forgot_password"
 
   match 'auth/:provider/callback', to: 'sessions#create'
   match 'auth/failure', to: redirect('/')
@@ -69,11 +79,12 @@ CpcadvApp::Application.routes.draw do
   
   #admin_root :to => 'AdminUser#index'
   
-  get "admin" => "AdminUser#login", :as => "admin"
-  post  "admin" => "AdminUser#login", :as => "admin"
+  get "admin" => "AdminUser#login"
+  post  "admin" => "AdminUser#login"
   
-  get "admin" => "admin_user#index", :as => "admin/index"
-  
+    
+  get "log_out" => "AdminUser#logout"#, :as => "log_out"
+ 
  
 
 
