@@ -72,7 +72,7 @@ CpcadvApp::Application.routes.draw do
   get "admin" => "AdminUser#login", :as => "admin"
   post  "admin" => "AdminUser#login", :as => "admin"
   
-  get "admin" => "AdminUser#index", :as => "admin/index"
+  get "admin" => "admin_user#index", :as => "admin/index"
   
  
 

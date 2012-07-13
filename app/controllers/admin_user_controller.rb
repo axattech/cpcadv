@@ -15,7 +15,9 @@ class AdminUserController < ApplicationController
       
         user = AdminUser.authenticate(params[:email], params[:password])
         if user
-          session[:admin_user_id] = user.id        
+          session[:admin_user_id] = user.id    
+           
+          flash.now.alert =  user1   
           
           redirect_to :controller=>'admin_user', :action=>'index'
 

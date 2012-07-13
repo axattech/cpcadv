@@ -40,3 +40,5 @@ gem 'pg'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+
+gem "bcrypt-ruby", :require => "bcrypt"
