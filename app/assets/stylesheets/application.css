@@ -278,7 +278,7 @@ color:#325190;
 .lhs li ul{ margin:10px 0 0; padding:0; list-style-type:none}
 .lhs li ul li{ margin-bottom:14px; font-weight:bold; background:url(/assets/front-end-images/arrow_inner.png) no-repeat 0 0.2em; padding-left:20px; float:left; font-family:Arial, Helvetica, sans-serif}
 .lhs ul a{color:#000; text-decoration:none;}
-.lhs li a:hover{color:#999; none;}
+.lhs li a:hover{color:#999; text-decoration:none; }
 
 .rhs{
 width:550px;
