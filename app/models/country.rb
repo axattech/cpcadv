@@ -9,4 +9,11 @@ class Country < ActiveRecord::Base
      
   end
   
+  def self.listcountryname()
+    
+     country_list = Country.all
+     
+  end
+  
+  
 end

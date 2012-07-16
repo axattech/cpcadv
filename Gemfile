@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '1.9.2'
 gem 'rails', '3.2.6'
-
+gem 'kaminari'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -42,3 +42,4 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 
 gem "bcrypt-ruby", :require => "bcrypt"
+

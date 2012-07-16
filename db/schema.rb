@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120713135340) do
+ActiveRecord::Schema.define(:version => 20120716065819) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(:version => 20120713135340) do
     t.datetime "last_login"
     t.datetime "created_at"
     t.string   "salt_password",   :limit => 100
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "category_name"
+    t.boolean  "status"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "countries", :force => true do |t|
@@ -31,12 +38,13 @@ ActiveRecord::Schema.define(:version => 20120713135340) do
   create_table "members", :force => true do |t|
     t.string   "username"
     t.string   "email"
-    t.string   "password"
+    t.string   "password_salt"
     t.integer  "country_id"
     t.string   "provider"
-    t.boolean  "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "status",        :default => true, :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.string   "password_hash"
   end
 
   create_table "users", :force => true do |t|

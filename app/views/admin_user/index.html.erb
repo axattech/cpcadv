@@ -1,73 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Welcome</title>
-       <%= stylesheet_link_tag    "application", :media => "all" %>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-        <script src="js/gooeymenu.js"></script>
-        <link rel="stylesheet" type="text/css" href="css/gooeymenu.css" />
-        <style type="text/css">
-        <!--
-        -->
-        </style>
-    </head>
-    <body>
-        <div id="wrapper">
-            <!--  Header start-->
-            <div id="header"> <img src="images/logo.png" class="logo" />
-                <div class="headerright-mid">
-                    <!--  Top serch sec start-->
-                    <div class="tpsrc"></div>
-                    <!--  Top menu start-->
-                    
-                    <div class="tpmenu-rht"><strong>Welcome Admin!</strong><img src="images/user-icon.png" alt="" class="imgsz"/>
-                    	<%= link_to "Log out", log_out_path %>
-					</div>
-					
-                </div>
-            </div>
-            <!--  Header End-->
-            <div class="mainfrmcontainera">
-              <div class="lhscontainer">
-              	 
-                    <div class="lhs">
-                      
-                        <ul>
-                        	 <li>
-                        	 		
-                        	 	
-                        	 	
-                        	 	<a href="/members">List Users</a>
-                        	 	
-                        	 	
-                        	 	
-                        	 </li>
-                           <!--   <li><a href="#">Latest Offers First</a></li>
-                            <li><a href="#">Offers expiring soon</a></li>
-                            <li><a href="#">Highest Credits Per Click</a></li>
-                            <li><a href="#">Latest Offers First</a></li>
-                            <li><a href="#">Max Number of Credits</a></li>
-                            <li><a href="#">Categories</a>
-                                <ul>
-                                    <li><a href="#">Entertainment</a></li>
-                                    <li><a href="#">Info Products</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        --->
-                    </div>
-                    
-                    
-                </div>
-                <div class="rhscontent">
-                    <h6>Welcome To CPC Dashboard</h6>
-                   
-                </div>
-                <br />
-                <br />
-            </div>
-          
-        </div>
-    </body>
-</html>
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+<h6>Welcome To CPC Dashboard</h6>                   
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>
+
+
+               

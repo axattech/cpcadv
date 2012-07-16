@@ -85,6 +85,26 @@ body{
 	margin-top:25px
 }
 
+.tpmenu a{
+	float: left;
+	margin-right:10px;
+	padding: 5px 10px;
+	background:#325190;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #fff
+	
+}
+
+.tpmenu a.active{
+	
+	background:#000;
+	border-radius: 5px;
+	text-decoration: none;
+	color: #fff
+	
+}
+
 .mainfrmcontainer{
 
 float:left;
@@ -102,7 +122,8 @@ padding:66px 0
 	color:#325190;
 	font-family:Calibri;
 	font-size:27px;
-	font-weight:normal
+	font-weight:normal;
+	line-height: 34px;
 }
 
 .mainfrmbrlow{
@@ -126,6 +147,10 @@ padding:66px 0
     margin-right: 3px;
 }
 
+.sntoolboxnew a:hover{
+	background-color: none !important;
+}
+
 
 .sntoolboxnew a span {
     background:url(/assets/front-end-images/lofinwidFBTW.png) no-repeat scroll 0 0 transparent;
@@ -141,7 +166,7 @@ padding:66px 0
 }
 
 .sntoolboxnew a span.twitter {
-    background-position: 0 -5.2em;
+    background-position: 0 -4.8em;
 }
 
 .comm{ float:left}
@@ -159,9 +184,9 @@ padding:66px 0
 	background:url(/assets/front-end-images/maiininputbg.png) no-repeat 0 0;
 	border: 0 none;
     float: left;
-    padding: 14px;
+    padding: 15px;
     width: 303px;
-	
+	color: #999;
 }
 
 .frmright p select.cl{
@@ -180,7 +205,7 @@ padding:66px 0
     float: left;
     font-family: Tahoma;
     font-size: 20px;
-    padding: 9px;
+    padding: 10px;
     width: 185px;
 	cursor:pointer
 	

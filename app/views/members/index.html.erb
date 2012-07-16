@@ -1,4 +1,9 @@
-  <%= stylesheet_link_tag    "admin_user", :media => "all" %>
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+
 
 <h1>List of users</h1>
 
@@ -7,14 +12,14 @@
     <th>Username</th>
     <th>Email</th>   
     <th>Country</th>
-    <th>Provider</th>
+    <th>Account Type</th>
     <th>Status</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
-<% @members.each do |member| %>
+<% @results.each do |member| %>
   <tr>
     <td><%= member.username %></td>
     <td><%= member.email %></td>    
@@ -24,6 +29,17 @@
    <!-- <td><%= link_to 'Show', member %></td>  -->     
   </tr>
 <% end %>
+	<tr>
+		<td colspan="5"></td>
+	</tr>
+	<tr>
+		<td colspan="5" align="right"><%= paginate @results %></td>
+	</tr>
 </table>
 
-<br />
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>
