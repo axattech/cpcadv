@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716065819) do
+ActiveRecord::Schema.define(:version => 20120716100817) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -46,6 +46,31 @@ ActiveRecord::Schema.define(:version => 20120716065819) do
     t.datetime "updated_at",                      :null => false
     t.string   "password_hash"
   end
+
+  create_table "offers", :force => true do |t|
+    t.string   "offer_name"
+    t.string   "offer_link"
+    t.text     "offer_description"
+    t.text     "offer_msg"
+    t.integer  "offer_budget"
+    t.integer  "offer_cr_per_click"
+    t.integer  "offer_max_clicks_per_user"
+    t.date     "offer_start_date"
+    t.date     "offer_end_date"
+    t.boolean  "offer_worldwide"
+    t.boolean  "offer_status"
+    t.integer  "category_id"
+    t.integer  "country_id"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
+  add_index "offers", ["country_id"], :name => "index_offers_on_country_id"
 
   create_table "users", :force => true do |t|
     t.string   "provider"

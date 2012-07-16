@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Offer name:</b>
+  <%= @offer.offer_name %>
+</p>
+
+<p>
+  <b>Offer link:</b>
+  <%= @offer.offer_link %>
+</p>
+
+<p>
+  <b>Offer description:</b>
+  <%= @offer.offer_description %>
+</p>
+
+<p>
+  <b>Offer msg:</b>
+  <%= @offer.offer_msg %>
+</p>
+
+<p>
+  <b>Offer budget:</b>
+  <%= @offer.offer_budget %>
+</p>
+
+<p>
+  <b>Offer cr per click:</b>
+  <%= @offer.offer_cr_per_click %>
+</p>
+
+<p>
+  <b>Offer max clicks per user:</b>
+  <%= @offer.offer_max_clicks_per_user %>
+</p>
+
+<p>
+  <b>Offer start date:</b>
+  <%= @offer.offer_start_date %>
+</p>
+
+<p>
+  <b>Offer end date:</b>
+  <%= @offer.offer_end_date %>
+</p>
+
+<p>
+  <b>Offer worldwide:</b>
+  <%= @offer.offer_worldwide %>
+</p>
+
+<p>
+  <b>Offer status:</b>
+  <%= @offer.offer_status %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @offer.category %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @offer.country %>
+</p>
+
+
+<%= link_to 'Edit', edit_offer_path(@offer) %> |
+<%= link_to 'Back', offers_path %>

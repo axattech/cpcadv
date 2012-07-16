@@ -1,0 +1,47 @@
+<h1>Listing offers</h1>
+
+<table>
+  <tr>
+    <th>Offer name</th>
+    <th>Offer link</th>
+    <th>Offer description</th>
+    <th>Offer msg</th>
+    <th>Offer budget</th>
+    <th>Offer cr per click</th>
+    <th>Offer max clicks per user</th>
+    <th>Offer start date</th>
+    <th>Offer end date</th>
+    <th>Offer worldwide</th>
+    <th>Offer status</th>
+    <th>Category</th>
+    <th>Country</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @offers.each do |offer| %>
+  <tr>
+    <td><%= offer.offer_name %></td>
+    <td><%= offer.offer_link %></td>
+    <td><%= offer.offer_description %></td>
+    <td><%= offer.offer_msg %></td>
+    <td><%= offer.offer_budget %></td>
+    <td><%= offer.offer_cr_per_click %></td>
+    <td><%= offer.offer_max_clicks_per_user %></td>
+    <td><%= offer.offer_start_date %></td>
+    <td><%= offer.offer_end_date %></td>
+    <td><%= offer.offer_worldwide %></td>
+    <td><%= offer.offer_status %></td>
+    <td><%= offer.category %></td>
+    <td><%= offer.country %></td>
+    <td><%= link_to 'Show', offer %></td>
+    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
+    <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Offer', new_offer_path %>

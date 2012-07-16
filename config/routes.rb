@@ -1,5 +1,7 @@
 CpcadvApp::Application.routes.draw do
   
+  resources :offers
+
   resources :categories
 
   resources :members
