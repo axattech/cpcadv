@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+  padding:0;
+  margin:0;
+  font:12px/18px Arial, Helvetica, sans-serif;
+  color:#000;
+}
+
+#wrapper{
+  width:1000px;
+  margin:0 auto;
+}
+
+#header{
+  width:100%;
+  float:left;
+  padding:10px 0
+}
+
+#header .logo{
+  float:left;
+  display:block;margin-top:20px
+}
+
+.headerright{
+  float:right;
+  width:490px;
+}
+
+.tpsrc{
+  float:left;
+}
+
+.srctxt{
+  float:left;
+  width:100px;
+  line-height:15px
+}
+
+.srctxt span{
+  color:#325190
+}
+
+.tpfrmsec{
+  float:left;
+  width:383px
+}
+
+.tpfrmsec input.headtopinput{
+  background:url(/assets/admin-images/topinputbg.png) no-repeat 0 0;
+  border: 0 none;
+    float: left;
+    margin-right: 5px;
+    padding: 8px 5px;
+    width: 154px;
+}
+
+.tpfrmsec input.tplogin{
+  background:url(/assets/admin-images/loginbg_small.png) no-repeat 0 0;
+  border: 0 none;
+    color: #FFFFFF;
+    float: left;
+    height: 32px;
+    width: 44px;
+  cursor:pointer
+}
+
+.tpmenu{
+  float: right;
+  margin-top:25px
+}
+
+.mainfrmcontainer{
+
+float:left;
+width:100%;
+background:url(/assets/admin-images/bodyfrmBG.png) no-repeat 0 0;
+padding:66px 0
+}
+.mainfrmcontainera{
+
+float:left;
+width:100%;
+background:url(/assets/admin-images/bodyfrmBG.png) no-repeat 0 0;
+}
+
+.frmmainbody{
+  margin:0 auto;
+  width:700px
+}
+
+.frmmainbody h3{
+  color:#325190;
+  font-family:Calibri;
+  font-size:27px;
+  font-weight:normal
+}
+
+.mainfrmbrlow{
+  margin:0 auto;
+  width:575px
+}
+
+.mainfrmlft{
+  float:left;
+  width:210px;
+  margin-top: 33px;
+}
+
+.sntoolboxnew {
+    float: left;
+}
+
+.sntoolboxnew a {
+    cursor: pointer;
+    display: block;
+    margin-right: 3px;
+}
+
+
+.sntoolboxnew a span {
+    background:url(/assets/admin-images/lofinwidFBTW.png) no-repeat scroll 0 0 transparent;
+    display: block;
+    height:51px;
+    margin:0 0 12px;
+    overflow: hidden;
+    width:212px;
+}
+
+.sntoolboxnew a span.facebook {
+    background-position: 0 0;
+}
+
+.sntoolboxnew a span.twitter {
+    background-position: 0 -5.2em;
+}
+
+.comm{ float:left}
+
+.frmright{
+  float: right;
+    width: 330px;
+}
+
+.frmright h2{ float:left; font-size:14px; margin:0; font-weight:normal; margin-bottom:15px}
+
+.frmright p{float:left; margin:0 0 15px 0}
+
+.frmright p input.txtbxmain{
+  background:url(/assets/admin-images/maiininputbg.png) no-repeat 0 0;
+  border: 0 none;
+    float: left;
+    padding: 14px;
+    width: 303px;
+  
+}
+
+.frmright p select.cl{
+  background:url(/assets/admin-images/maiininputbg.png) no-repeat 0 0;
+  border: 0 none;
+    float: left;
+    padding: 14px;
+    width: 332px;
+  
+}
+
+.frmright p input.smtbtn{
+  background:url(/assets/admin-images/sbtbtn.gif) no-repeat 0 0;
+  border: 0 none;
+    color: #FFFFFF;
+    float: left;
+    font-family: Tahoma;
+    font-size: 20px;
+    padding: 9px;
+    width: 185px;
+  cursor:pointer
+  
+}
+
+.sntoolboxbt {
+    
+  width:57px;
+  margin:0 auto;
+  padding:5px 0
+}
+
+.sntoolboxbt a {
+    cursor: pointer;
+    display: block;
+    margin-right: 3px;
+}
+
+
+.sntoolboxbt a span {
+    background:url(/assets/admin-images/social_icon.png) no-repeat scroll 0 0 transparent;
+    display: block;
+    height:27px;
+    overflow: hidden;
+    width:27px;
+  float:left
+}
+
+.sntoolboxbt a span.facebook {
+    background-position: 0 0;
+}
+
+.sntoolboxbt a span.twitter {
+    background-position: -2.3em 0;
+}
+
+#footer{ 
+  float:left; 
+  width:1000px;
+  text-align:center;
+  color:#4e4e4e;
+  padding:10px 0
+}
+
+.lhscontainer{
+width:280px;
+float:left;
+padding:20px;
+}
+
+.lhs{
+width:260px;
+border:1px dashed #999;
+margin:0px 10px;;
+float:left;
+clear:left;
+padding-left:10px;
+}
+
+.lhs h6{
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#325190;
+}
+
+.lhs p{ float:left;  clear:left; margin:10px 0 0}
+.lhs ul{ margin:10px 0 0; padding:0; list-style-type:none}
+.lhs li{ margin-bottom:14px; font-weight:bold; float:left; width:150px; font-family:Arial, Helvetica, sans-serif}
+
+.lhs li ul{ margin:10px 0 0; padding:0; list-style-type:none}
+.lhs li ul li{ margin-bottom:14px; font-weight:bold; background:url(/assets/admin-images/arrow_inner.png) no-repeat 0 0.2em; padding-left:20px; float:left; font-family:Arial, Helvetica, sans-serif}
+.lhs ul a{color:#000; text-decoration:none;}
+.lhs li a:hover{color:#999;}
+
+.rhs{
+width:550px;
+float:left;
+border:1px dashed #999999;
+margin-top:20px;
+padding:10px;
+
+}
+.rhs p{
+font-family:Arial, Helvetica, sans-serif;
+font-size:12px;
+color:#000000;
+margin:0px;
+}
+.rhs h6{
+font-family:Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#000000;
+margin:0px;
+}
+
+.imgr{
+float:left;
+margin-right:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

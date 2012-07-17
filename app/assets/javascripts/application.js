@@ -10,14 +10,9 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-
-
-
-
-$(document).ready(function(){
-	$('input.date').datepicker();
-	alert('');
-});
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
 
 
 function popupCenter(url, width, height, name) {
@@ -31,5 +26,3 @@ $(document).ready(function(){
 	  e.stopPropagation(); return false;
 	});
 });
-
-
