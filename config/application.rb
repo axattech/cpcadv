@@ -1,7 +1,5 @@
 require File.expand_path('../boot', __FILE__)
 
-config.assets.precompile += ['admin_user.css']
-
 require 'rails/all'
 
 if defined?(Bundler)
