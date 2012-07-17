@@ -13,6 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.ui.datepicker
+
+
+
+$(document).ready(function(){
+	$('input.date').datepicker();
+	alert('test');
+});
 
 
 function popupCenter(url, width, height, name) {
@@ -27,6 +35,4 @@ $(document).ready(function(){
 	});
 });
 
-$(document).ready(function(){
-	$("#offer_offer_start_date").datepicker();
-});
+
