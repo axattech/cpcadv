@@ -26,3 +26,7 @@ $(document).ready(function(){
 	  e.stopPropagation(); return false;
 	});
 });
+
+$(document).ready(function(){
+	$("#offer_offer_start_date").datepicker();
+});
