@@ -12,6 +12,9 @@ class AdminUserController < ApplicationController
   end
   
   def login
+     if session[:admin_user_id]
+      redirect_to :controller=>'AdminUser', :action=>'index'
+     end 
     
     if request.post?
       

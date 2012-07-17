@@ -25,7 +25,13 @@
     <td><%= member.email %></td>    
     <td><%= Country.getcountryname(member.country_id).country %></td>
     <td><%= member.provider %></td>
-    <td><%= member.status %></td>
+    <td>
+    	<% if member.status %>
+    	 Active
+    	<% else %>
+    	 Inactive
+    	<% end %>        	    
+    </td>
    <!-- <td><%= link_to 'Show', member %></td>  -->     
   </tr>
 <% end %>

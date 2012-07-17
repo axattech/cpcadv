@@ -1,8 +1,6 @@
 <%= form_for(@category) do |f| %>
   <% if @category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
+    <div id="error_explanation">      
       <ul>
       <% @category.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -16,9 +14,20 @@
     <%= f.text_field :category_name %>
   </div>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.check_box :status %>
+   <%= f.label :status %><br />
+   <%= f.radio_button :status, TRUE, :checked => true %>Active
+   
+   <%= f.radio_button :status, FALSE %>Inactive
+   
+   
+    
+    
   </div>
+  
+  
+  
+  
+  
   <div class="actions">
     <%= f.submit %>
   </div>

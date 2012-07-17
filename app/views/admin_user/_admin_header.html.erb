@@ -6,6 +6,7 @@
 
 
 <%= stylesheet_link_tag    "admin_user", :media => "all" %>
+<%= javascript_include_tag 'application' %>
 
 <%= csrf_meta_tags %>
 
@@ -23,6 +24,9 @@
         	        	
         	 <%= image_tag("/assets/admin-images/logo.png", alt: "CPC logo", class: 'logo') %>
         	
+        	
+        	<% if session[:admin_user_id] %>
+        	
             <div class="headerright">
             	<!--  Top serch sec start-->
             	<div class="tpsrc"></div>
@@ -30,9 +34,14 @@
             <!--  Top menu start-->
                 <div class="tpmenu">                	                  
                   
-						<a href="#" title="Home" class="active">Home</a>
+					
+						<%=  link_to "Home", {:controller => "AdminUser", :action => "index"}, :class => "active" %>
+						
+						
 						<a href="#" title="PROMOTE OFFERS">Offers</a>
+						
 						<%= link_to "Users", :controller => "members", :action => "index"  %>
+						<%= link_to "Categories", :controller => "categories", :action => "index"  %>
 																			                                      				
                     
 					<script>
@@ -43,5 +52,10 @@
                     	<%= link_to "Log out", log_out_path %>
 				</div>
             </div>
+            <% end %>
+            
+            
+            
+            
         </div>
         <!--  Header End-->

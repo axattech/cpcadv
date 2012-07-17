@@ -1,8 +1,17 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
-  def index
-    @categories = Category.all
+   layout false
+   
+   include ApplicationHelper
+
+   
+   
+   
+  def index    
+    categories = Category.all
+    @cat_results = Kaminari.paginate_array(categories).page(params[:page]).per(5)
+
 
     respond_to do |format|
       format.html # index.html.erb

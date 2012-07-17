@@ -1,4 +1,11 @@
- <%= stylesheet_link_tag    "admin_user", :media => "all" %>
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent" style="width:200px;margin-left: 400px">
+
+
+<%= stylesheet_link_tag    "admin_user", :media => "all" %>
 <h1>Log in</h1>
 
 <% flash.each do |name, msg| %>
@@ -19,4 +26,16 @@
   </p>
   <p class="button"><%= submit_tag "Log in" %></p>
 <% end %>
+ 
+
+
+
+
+              
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>
 

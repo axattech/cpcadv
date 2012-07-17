@@ -1,3 +1,10 @@
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -7,9 +14,25 @@
 
 <p>
   <b>Status:</b>
-  <%= @category.status %>
+  
+  <% if @category.status %>
+    	 Active
+  <% else %>
+    	 Inactive
+  <% end %>
+    
 </p>
 
 
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
+
+
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>
+
+

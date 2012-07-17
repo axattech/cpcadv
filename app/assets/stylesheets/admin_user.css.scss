@@ -72,6 +72,41 @@ body{
   margin-top:25px
 }
 
+.tpmenu a{
+  float: left;
+  margin-right:10px;
+  padding: 5px 10px;
+  background:#325190;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff
+  
+}
+
+
+.tpmenu a:hover{
+
+  background:#000;
+  
+  color: #fff
+  
+}
+.tpmenu a.active{
+  
+  background:#000;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #fff
+  
+}
+
+
+
+
+
+
+
+
 .mainfrmcontainer{
 
 float:left;
