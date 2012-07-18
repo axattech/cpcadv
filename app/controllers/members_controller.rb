@@ -50,4 +50,24 @@ class MembersController < ApplicationController
   # DELETE /members/1
   # DELETE /members/1.json
   
+  def banuser    
+    @member1 = Member.find(params[:id])
+    
+   
+     if @member1.status
+       @member1.update_attribute(:status , "false")
+       flash[:notice] = "You have successfully banned user"
+     else
+       @member1.update_attribute(:status , "true")
+       flash[:notice] = "You have successfully permited user"
+     end
+  
+    
+   
+    redirect_to :controller=>'members', :action => 'index'    
+    #flash[:notice] = ""
+  end
+  
+  
+  
 end

@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   private
     def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
+      @current_user ||= Member.find(session[:user_id]) if session[:user_id]
     end
     helper_method :current_user 
     
@@ -15,5 +15,18 @@ class ApplicationController < ActionController::Base
       @current_admin_user ||= AdminUser.find(session[:admin_user_id]) if session[:admin_user_id]
     end
     helper_method :current_admin_user 
+    
+    
+    private
+    
+    def redirect_to_other      
+      if session[:admin_user_id]
+      else
+         redirect_to root_url         
+      end      
+    end
+    
+    helper_method :redirect_to_other 
+    
     
 end

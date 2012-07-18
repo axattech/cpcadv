@@ -37,9 +37,9 @@
 					
 						<%=  link_to "Home", {:controller => "AdminUser", :action => "index"}, :class => "active" %>
 						
-						
-						<a href="#" title="PROMOTE OFFERS">Offers</a>
-						
+						<%=  link_to "Offers", {:controller => "offers", :action => "index"} %>
+					
+											
 						<%= link_to "Users", :controller => "members", :action => "index"  %>
 						<%= link_to "Categories", :controller => "categories", :action => "index"  %>
 																			                                      				

@@ -1,8 +1,8 @@
 <script type="text/javascript">
-	if(window.opener) {
+	/*if(window.opener) {
 	   window.opener.location.reload(true);
 	   window.close()
-	}
+	}*/
 </script>
   
 
@@ -70,8 +70,8 @@
                             <div class="mainfrmlft">
                                     <div class="sntoolboxnew">
 
-                                            <%= link_to content_tag(:span, '', :class => 'facebook'), "/auth/facebook", id: "sign_in" , :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
-                                            <%= link_to content_tag(:span, '', :class => 'twitter'), "/auth/twitter", id: "sign_in", :class => "popup", :"data-width" => 600, :"data-height" => 400 %>
+                                            <%= link_to content_tag(:span, '', :class => 'facebook'), "/auth/facebook", id: "sign_in"  %>
+                                            <%= link_to content_tag(:span, '', :class => 'twitter'), "/auth/twitter", id: "sign_in" %>
 
                                             <!--<a title="Login with Facebook" href="#" target="_blank">
                                                     <span class="facebook"></span>

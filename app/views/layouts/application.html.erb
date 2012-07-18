@@ -18,8 +18,10 @@
 				<!--  Top serch sec start-->
 				<div class="tpsrc">
 					<div id="user_nav">
-											<% if current_user %>
-						    Signed in as <strong><%= current_user.name %></strong>!
+						<%= notice %>
+						
+							<% if current_user %>
+						    Signed in as <strong><%= current_user.username %></strong>!
 						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
 						<% else %>
 							

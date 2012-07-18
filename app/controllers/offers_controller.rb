@@ -1,7 +1,11 @@
 class OffersController < ApplicationController
   # GET /offers
   # GET /offers.json
-  def index
+  
+  layout  false
+  
+  
+  def index       
     @offers = Offer.all
 
     respond_to do |format|
@@ -79,5 +83,25 @@ class OffersController < ApplicationController
       format.html { redirect_to offers_url }
       format.json { head :no_content }
     end
+  end
+  
+  def approverejectoffer
+    
+    @offer1 = Offer.find(params[:id])
+    
+   
+     if @offer1.offer_status
+       @offer1.update_attribute(:offer_status , "false")
+       flash[:notice] = "You have successfully rejected offer"
+     else
+       @offer1.update_attribute(:offer_status , "true")
+       flash[:notice] = "You have successfully approved offer"
+     end
+  
+    
+   
+    redirect_to :controller=>'offers', :action => 'index'    
+    #flash[:notice] = ""
+     
   end
 end

@@ -1,14 +1,13 @@
 class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
-   layout false
-   
+   layout false   
    include ApplicationHelper
 
    
-   
-   
-  def index    
+   before_filter :redirect_to_other
+    
+  def index
     categories = Category.all
     @cat_results = Kaminari.paginate_array(categories).page(params[:page]).per(5)
 

@@ -20,7 +20,12 @@ CpcadvApp::Application.routes.draw do
     #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
   #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
 
+  #post "members/:id"
   
+  
+  post "members/:id" => "Members#banuser"
+  
+  post "offers/:id" => "Offers#approverejectoffer"
   
 
   #get "admin_user/logout"

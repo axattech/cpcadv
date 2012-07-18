@@ -1,50 +1,66 @@
-<!---
-<h1>Listing offers</h1>
+<%= render 'admin_user/admin_header' %>
 
-<table>
-  <tr>
-    <th>Offer name</th>
-    <th>Offer link</th>
-    <th>Offer description</th>
-    <th>Offer msg</th>
-    <th>Offer budget</th>
-    <th>Offer cr per click</th>
-    <th>Offer max clicks per user</th>
-    <th>Offer start date</th>
-    <th>Offer end date</th>
-    <th>Offer worldwide</th>
-    <th>Offer status</th>
-    <th>Category</th>
-    <th>Country</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= render 'admin_user/admin_lhs' %>
 
-<% @offers.each do |offer| %>
-  <tr>
-    <td><%= offer.offer_name %></td>
-    <td><%= offer.offer_link %></td>
-    <td><%= offer.offer_description %></td>
-    <td><%= offer.offer_msg %></td>
-    <td><%= offer.offer_budget %></td>
-    <td><%= offer.offer_cr_per_click %></td>
-    <td><%= offer.offer_max_clicks_per_user %></td>
-    <td><%= offer.offer_start_date %></td>
-    <td><%= offer.offer_end_date %></td>
-    <td><%= offer.offer_worldwide %></td>
-    <td><%= offer.offer_status %></td>
-    <td><%= offer.category %></td>
-    <td><%= offer.country %></td>
-    <td><%= link_to 'Show', offer %></td>
-    <td><%= link_to 'Edit', edit_offer_path(offer) %></td>
-    <td><%= link_to 'Destroy', offer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<div class="rhscontent">
 
-<br />
+<p id="notice"><%= notice %></p>
+	<div id="user-conatiner">
+		
+		
+		<% @offers.each do |offer| %>
+		
+			
+		<div class="rhs-ucontentnew">
+    	<img src="images/img.png" alt="" class="imgl"/>
+        		<h2><%= offer.offer_name %></h2>
+                <p> <%= offer.offer_description %> </p>
+                <p>
+                	<strong>CPC</strong>: <%= offer.offer_cr_per_click %>&nbsp; 
+                	<strong>Max Credits</strong>:<%= offer.offer_budget %>&nbsp;
+                	<strong>Country</strong>: <%= Country.getcountryname(offer.country).country %>
+                </p>
+       			<p>
+       				<strong>Category</strong>: <%= Category.getcategoryname(offer.category) %>
+       				<strong>&nbsp;Duration</strong>: <%= offer.offer_start_date %> - <%= offer.offer_end_date %>        				
+       			</p>
+        </div> 
+              			        			        				
+        				<% if offer.offer_status %>
+        				
+        				 <div class="butlfta">
+        					<h2>
+        						<%= link_to 'Reject Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>
+        						
+        					</h2>
+        				</div>
+        				<% else %>
+        				<div class="butlft">
+                    		<h2>
+                    			<%= link_to 'Approve Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+                    		</h2>
+        				</div>
+        				
+        				<% end %>
+        				 	
+    	  	   	
+    	  
+        				
+        			
+                 	                 
+                    
+		
+		
+		
+		
+		
+		<% end %>
+						   
+     
+	</div>
 
-<%= link_to 'New Offer', new_offer_path %>
 
---->
+
+</div>
+</div>
+<%= render 'admin_user/admin_footer' %>
