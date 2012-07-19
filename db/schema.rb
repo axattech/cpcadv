@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120716100817) do
+ActiveRecord::Schema.define(:version => 20120719120328) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -67,10 +67,12 @@ ActiveRecord::Schema.define(:version => 20120716100817) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "member_id"
   end
 
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
   add_index "offers", ["country_id"], :name => "index_offers_on_country_id"
+  add_index "offers", ["member_id"], :name => "index_offers_on_member_id"
 
   create_table "users", :force => true do |t|
     t.string   "provider"

@@ -22,6 +22,7 @@ class MembersController < ApplicationController
   # GET /members/new.json
   def new
     @member = Member.new    
+   
     
   end
 
@@ -31,14 +32,25 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
-          
+         
+         
+       
+         
+         
     @member = Member.new(params[:member])
     if @member.save  
       flash[:success] = "Member was successfully created."
       #redirect_to @member
-      render 'new'
-    else
-      render 'new'
+      #render 'new'
+      
+       render   'home/index'
+      #render :template => 'home/index'
+     
+    else           
+     render   'home/index'
+     
+     
+     
     end
     
   end

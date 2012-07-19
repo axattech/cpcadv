@@ -25,10 +25,15 @@ class Member < ActiveRecord::Base
     #logger.debug "MEMBER-TEST: #{auth["extra"]["raw_info"]["username"]}"
     #abort('khan')
     checkMember = self.find_by_email(auth["info"]["email"])
-    
+    logger.debug "MEMBER-TEST-EMAIL: #{auth}"
     
     if checkMember
-      return false
+      if auth['provider'] = checkMember.provider
+        return checkMember.id
+      else
+        return false
+      end
+      
     else
       objMember = Member.new
       objMember.username = auth["extra"]["raw_info"]["username"]

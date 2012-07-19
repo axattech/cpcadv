@@ -1,0 +1,39 @@
+
+<% if @member.errors.any? %>
+    <div class="error_messages">     
+      <ul>
+        <% for message in @member.errors.full_messages %>
+          <li><%= message %></li> 
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<%= form_for Member.new do |f| %>
+	  <p>
+      <%= f.label :username %><br />
+      <%= f.text_field :username %>
+      </p>
+    
+      <p>
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+      </p>
+
+	  <p>
+      <%= f.label :password_confirmation, "Confirmation" %><br />
+      <%= f.password_field :password_confirmation %>
+      </p>
+      
+       <p>
+      <%= f.label :country, "country" %><br />
+      <%=select("member", "country_id", Country.all.collect {|c| [ c.country, c.id ] }, {:prompt => 'Select Country'}) %>
+      </p> 
+           
+		<%= f.hidden_field :provider, :value => "CPC" %>
+
+	<p>
+      <%= f.submit "Sign Up!" %>
+    </p>
+      
+<% end %>

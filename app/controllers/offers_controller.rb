@@ -104,4 +104,14 @@ class OffersController < ApplicationController
     #flash[:notice] = ""
      
   end
+  
+  #method created by emamul khan
+  def myOffers
+    #@offerList = Offer.find_by_member_id(@logged_user_id)
+    
+    offerList = Offer.find_all_by_member_id(session[:user_id])
+    #logger.debug "MEMBER-TEST: #{offerList}"
+    @offers = Kaminari.paginate_array(offerList).page(params[:page]).per(5)
+  end
+  
 end

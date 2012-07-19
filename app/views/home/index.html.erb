@@ -1,3 +1,5 @@
+<%= render 'home/header' %>
+
 <script type="text/javascript">
 	/*if(window.opener) {
 	   window.opener.location.reload(true);
@@ -88,17 +90,18 @@
 
                             <div class="frmright">
                                     <h2>Create an Acount</h2>
-                                    <p><input name="" type="text" class="txtbxmain" value="Username" /></p>
-                                    <p><input name="" type="text" class="txtbxmain" value="Password" /></p>
-                                    <p><select name="" class="cl"></select></p>
-                                    <p><input name="" type="button" class="smtbtn" value="Sign Up!" /></p>
+                                    
+                                  
+                                        
+
+                                    <%= render :partial => "members/new",  :object => @member%>
+                           
                             </div>  
                             
                        <% end %>
 		</div>
 	</div>
 </div>
-		
-		
+<%= render 'home/footer' %>
 		
 	
