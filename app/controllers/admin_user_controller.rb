@@ -22,9 +22,7 @@ class AdminUserController < ApplicationController
         if user
           session[:admin_user_id] = user.id        
           
-          redirect_to :controller=>'AdminUser', :action=>'index'
-          
-
+          redirect_to :controller=>'AdminUser', :action=>'index'         
         else
         flash.now.alert = "Invalid email or password"
         end

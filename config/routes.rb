@@ -4,6 +4,7 @@ CpcadvApp::Application.routes.draw do
 
   resources :categories
 
+  get "members" => "home#index"
   resources :members
 
   #match "admin/index" => "AdminUser#index", :as => "admin/dashboard"
@@ -13,10 +14,16 @@ CpcadvApp::Application.routes.draw do
   
   get "admin/dashboard" => "AdminUser#index"
   
+  get "admin/members" => "members#index"
+  
+  post "login" => "home#login"
+  
+  post "updatevalue" =>"members#updatevalue"
+  
+  
   get "sign_up" => "members#new", :as => "sign_up"
 
 
-  get "admin/members" => "Members#index"
     #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
   #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
 

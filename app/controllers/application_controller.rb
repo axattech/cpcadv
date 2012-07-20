@@ -21,9 +21,10 @@ class ApplicationController < ActionController::Base
     
     def redirect_to_other      
       if session[:admin_user_id]
-      else
-         redirect_to root_url         
+      else      
+          redirect_to root_url                         
       end      
+       
     end
     
     helper_method :redirect_to_other 

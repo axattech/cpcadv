@@ -17,9 +17,7 @@
 			<div class="headerright">
 				<!--  Top serch sec start-->
 				<div class="tpsrc">
-					<div id="user_nav">
-						<%= notice %>
-						
+					<div id="user_nav">						
 							<% if current_user %>
 						    Signed in as <strong><%= current_user.username %></strong>!
 						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
@@ -29,11 +27,27 @@
 							
 							<% else %>
 							
-							<div class="srctxt">Already Member? <span>Login here:</span></div>
+						
 							<div class="tpfrmsec">
-								<input name="" type="text" class="headtopinput" /> 
-								<input name="" type="text" class="headtopinput" /> 
-								<input name="" type="button" class="tplogin" value="Login" />
+																													 
+								
+								  <% if  flash[:signin_notice] %>
+									<div class="error_messages" style="clear: left;">     
+								      <ul>
+								       <%=  flash[:signin_notice] %>
+								      </ul>
+								    </div>
+								<% end %>	
+															
+								<div style="float: left;">
+								
+								<%= form_tag("/login", :method => "post") do  %>								
+							    <%= text_field_tag :email, params[:email],:class => 'headtopinput' %>  								  							
+							    <%= password_field_tag :password,'' ,:class => 'headtopinput' %>							
+							    <%= submit_tag "Log in",  :class => 'tplogin' %>								
+								<% end %>
+								</div>
+								
 							</div>
 
 							<% end %>						

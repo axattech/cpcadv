@@ -353,7 +353,7 @@ width:auto;
 float:left;
 }
 
-.error_messages{ float: left}
+.error_messages{ float: left; clear:left}
 .error_messages h2 {
     float: left;
     font-size: 14px;

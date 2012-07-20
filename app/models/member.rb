@@ -1,16 +1,18 @@
 class Member < ActiveRecord::Base
   #attr_accessible :country_id, :email, :password, :provider, :status, :username
   
-  attr_accessible :username, :password, :password_confirmation, :country_id, :provider, :status
+  attr_accessible :username, :password, :password_confirmation, :country_id, :provider, :status, :email, :age, :gender, :member_setting
   
   attr_accessor :password
   before_save :encrypt_password
 
   
+  
+  validates_uniqueness_of :username, :email
   validates_confirmation_of :password
-  validates_presence_of :username, :password, :password_confirmation, :country_id
-  validates_uniqueness_of :username
-
+  validates_presence_of :username, :email,  :password, :password_confirmation, :gender, :age, :country_id
+  
+  validates_numericality_of :age, :only_integer => true, :message => "should be  whole number."
   
   
   def encrypt_password
@@ -47,4 +49,17 @@ class Member < ActiveRecord::Base
       return member_details.id
     end
   end
+  
+  def self.authenticate_user(email, password)
+    
+      user = find_by_email(email)         
+      if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+        user
+      else
+        nil
+      end
+  end
+  
+  
+  
 end
