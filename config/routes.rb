@@ -18,8 +18,8 @@ CpcadvApp::Application.routes.draw do
   
   post "login" => "home#login"
   
-  post "updatevalue" =>"members#updatevalue"
-  
+  post "updateMemberDetail" =>"members#updateMemberDetail"
+  post "updateMemberSettings" =>"members#updateMemberSettings"
   
   get "sign_up" => "members#new", :as => "sign_up"
 
@@ -46,6 +46,7 @@ CpcadvApp::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'myOffers', to: 'offers#myOffers', as: 'myOffers'
   match 'mySettings', to: 'members#mySettings', as: 'mySettings'
+  match 'promoteOffers', to: 'offers#promoteOffers', as: 'promoteOffers'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

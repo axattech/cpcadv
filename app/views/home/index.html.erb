@@ -1,86 +1,27 @@
 <%= render 'home/header' %>
-
-<script type="text/javascript">
-	/*if(window.opener) {
-	   window.opener.location.reload(true);
-	   window.close()
-	}*/
-</script>
-  
-
-<div class="mainfrmcontainer">
-        <% if current_user %>
-                            <%= render 'home/lhs' %>
-
-                            <div class="rhs">
-                                <%= image_tag("/assets/front-end-images/img.png", alt: "CPC Advertising", class: 'imgr') %>         
-                                <h6>Name of the offer</h6>
-                                <p>Description of offer Description of offer Description of offer 
-                                Description of offer Description of offer Description of offer 
-                                Description of offer Description of offer Description of offer 
-                                <br />
-                                <br />
-                                </p>
-
-                                <p><strong>CPC</strong> : 100&nbsp;&nbsp;<strong> Max Credit</strong> : 500&nbsp; &nbsp;<strong>Country</strong> : Worldwide</p>
-                                <p><strong>Category</strong> : Entertainment&nbsp; <strong>Duration</strong> : 24th July 2012 to 30th July 2012&#13;</p>
-                            </div>
-
-                            <div class="rhs">
-                                <%= image_tag("/assets/front-end-images/img.png", alt: "CPC Advertising", class: 'imgr') %>        
-                                <h6>Name of the offer</h6>
-                                <p>Description of offer Description of offer Description of offer 
-                                Description of offer Description of offer Description of offer 
-                                Description of offer Description of offer Description of offer 
-                                <br />
-                                <br />
-                                </p>
-
-                                <p><strong>CPC</strong> : 100&nbsp;&nbsp;<strong> Max Credit</strong> : 500&nbsp; &nbsp;<strong>Country</strong> : Worldwide</p>
-                                <p><strong>Category</strong> : Entertainment&nbsp; <strong>Duration</strong> : 24th July 2012 to 30th July 2012&#13;</p>
-                            </div>
-                            <br />
-                            <br />
-          <% end %>
-	<div class="frmmainbody">
-		<% if !current_user %> <h3>Sign up using Facebook or Twitter or create an account with us.</h3> <% end %>
-                
-		<div class="mainfrmbrlow">
-                        
-                            
-                      <% if !current_user %>
-                            <div class="mainfrmlft">
-                                    <div class="sntoolboxnew">
-
-                                            <%= link_to content_tag(:span, '', :class => 'facebook'), "/auth/facebook", id: "sign_in"  %>
-
-                                            <!--<a title="Login with Facebook" href="#" target="_blank">
-                                                    <span class="facebook"></span>
-                                            </a>-->
-                                            <!--<a title="Login with Twitter" href="#" target="_blank">
-                                                    <span class="twitter"></span>
-                                            </a>-->
-
-                                    </div>
-
-                                    <div class="comm">If you encounter any issues logging in Or signing up please contact us at <a href="mailto:aksjd@ajkd.com">aksjd@ajkd.com</a></div>
-
-                            </div>
-
-                            <div class="frmright">
-                                    <h2>Create an Acount</h2>
-                                    
-                                  
-                                        
-
-                                    <%= render :partial => "members/new",  :object => @member%>
-                           
-                            </div>  
-                            
-                       <% end %>
+	<script type="text/javascript">
+		/*if(window.opener) {
+		   window.opener.location.reload(true);
+		   window.close()
+		}*/
+	</script>
+	<div class="mainfrmcontainer">
+		<div class="frmmainbody">
+			<% if !current_user %> <h3>Sign up using Facebook or Twitter or create an account with us.</h3> <% end %>
+			<div class="mainfrmbrlow">
+	          <% if !current_user %>
+	                <div class="mainfrmlft">
+	                    <div class="sntoolboxnew">
+	                         <%= link_to content_tag(:span, '', :class => 'facebook'), "/auth/facebook", id: "sign_in"  %>
+	                    </div>
+	                    <div class="comm">If you encounter any issues logging in Or signing up please contact us at <a href="mailto:aksjd@ajkd.com">aksjd@ajkd.com</a></div>
+	                </div>
+	                <div class="frmright">
+	                    <h2>Create an Acount</h2>
+	                    <%= render :partial => "members/new",  :object => @member%>
+	                </div>  
+	           <% end %>
+			</div>
 		</div>
 	</div>
-</div>
 <%= render 'home/footer' %>
-		
-	

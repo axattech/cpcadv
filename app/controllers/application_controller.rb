@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  #layout "template_name", :only => [:action, :action], :except => [:action, :action]
   
   private
     def current_user
@@ -10,7 +9,7 @@ class ApplicationController < ActionController::Base
     helper_method :current_user 
     
     
-    private
+  private
     def current_admin_user
       @current_admin_user ||= AdminUser.find(session[:admin_user_id]) if session[:admin_user_id]
     end

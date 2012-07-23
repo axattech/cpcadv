@@ -30,6 +30,7 @@ class OffersController < ApplicationController
   def new
     @offer = Offer.new
 
+   
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @offer }
@@ -45,10 +46,13 @@ class OffersController < ApplicationController
   # POST /offers.json
   def create
     @offer = Offer.new(params[:offer])
+   
 
     respond_to do |format|
       if @offer.save
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
+         redirect_to :action=>'myOffers' 
+         return
         format.json { render json: @offer, status: :created, location: @offer }
       else
         format.html { render action: "new" }
@@ -65,6 +69,9 @@ class OffersController < ApplicationController
     respond_to do |format|
       if @offer.update_attributes(params[:offer])
         format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
+        
+         redirect_to :action=>'myOffers' 
+         return
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -107,11 +114,18 @@ class OffersController < ApplicationController
   
   #method created by emamul khan
   def myOffers
-    #@offerList = Offer.find_by_member_id(@logged_user_id)
+    objOff = Offer.new
+    @offers = objOff.listMyOffers(session[:user_id], params[:page])
     
-    offerList = Offer.find_all_by_member_id(session[:user_id])
-    #logger.debug "MEMBER-TEST: #{offerList}"
-    @offers = Kaminari.paginate_array(offerList).page(params[:page]).per(5)
+  
+    
+    
+    #logger.debug "OFFER-LIST: #{@offers}"
   end
   
+  def promoteOffers
+    objOff = Offer.new
+    objOff.getOffersToPromoteAndSort()
+  end 
+    
 end

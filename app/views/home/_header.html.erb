@@ -5,6 +5,11 @@
  <%= stylesheet_link_tag    "frontend"  %>
  
   <%= javascript_include_tag "application" %>
+  
+  <%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+  
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,14 +17,14 @@
 		<!--  Header start-->
 		<div id="header">
 			
-			<%= link_to image_tag("/assets/front-end-images/logo.png", alt: "CPC Advertising"), 'http://rubyonrails.org/' %>
+			<%= link_to image_tag("/assets/front-end-images/logo.png", alt: "CPC Advertising"), '/', :title => 'CPC Advertising' %>
 
 			<div class="headerright">
 				<!--  Top serch sec start-->
 				<div class="tpsrc">
-					<div id="user_nav">						
+					<div id="user_nav">				
 							<% if current_user %>
-						    Signed in as <strong><%= current_user.username %></strong>!
+						    	Signed in as <strong><%= current_user.username %></strong>!
 						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
 						<% else %>
 							
@@ -29,46 +34,35 @@
 							
 						
 							<div class="tpfrmsec">
-																													 
-								
 								  <% if  flash[:signin_notice] %>
 									<div class="error_messages" style="clear: left;">     
 								      <ul>
 								       <%=  flash[:signin_notice] %>
 								      </ul>
 								    </div>
-								<% end %>	
+							      <% end %>	
 															
 								<div style="float: left;">
-								
-								<%= form_tag("/login", :method => "post") do  %>								
-							    <%= text_field_tag :email, params[:email],:class => 'headtopinput' %>  								  							
-							    <%= password_field_tag :password,'' ,:class => 'headtopinput' %>							
-							    <%= submit_tag "Log in",  :class => 'tplogin' %>								
-								<% end %>
+									<%= form_tag("/login", :method => "post") do  %>								
+								    <%= text_field_tag :email, params[:email],:class => 'headtopinput' %>  								  							
+								    <%= password_field_tag :password,'' ,:class => 'headtopinput' %>							
+								    <%= submit_tag "Log in",  :class => 'tplogin' %>								
+									<% end %>
 								</div>
-								
 							</div>
-
 							<% end %>						
-						
-						
-							
 						<% end %>
-						
 					</div>
-				
-				
-					
 				</div>
-				
 				<!--  Top menu start-->
-				<div class="tpmenu">
-					<a href="#" title="Home" class="active">Home</a>
-						<a href="#" title="PROMOTE OFFERS">PROMOTE OFFERS</a>
+				<% if current_user && current_user.member_detail  %>
+					<div class="tpmenu">
+						<%= link_to('HOME', '/', :title => 'OFFER') %>
+						<%= link_to('PROMOTE OFFERS', '/promoteOffers', :title => 'PROMOTE OFFERS') %>
 						<%= link_to('LIST AN OFFER', 'offers/new', :title => 'LIST AN OFFER') %>
-						<a href="#" title="YOUR OFFERS">YOUR OFFERS</a>
-				</div>
+						<%= link_to('YOUR OFFERS', '/myOffers', :title => 'YOUR OFFERS') %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 		<!--  Header End-->

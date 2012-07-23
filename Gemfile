@@ -44,5 +44,5 @@ gem 'omniauth-twitter'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "paperclip", "~> 2.3"
-
+gem 'jquery_datepicker'
 

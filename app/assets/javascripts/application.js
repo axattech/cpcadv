@@ -12,7 +12,56 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require_tree .
+
+$(document).ready(function(){
+    
+  $('#offer_offer_start_date').datepicker();
+  $('#offer_offer_end_date').datepicker();
+  
+  
+  //$("#field_country").css("display","none");
+  
+  
+  
+  
+  if( $('#offer_offer_worldwide').is(':checked')) {
+  	
+  	 $("#field_country").hide();  	 
+  	 $("#offer_country_id").attr("disabled", "disabled");  	 
+  	 //$('#new_offer').append('<input type="hidden" name="country_id" value="0" />');
+  	// $("#offer_country_id").val("0");
+
+  }
+  
+  $('#offer_offer_worldwide').click(function() {
+    if( $(this).is(':checked')) {       
+          $("#field_country").hide();         
+		  $("#offer_country_id").attr("disabled", "disabled");  
+          
+         // $('#new_offer').append('<input type="hidden" name="country_id" value="0" />');
+      //    $("#offer_country_id").val("0");
+    } else {
+       $("#field_country").show();
+       $("#offer_country_id").removeAttr("disabled");
+
+    }
+}); 
+  
+  
+  $('#new_offer').submit(function() {
+  	$("#field_country").attr('selectedIndex', 0);  
+  });
+  
+  
+  	
+});
+
+
+
+
+
 
 
 /*function popupCenter(url, width, height, name) {

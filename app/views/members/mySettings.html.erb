@@ -1,28 +1,29 @@
 <%= render 'home/header' %>
 	<div class="mainfrmcontainer">
 		<%= render 'home/lhs' %>
-		<% @offers.each do |offer| %>
-			<div class="rhs">
-			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
-			    <h6><%= offer.offer_name %></h6>
-			    <p><%= offer.offer_description %></p>
-			
-			    <p>
-			    	<strong>CPC</strong> : 
-			    	<%= offer.offer_cr_per_click %> 
-			    	<strong> Max Credit</strong> : 
-			    	<%= offer.offer_budget %>
-			    	<strong>Country</strong> : 
-			    	<%= offer.offer_worldwide %>
-			    </p>
-			    <p>
-			    	<strong>Category</strong> : 
-			    	Entertainment  
-			    	<strong>Duration</strong> : 
-			    	24th July 2012 to 30th July 2012&#13;
-			    </p>
+		<div class="rhs">
+        	<% if  flash[:member_setting_update_notice] %>
+			    <%= flash[:member_setting_update_notice] %>
+			<% end %>	
+			<div style="float: left;">
+				<%= form_tag("/updateMemberSettings", :method => "post") do  %>		   		
+					<p>
+				      	<%= label_tag :Password %><br />
+				       	<%= password_field_tag :password %>
+		      		</p>
+					<p>
+				      	<%= label :password_confirmation, "Confirm Password" %><br />
+      					<%= password_field_tag :password_confirmation %>
+		      		</p>
+		      		<p>
+		      			<%= label_tag :country, "Country" %><br />
+		      			<%= select_tag "country_id", options_from_collection_for_select(Country.all.collect, "id", "country", @member_details.country_id) , {:prompt => 'Select Country'} %>
+		      		</p> 
+					<p>							
+				    <%= submit_tag "Update",  :class => 'tplogin' %>
+				    </p>								
+				<% end %>
 			</div>
-		<% end %>
-		<%= paginate @offers %>
+        </div>
 	</div>
 <%= render 'home/footer' %>

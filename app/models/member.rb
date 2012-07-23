@@ -1,7 +1,7 @@
 class Member < ActiveRecord::Base
   #attr_accessible :country_id, :email, :password, :provider, :status, :username
   
-  attr_accessible :username, :password, :password_confirmation, :country_id, :provider, :status, :email, :age, :gender, :member_setting
+  attr_accessible :username, :password, :password_confirmation, :country_id, :provider, :status, :email, :age, :gender, :member_detail
   
   attr_accessor :password
   before_save :encrypt_password
@@ -10,8 +10,8 @@ class Member < ActiveRecord::Base
   
   validates_uniqueness_of :username, :email
   validates_confirmation_of :password
-  validates_presence_of :username, :email,  :password, :password_confirmation, :gender, :age, :country_id
   
+  validates_presence_of :username, :email,  :password, :password_confirmation, :gender, :age, :country_id
   validates_numericality_of :age, :only_integer => true, :message => "should be  whole number."
   
   
@@ -35,7 +35,6 @@ class Member < ActiveRecord::Base
       else
         return false
       end
-      
     else
       objMember = Member.new
       objMember.username = auth["extra"]["raw_info"]["username"]
@@ -44,6 +43,9 @@ class Member < ActiveRecord::Base
       objMember.password_confirmation = 'CPC@ADV@APP'
       objMember.country_id = 'NULL'
       objMember.provider = auth["provider"]
+      objMember.member_detail = "FALSE"
+      objMember.gender = 'NULL'
+      objMember.age = 0
       objMember.save!
       member_details = self.find_by_email(auth["info"]["email"])
       return member_details.id
@@ -51,7 +53,6 @@ class Member < ActiveRecord::Base
   end
   
   def self.authenticate_user(email, password)
-    
       user = find_by_email(email)         
       if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
         user
@@ -60,6 +61,14 @@ class Member < ActiveRecord::Base
       end
   end
   
-  
+  def getMemberDataById(member_id)
+    member_data = Member.find(member_id)
+    if member_data
+      return member_data
+    else
+      return false
+    end
+      
+  end
   
 end

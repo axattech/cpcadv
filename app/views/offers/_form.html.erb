@@ -57,31 +57,28 @@
     <%= f.number_field :offer_max_clicks_per_user %>
   </div>
   <div class="field">
-    <%= f.label :offer_start_date %><br />
-    
-    
-    
-    <%= f.date_select :offer_start_date %>
+    <%= f.label :offer_start_date %><br />          
+    <%= f.text_field :offer_start_date, :readonly => 'true'%>
   </div>
   <div class="field">
     <%= f.label :offer_end_date %><br />
-    <%= f.date_select :offer_end_date %>
+    <%= f.text_field :offer_end_date,:readonly => 'true' %>
   </div>
   <div class="field">
     <%= f.label :offer_worldwide %><br />
     <%= f.check_box :offer_worldwide %>
-  </div>
-  <div class="field">
-    <%= f.label :offer_status %><br />
-    <%= f.check_box :offer_status %>
-  </div>
+  </div>    
+    <%= f.hidden_field :offer_status, :value => 'false' %>
+    <%= f.hidden_field :member_id, :value => session[:user_id]  %>
+    	    
+    
   <div class="field">
   	
   	<%= f.label :category %><br />
   	<%=select("offer", "category_id", Category.all.collect {|ca| [ ca.category_name, ca.id ] }, {:prompt => 'Select Category'}) %>
   	
   </div>
-  <div class="field">
+  <div class="field" id="field_country">
     <%= f.label :country %><br />
     
     <%=select("offer", "country_id", Country.all.collect {|c| [ c.country, c.id ] }, {:prompt => 'Select Country'}) %>

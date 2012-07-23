@@ -1,0 +1,34 @@
+<div class="mainfrmcontainer">
+	<% if !@offers.empty? %>
+		<% @offers.each do |offer| %>
+		
+			<div class="rhs">
+				<p id="notice"><%= notice %></p>
+			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
+			    <h6><%= offer.offer_name %></h6>
+			    <p><%= offer.offer_description %></p>
+			
+			    <p>
+			    	<strong>CPC</strong> : 
+			    	<%= offer.offer_cr_per_click %> 
+			    	<strong> Max Credit</strong> : 
+			    	<%= offer.offer_budget %>
+			    	<strong>Country</strong> : 
+			    	<%= offer.offer_worldwide %>
+			    </p>
+			    <p>
+			    	<strong>Category</strong> : 
+			    	Entertainment  
+			    	<strong>Duration</strong> : 
+			    	24th July 2012 to 30th July 2012&#13;
+			    </p>
+			    <p>			    	
+			    <%=	link_to "Edit", :controller =>"offers", :action => "edit", :id=>offer.id %>			  
+			    </p>
+			</div>
+		<% end %>
+		<%= paginate @offers %>
+	<% else %>
+		You have not listed any offer yet, <%= link_to('click here', 'offers/new') %> to list an offer!
+	<% end %>
+</div>

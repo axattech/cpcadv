@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120720100619) do
+ActiveRecord::Schema.define(:version => 20120723070836) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -41,13 +41,13 @@ ActiveRecord::Schema.define(:version => 20120720100619) do
     t.string   "password_salt"
     t.integer  "country_id"
     t.string   "provider"
-    t.boolean  "status",         :default => true, :null => false
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.boolean  "status",        :default => true, :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
     t.string   "password_hash"
     t.string   "gender"
     t.integer  "age"
-    t.boolean  "member_setting"
+    t.boolean  "member_detail", :default => true
   end
 
   create_table "offers", :force => true do |t|
