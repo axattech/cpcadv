@@ -24,12 +24,6 @@ class Offer < ActiveRecord::Base
   validates_presence_of :country_id, :unless => :offer_worldwide
 
 
-   
-
-   
-  
-
-  
   def listMyOffers(logged_user_id, page_no)
     offerList = Offer.find_all_by_member_id(logged_user_id)
     if offerList
@@ -41,7 +35,61 @@ class Offer < ActiveRecord::Base
   end
   
   def getOffersToPromoteAndSort(*args)
-     
+    params = args.extract_options!
+    
+    if params[:sort_by] == 'all'
+      offerList = Offer.find(:all, 
+      :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]])
+    elsif params[:sort_by] == 'latest'
+      offerList = Offer.find(:all, 
+          :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+          :order => 'created_at desc'
+        )
+    elsif params[:sort_by] == 'expsoon'
+      offerList = Offer.find(:all, 
+          :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+          :order => ' offer_end_date asc'
+        )  
+     elsif params[:sort_by] == 'highcpc'
+      offerList = Offer.find(:all, 
+          :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+          :order => ' offer_cr_per_click desc'
+        )
+     elsif params[:sort_by] == 'maxnumcredits'
+      offerList = Offer.find(:all, 
+        :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+        :order => ' offer_budget desc'
+      )
+    end
+    
+    if offerList
+      @offers = Kaminari.paginate_array(offerList).page(params[:page_no]).per(5)
+      return @offers
+    else
+      return false
+    end
+    logger.debug "MEMBER-TEST: #{offerList}"
   end
+  
+  def getOfferDataById(offer_id)
+    offer_data = Offer.find(offer_id)
+    if offer_data
+      return offer_data
+    else
+      return false
+    end
+  end
+  
+  
+  def getCategoriesIfOfferExists
+    objCat = Category.new
+    @categoryList = objCat.getAllCategories()
+    
+    @categoryList.each do |category| 
+      @categoryIds += category.id+','
+    end
+    logger.debug "CATEGORY-IDS: #{@categoryIds}"
+  end
+  
   
 end

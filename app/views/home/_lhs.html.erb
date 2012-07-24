@@ -6,16 +6,28 @@
         <h6>Sort Offers</h6>
         <ul>
         	<li><a href="#">myOffer</a></li>
-	        <li><a href="#">Latest Offers First</a></li>
-	        <li><a href="#">Offers expiring soon</a></li>
-	        <li><a href="#">Highest Credits Per Click</a></li>
-	        <li><a href="#">Latest Offers First</a></li>
-	        <li><a href="#">Max Number of Credits</a></li>
+        	<li>
+        		<%=	link_to "Latest Offers First", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'latest' %>
+	        </li>
+	        <li>
+	        	<%=	link_to "Offers expiring soon", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'expsoon' %>
+	        </li>
+	        <li>
+	        	<%=	link_to "Highest Credits Per Click", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'highcpc' %>
+	        </li>
+	        <li>
+	        	<%=	link_to "Max Number of Credits", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'maxnumcredits' %>
+	        </li>
 	        <li>
 	            <a href="#">Categories</a>
 	            <ul>
-	                <li><a href="#">Entertainment</a></li>
-	                <li><a href="#">Info Products</a></li>
+	            	<%
+	            		#objOffer = Offer.new
+      					@categoryList = Offer.getCategoriesIfOfferExists
+	            		@categoryList.each do |category| 
+	            	%>
+	                	<li><a href="#"><%= category.category_name %></a></li>
+	                <% end %>
 	            </ul>
 	        </li>
         </ul>               

@@ -1,5 +1,7 @@
 CpcadvApp::Application.routes.draw do
   
+  get "share_offer/CreateLink"
+
   resources :offers
 
   resources :categories
@@ -46,7 +48,9 @@ CpcadvApp::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'myOffers', to: 'offers#myOffers', as: 'myOffers'
   match 'mySettings', to: 'members#mySettings', as: 'mySettings'
-  match 'promoteOffers', to: 'offers#promoteOffers', as: 'promoteOffers'
+  match 'promoteOffers', to: 'offers#promoteAndSortOffers', as: 'promoteOffers'
+  match 'sortOffers/:sort_by', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
+  match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

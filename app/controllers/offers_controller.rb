@@ -20,7 +20,6 @@ class OffersController < ApplicationController
     @offer = Offer.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
       format.json { render json: @offer }
     end
   end
@@ -114,18 +113,42 @@ class OffersController < ApplicationController
   
   #method created by emamul khan
   def myOffers
+    @logged_user_id = session[:user_id]
     objOff = Offer.new
     @offers = objOff.listMyOffers(session[:user_id], params[:page])
-    
-  
-    
-    
     #logger.debug "OFFER-LIST: #{@offers}"
   end
   
-  def promoteOffers
-    objOff = Offer.new
-    objOff.getOffersToPromoteAndSort()
+  def promoteAndSortOffers
+    @logged_user_id = session[:user_id]
+    if params[:sort_by]
+      @sort_by = params[:sort_by]
+    else
+      @sort_by = 'all'
+    end
+    if session[:user_id]
+      objMember = Member.new
+      member_details = objMember.getMemberDataById(session[:user_id])
+      arrParams = {}
+      arrParams[:page_no] = params[:page]
+      arrParams[:member_id] = session[:user_id]
+      arrParams[:country_id] = member_details.country_id
+      arrParams[:sort_by] = @sort_by
+      
+      objOff = Offer.new
+      @offers = objOff.getOffersToPromoteAndSort(arrParams)
+    end
   end 
+  
+  
+  def promoteOffers1        
+
+      
+  end 
+  
+  
+  def topup1223
+   @offer = Offer.find(params[:id])
+  end
     
 end

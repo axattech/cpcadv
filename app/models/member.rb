@@ -27,7 +27,7 @@ class Member < ActiveRecord::Base
     #logger.debug "MEMBER-TEST: #{auth["extra"]["raw_info"]["username"]}"
     #abort('khan')
     checkMember = self.find_by_email(auth["info"]["email"])
-    logger.debug "MEMBER-TEST-EMAIL: #{auth}"
+    #logger.debug "MEMBER-TEST-EMAIL: #{auth}"
     
     if checkMember
       if auth['provider'] = checkMember.provider
@@ -68,7 +68,6 @@ class Member < ActiveRecord::Base
     else
       return false
     end
-      
   end
   
 end

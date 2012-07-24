@@ -60,6 +60,33 @@ $(document).ready(function(){
 
 
 
+$(document).ready(function() {
+
+  $("#user_username").bind('ajax:success', function(evt, data, status, xhr){
+    if (data !== null) {
+      $('#username_check').html(data.offer_name + ' is already taken');
+    } else {
+      $('#username_check').html('Username is available!');
+    }
+  });
+
+  // cancel Ajax call if input field empty
+  $("#user_username").live('ajax:before', function(){
+    if ($(this).val() == '') {
+      return false;
+    }
+  });
+
+  $("#user_username").focus(function(){
+    $('#username_check').empty();
+  });
+
+});
+
+
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 <div class="mainfrmcontainer">
+	<%= render 'home/lhs' %>
 	<% if !@offers.empty? %>
 		<% @offers.each do |offer| %>
-		
 			<div class="rhs">
 				<p id="notice"><%= notice %></p>
 			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
@@ -22,9 +22,18 @@
 			    	<strong>Duration</strong> : 
 			    	24th July 2012 to 30th July 2012&#13;
 			    </p>
-			    <p>			    	
-			    <%=	link_to "Edit", :controller =>"offers", :action => "edit", :id=>offer.id %>			  
-			    </p>
+			    <% if @logged_user_id == offer.member_id %>
+				    <p>			    	
+				    <%=	link_to "Edit", :controller =>"offers", :action => "edit", :id=>offer.id %>			  
+				    </p>
+				    <p>
+				    	<%=	link_to "View Analytics of Offer", :controller =>"offers", :action => "edit", :id=>offer.id %> |
+				    	<%=	link_to "Top Up Offer Budget", :controller =>"offers", :action => "topup1223", :id=>offer.id %> |
+				    	<%=	link_to "Stop Offer", :controller =>"offers", :action => "edit", :id=>offer.id %> 
+				    </p>
+				<% else %>
+					<%= link_to "Share This Offer", :controller => 'offers', :action => '#' %>
+			    <% end %>
 			</div>
 		<% end %>
 		<%= paginate @offers %>
