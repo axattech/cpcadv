@@ -18,18 +18,7 @@
 	        <li>
 	        	<%=	link_to "Max Number of Credits", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'maxnumcredits' %>
 	        </li>
-	        <li>
-	            <a href="#">Categories</a>
-	            <ul>
-	            	<%
-	            		#objOffer = Offer.new
-      					@categoryList = Offer.getCategoriesIfOfferExists
-	            		@categoryList.each do |category| 
-	            	%>
-	                	<li><a href="#"><%= category.category_name %></a></li>
-	                <% end %>
-	            </ul>
-	        </li>
+	        
         </ul>               
     </div>
 </div>
