@@ -47,4 +47,3 @@ gem "paperclip", "~> 2.3"
 gem 'jquery_datepicker'
 gem "nifty-generators", :group => :development
 
-gem "mocha", :group => :test
