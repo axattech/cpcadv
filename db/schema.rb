@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723070836) do
+ActiveRecord::Schema.define(:version => 20120726095625) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -58,14 +58,14 @@ ActiveRecord::Schema.define(:version => 20120723070836) do
     t.integer  "offer_budget"
     t.integer  "offer_cr_per_click"
     t.integer  "offer_max_clicks_per_user"
-    t.date     "offer_start_date"
-    t.date     "offer_end_date"
-    t.boolean  "offer_worldwide"
+    t.string   "offer_start_date",          :limit => 50
+    t.string   "offer_end_date",            :limit => 50
+    t.boolean  "offer_worldwide",                         :default => false
     t.boolean  "offer_status"
     t.integer  "category_id"
     t.integer  "country_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                                 :null => false
+    t.datetime "updated_at",                                                 :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -76,6 +76,16 @@ ActiveRecord::Schema.define(:version => 20120723070836) do
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
   add_index "offers", ["country_id"], :name => "index_offers_on_country_id"
   add_index "offers", ["member_id"], :name => "index_offers_on_member_id"
+
+  create_table "payment_notifications", :force => true do |t|
+    t.text     "params"
+    t.integer  "offer_id"
+    t.string   "status"
+    t.string   "transaction_id"
+    t.datetime "purchased_at"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "provider"

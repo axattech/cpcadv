@@ -5,7 +5,7 @@ class Category < ActiveRecord::Base
   
   
   def self.getcategoryname(category_id)
-     category_name = Category.find_by_id(category_id).category_name
+     category_name = Category.find(category_id).category_name
   end
   
   def getAllCategories

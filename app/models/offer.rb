@@ -60,6 +60,11 @@ class Offer < ActiveRecord::Base
         :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
         :order => ' offer_budget desc'
       )
+     elsif params[:sort_by] == 'category'
+      offerList = Offer.find(:all, 
+        :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE ) and category_id = ? ", params[:member_id], params[:country_id], params[:category_id]],
+        :order => ' offer_budget desc'
+      )
     end
     
     if offerList
@@ -68,7 +73,7 @@ class Offer < ActiveRecord::Base
     else
       return false
     end
-    logger.debug "MEMBER-TEST: #{offerList}"
+    #logger.debug "EMAMULBHAI: #{offerList}"
   end
   
   def getOfferDataById(offer_id)
@@ -79,17 +84,53 @@ class Offer < ActiveRecord::Base
       return false
     end
   end
-  
-  
+
   def getCategoriesIfOfferExists
     objCat = Category.new
-    @categoryList = objCat.getAllCategories()
-    
+    @categoryList = objCat.getAllCategories
+    @categoryIds = '' 
+    @i = 0
     @categoryList.each do |category| 
-      @categoryIds += category.id+','
+      @i += 1
+      if @i < @categoryList.count.to_i
+        @categoryIds += category.id.to_s + ','
+      else
+        @categoryIds += category.id.to_s
+      end
     end
-    logger.debug "CATEGORY-IDS: #{@categoryIds}"
+    offerList = Category.find(:all, 
+      :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]])
   end
+  
+   def paypal_encrypted(return_url, notify_url,offer_id)
+    offerList = Offer.find(offer_id)
+    values = {
+      :business       => APP_CONFIG[:paypal_email],
+      :cmd            => '_xclick',
+      :upload         => 1,
+      :return         => return_url,
+      :invoice        => offerList.id,
+      :amount         => offerList.offer_budget*120/100,
+      :item_name      => offerList.offer_name,
+      :quantity       => 1,
+      :currency_code  => 'USD',
+      :cert_id => APP_CONFIG[:paypal_cert_id]
+    }
+    
+    encrypt_for_paypal(values)    
+  end
+  
+  
+  PAYPAL_CERT_PEM = File.read("#{Rails.root}/certs/paypal_cert.pem")
+  APP_CERT_PEM = File.read("#{Rails.root}/certs/app_cert.pem")
+  APP_KEY_PEM = File.read("#{Rails.root}/certs/app_key.pem")
+
+  def encrypt_for_paypal(values)
+    signed = OpenSSL::PKCS7::sign(OpenSSL::X509::Certificate.new(APP_CERT_PEM), OpenSSL::PKey::RSA.new(APP_KEY_PEM, ''), values.map { |k, v| "#{k}=#{v}" }.join("\n"), [], OpenSSL::PKCS7::BINARY)
+    OpenSSL::PKCS7::encrypt([OpenSSL::X509::Certificate.new(PAYPAL_CERT_PEM)], signed.to_der, OpenSSL::Cipher::Cipher::new("DES3"), OpenSSL::PKCS7::BINARY).to_s.gsub("\n", "")
+  end
+  
+  
   
   
 end

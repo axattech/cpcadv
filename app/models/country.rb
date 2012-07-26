@@ -5,7 +5,7 @@ class Country < ActiveRecord::Base
   
   def self.getcountryname(country_id)
     
-     country_name = Country.find_by_id(country_id)
+     country_name = Country.find(country_id)
      
   end
   

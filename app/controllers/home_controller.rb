@@ -42,10 +42,6 @@ class HomeController < ApplicationController
         end   
         redirect_to root_url    
     end
-
-      
-       
-           
        return
   end
   

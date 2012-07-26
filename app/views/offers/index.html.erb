@@ -12,13 +12,18 @@
 		
 			
 		<div class="rhs-ucontentnew">
-    	<img src="images/img.png" alt="" class="imgl"/>
+    	<%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>  
         		<h2><%= offer.offer_name %></h2>
                 <p> <%= offer.offer_description %> </p>
                 <p>
                 	<strong>CPC</strong>: <%= offer.offer_cr_per_click %>&nbsp; 
                 	<strong>Max Credits</strong>:<%= offer.offer_budget %>&nbsp;
-                	<strong>Country</strong>: <%= Country.getcountryname(offer.country).country %>
+                	<strong>Country</strong>: 
+                		<% if offer.country_id %>
+                			<%= Country.getcountryname(offer.country_id).country %>
+                		<% else %>
+                			offer is world wide	
+                		<% end %>	
                 </p>
        			<p>
        				<strong>Category</strong>: <%= Category.getcategoryname(offer.category) %>

@@ -1,7 +1,12 @@
+<script type="text/javascript">
+	function toggleShareLinkDiv(divId) {
+		$('#'+divId).toggle('slow');
+	}
+</script>
 <div class="mainfrmcontainer">
 	<%= render 'home/lhs' %>
 	<% if !@offers.empty? %>
-		<% @offers.each do |offer| %>
+		<% @offers.each_with_index do |offer, index| %>
 			<div class="rhs">
 				<p id="notice"><%= notice %></p>
 			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
@@ -18,26 +23,52 @@
 			    </p>
 			    <p>
 			    	<strong>Category</strong> : 
+			    	<%= Category.getcategoryname(offer.category_id) %>
 			    	Entertainment  
 			    	<strong>Duration</strong> : 
 			    	24th July 2012 to 30th July 2012&#13;
 			    </p>
 			    <% if @logged_user_id == offer.member_id %>
+			    
+			    	<% if offer.offer_status %>
+			        <p>
+			        	You have to pay : $<%= offer.offer_budget * 120/100 %> USD
+			        </p>
+			        <% end %>
 				    <p>			    	
 				    <%=	link_to "Edit", :controller =>"offers", :action => "edit", :id=>offer.id %>			  
 				    </p>
 				    <p>
 				    	<%=	link_to "View Analytics of Offer", :controller =>"offers", :action => "edit", :id=>offer.id %> |
 				    	<%=	link_to "Top Up Offer Budget", :controller =>"offers", :action => "topup1223", :id=>offer.id %> |
-				    	<%=	link_to "Stop Offer", :controller =>"offers", :action => "edit", :id=>offer.id %> 
+				    	<%=	link_to "Stop Offer", :controller =>"offers", :action => "edit", :id => offer.id %> 
+				    	
+				    	<% if offer.offer_status %>
+				    		<% return_url = "http://#{request.host}:#{request.port.to_s + request.fullpath}" %>
+							<%= form_tag APP_CONFIG[:paypal_url] do %>  
+								<%= hidden_field_tag :cmd, "_s-xclick" %>
+								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]), offer.id) %>
+								<p><%= submit_tag "Pay for the offer" %></p>
+							<% end %>
+						<% end %>
+					
+				    	
+				    	
 				    </p>
 				<% else %>
-					<%= link_to "Share This Offer", :controller => 'offers', :action => '#' %>
+					<%= link_to "Share This Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('shareLink_#{index}');" %>
+					<div id="shareLink_<%= index %>" style="display: none">
+						testing
+					</div>
 			    <% end %>
 			</div>
 		<% end %>
 		<%= paginate @offers %>
 	<% else %>
-		You have not listed any offer yet, <%= link_to('click here', 'offers/new') %> to list an offer!
+		<% if action_name == 'promoteAndSortOffers' %>
+			No Offers Found.
+		<% else %>
+			You have not listed any offer yet, <%= link_to('click here', 'offers/new') %> to list an offer!
+		<% end %>
 	<% end %>
 </div>

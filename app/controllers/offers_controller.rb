@@ -129,17 +129,28 @@ class OffersController < ApplicationController
     if session[:user_id]
       objMember = Member.new
       member_details = objMember.getMemberDataById(session[:user_id])
-      arrParams = {}
-      arrParams[:page_no] = params[:page]
-      arrParams[:member_id] = session[:user_id]
-      arrParams[:country_id] = member_details.country_id
-      arrParams[:sort_by] = @sort_by
+      arrParams = {
+        :page_no      => params[:page],
+        :member_id    => session[:user_id],
+        :country_id   => member_details.country_id,
+        :category_id  => params[:category_id],
+        :sort_by      => @sort_by
+      }
       
       objOff = Offer.new
       @offers = objOff.getOffersToPromoteAndSort(arrParams)
     end
   end 
   
+  
+  def offerPayment
+    Offer.new.paypal_url(root_url, params[:offer_id])
+  end
+  
+  
+  def shareOffer
+    
+  end
   
   def promoteOffers1        
 

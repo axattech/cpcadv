@@ -1,5 +1,7 @@
 CpcadvApp::Application.routes.draw do
   
+  resources :payment_notifications
+
   get "share_offer/CreateLink"
 
   resources :offers
@@ -50,6 +52,8 @@ CpcadvApp::Application.routes.draw do
   match 'mySettings', to: 'members#mySettings', as: 'mySettings'
   match 'promoteOffers', to: 'offers#promoteAndSortOffers', as: 'promoteOffers'
   match 'sortOffers/:sort_by', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
+  match 'sortOffers/:sort_by/:category_id', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
+  match 'offerPayment/:offer_id', to: 'offers#offerPayment', as: 'offerPayment'
   match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
   # The priority is based upon order of creation:
   # first created -> highest priority.
