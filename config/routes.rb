@@ -20,6 +20,8 @@ CpcadvApp::Application.routes.draw do
   
   get "admin/members" => "members#index"
   
+   post "topup" => "offers#topup"
+  
   post "login" => "home#login"
   
   post "updateMemberDetail" =>"members#updateMemberDetail"

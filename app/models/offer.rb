@@ -102,19 +102,26 @@ class Offer < ActiveRecord::Base
       :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]])
   end
   
-   def paypal_encrypted(return_url, notify_url,offer_id)
+   def paypal_encrypted(return_url, notify_url,offer_id,top_up,amount)
     offerList = Offer.find(offer_id)
+    
+    if top_up 
+      amount = amount
+    else
+      amount = offerList.offer_budget*120/100
+    end
+    
     values = {
       :business       => APP_CONFIG[:paypal_email],
       :cmd            => '_xclick',
       :upload         => 1,
       :return         => return_url,
       :invoice        => offerList.id,
-      :amount         => offerList.offer_budget*120/100,
+      :amount         => amount,
       :item_name      => offerList.offer_name,
       :quantity       => 1,
       :currency_code  => 'USD',
-      :cert_id => APP_CONFIG[:paypal_cert_id]
+      :cert_id => 'UW7T4YNMGMBT2'
     }
     
     encrypt_for_paypal(values)    
