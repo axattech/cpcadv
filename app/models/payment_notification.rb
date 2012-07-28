@@ -9,12 +9,21 @@ class PaymentNotification < ActiveRecord::Base
   private
 
   def mark_cart_as_purchased
-    if status == "Completed"             
-       #logger.debug "test-offer-id2: #{offer_id}"      
+                                                        
+    if status == "Completed" && params[:topup] == "topup"     
       @offer = Offer.find_by_id(offer_id)
-      @offer.payment_status = 'true'       
-      @offer.save                       
+      @offer.offer_msg = 'offer_msg'       
+      @offer.save  
+    else
+      if status == "Completed"             
+         #logger.debug "test-offer-id2: #{offer_id}"      
+        @offer = Offer.find_by_id(offer_id)
+        @offer.payment_status = 'true'       
+        @offer.save                       
+      end           
     end
+    
+    
   end
   
   

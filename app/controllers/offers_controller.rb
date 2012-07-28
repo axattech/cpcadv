@@ -159,7 +159,8 @@ class OffersController < ApplicationController
      
   def topup   
      #encrypted = Offer.new.paypal_encrypted(params[:return_url],payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]),params[:offer_id],true,params[:amount])
-     notify_url = url_for :controller => 'payment_notifications', :action => 'create' 
+     notify_url = payment_notifications_url(:secret => APP_CONFIG[:paypal_secret],:topup=>'topup')
+     
      redirect_to URI.encode("https://www.sandbox.paypal.com/cgi-bin/webscr" + "?cmd=_xclick&business=#{APP_CONFIG[:paypal_email]}&currency_code=USD&item_name=#{params[:offer_name]}&amount=#{params[:amount]}&invoice=#{params[:offer_id]}&return=#{params[:return_url]}&quantity=1&notify_url=#{notify_url}")     
      return
   end
