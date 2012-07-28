@@ -156,33 +156,11 @@ class OffersController < ApplicationController
 
       
   end 
-   PAYPAL_CERT_PEM = File.read("#{Rails.root}/certs/paypal_cert.pem")
-  APP_CERT_PEM = File.read("#{Rails.root}/certs/app_cert.pem")
-  APP_KEY_PEM = File.read("#{Rails.root}/certs/app_key.pem")
-    
-  
-  def topup
-    
-    
-    
-    
-   paypal_uri = URI.parse('https://www.sandbox.paypal.com/cgi-bin/webscr')
-req = Net::HTTP::Post.new(paypal_uri.path)
-req.set_form_data({:cmd => "_notify-sync"})
-sock = Net::HTTP.new(paypal_uri.host, 443)
-sock.use_ssl = true
-store = OpenSSL::X509::Store.new
-store.add_cert OpenSSL::X509::Certificate.new(PAYPAL_CERT_PEM)
-store.add_cert OpenSSL::X509::Certificate.new(APP_CERT_PEM)
-sock.cert_store = store
-sock.start do |http|
-  response = http.request(req)
-end
-
-    
-    
-
+     
+  def topup   
+     encrypted = Offer.new.paypal_encrypted(params[:return_url],payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]),params[:offer_id],true,params[:amount])
+     redirect_to URI.encode("https://www.sandbox.paypal.com/cgi-bin/webscr" + "?cmd=_xclick&business=#{APP_CONFIG[:paypal_email]}&currency_code=USD&item_name=#{params[:offer_name]}&amount=#{params[:amount]}&invoice=#{params[:offer_id]}&return=#{params[:return_url]}&quantity=1")     
+     return
+  end
   
   end
-    
-end

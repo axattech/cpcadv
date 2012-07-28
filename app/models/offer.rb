@@ -107,6 +107,7 @@ class Offer < ActiveRecord::Base
     
     if top_up 
       amount = amount
+            
     else
       amount = offerList.offer_budget*120/100
     end
@@ -124,7 +125,7 @@ class Offer < ActiveRecord::Base
       :cert_id => 'UW7T4YNMGMBT2'
     }
     
-    encrypt_for_paypal(values)    
+    encrypt_for_paypal(values)
   end
   
   
