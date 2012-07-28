@@ -48,7 +48,7 @@
 							<%= form_tag APP_CONFIG[:paypal_url] do %>  
 								<%= hidden_field_tag :cmd, "_s-xclick" %>
 								
-								<%=  notify_url = url_for :controller => 'payment_notifications', :action => 'create' %>
+								<%  notify_url = url_for :controller => 'payment_notifications', :action => 'create' %>
 								
 								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,notify_url, offer.id,false,0) %>
 								<p><%= submit_tag "Pay for the offer" %></p>
