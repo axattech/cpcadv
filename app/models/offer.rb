@@ -104,7 +104,7 @@ class Offer < ActiveRecord::Base
   
    def paypal_encrypted(return_url, notify_url,offer_id,top_up,amount)
     offerList = Offer.find(offer_id)
-    
+    notify_url = notify_url
     if top_up 
       amount = amount
             
@@ -122,7 +122,8 @@ class Offer < ActiveRecord::Base
       :item_name      => offerList.offer_name,
       :quantity       => 1,
       :currency_code  => 'USD',
-      :cert_id => 'UW7T4YNMGMBT2'
+      :cert_id => 'UW7T4YNMGMBT2',
+      :notify_url => notify_url
     }
     
     encrypt_for_paypal(values)
