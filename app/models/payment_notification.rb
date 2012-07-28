@@ -8,11 +8,14 @@ class PaymentNotification < ActiveRecord::Base
 
   private
 
-  def mark_cart_as_purchased
-                                                        
-    if status == "Completed" && params[:topup] == "topup"     
+  def mark_cart_as_purchased   
+                                                                                                 
+    if status == "Completed" && params[:secret] == APP_CONFIG[:paypal_secret]   
+      
+       logger.debug "test-offer-message: #{offer_id}"   
+      
       @offer = Offer.find_by_id(offer_id)
-      @offer.offer_msg = 'offer_msg'       
+      @offer.offer_msg = 'test offer msg test again'       
       @offer.save  
     else
       if status == "Completed"             
@@ -22,8 +25,7 @@ class PaymentNotification < ActiveRecord::Base
         @offer.save                       
       end           
     end
-    
-    
+            
   end
   
   
