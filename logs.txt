@@ -1419,3 +1419,104 @@ ms)
 2012-07-30T07:06:06+00:00 app[web.1]:   Rendered text template (0.0ms)
 2012-07-30T07:06:06+00:00 app[web.1]: Completed 200 OK in 143ms (Views: 58.1ms | ActiveRecord: 40.7ms)
 2012-07-30T07:06:06+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?secret=foobar dyno=web.1 queue=0 wait=0ms service=227ms status=200 bytes=1
+2012-07-30T07:12:01+00:00 app[web.1]: Param address_name: axat buyer
+2012-07-30T07:12:01+00:00 app[web.1]: Param custom: 
+2012-07-30T07:12:01+00:00 app[web.1]: Param notify_version: 3.5
+2012-07-30T07:12:01+00:00 app[web.1]: Param payer_status: verified
+2012-07-30T07:12:01+00:00 app[web.1]: Param business: seller_1343207727_biz@axat-tech.com
+2012-07-30T07:12:01+00:00 app[web.1]: Param address_country: United States
+2012-07-30T07:12:01+00:00 app[web.1]: Param address_city: San Jose
+2012-07-30T07:12:01+00:00 app[web.1]: Param quantity: 1
+2012-07-30T07:12:01+00:00 app[web.1]: Param verify_sign: ArI1vHfsQpytvhoUws7GgePD-uh8A30THm33A8n14qul7EyXao4kCt9z
+2012-07-30T07:12:01+00:00 app[web.1]: Param payer_email: buyer_1343207814_per@axat-tech.com
+2012-07-30T07:12:01+00:00 app[web.1]: Param txn_id: 47K73340TP0995614
+2012-07-30T07:12:01+00:00 app[web.1]: Param payment_type: instant
+2012-07-30T07:12:01+00:00 app[web.1]: Param address_state: CA
+2012-07-30T07:12:01+00:00 app[web.1]: Param last_name: buyer
+2012-07-30T07:12:01+00:00 app[web.1]: Param receiver_email: seller_1343207727_biz@axat-tech.com
+2012-07-30T07:12:01+00:00 app[web.1]: Param payment_fee: 6.07
+2012-07-30T07:12:01+00:00 app[web.1]: Param residence_country: US
+2012-07-30T07:12:01+00:00 app[web.1]: Param item_number: 
+2012-07-30T07:12:01+00:00 app[web.1]: Param mc_currency: USD
+2012-07-30T07:12:01+00:00 app[web.1]: Param test_ipn: 1
+2012-07-30T07:12:01+00:00 app[web.1]: Param txn_type: web_accept
+2012-07-30T07:12:01+00:00 app[web.1]: Param item_name: test offer
+2012-07-30T07:12:01+00:00 app[web.1]: Param transaction_subject: test offer
+2012-07-30T07:12:01+00:00 app[web.1]: Param payment_gross: 199.00
+2012-07-30T07:12:01+00:00 app[web.1]: Param shipping: 0.00
+2012-07-30T07:12:01+00:00 app[web.1]: Param handling_amount: 0.00
+2012-07-30T07:12:01+00:00 app[web.1]: Param receiver_id: L2BZ7SQMLEWUQ
+2012-07-30T07:12:01+00:00 app[web.1]: Param ipn_track_id: efef6efe8006
+2012-07-30T07:12:01+00:00 app[web.1]: Param secret: foobar
+2012-07-30T07:12:01+00:00 app[web.1]: Param action: create
+2012-07-30T07:12:01+00:00 app[web.1]: 
+2012-07-30T07:12:01+00:00 app[web.1]: Param controller: payment_notifications
+2012-07-30T07:12:01+00:00 app[web.1]: NameError (undefined local variable or method `mc_gross' for #<PaymentNotification:0x00000005a315b0>):
+2012-07-30T07:12:01+00:00 app[web.1]:   app/models/payment_notification.rb:24:in `mark_cart_as_purchased'
+2012-07-30T07:12:01+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
+2012-07-30T07:12:01+00:00 app[web.1]: 
+2012-07-30T07:12:01+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
+2012-07-30T07:12:01+00:00 app[web.1]: 
+2012-07-30T07:12:01+00:00 app[web.1]:   Parameters: {"mc_gross"=>"199.00", "invoice"=>"24", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"Z4RH6JYNVP9ES", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"00:11:56 Jul 30, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"axat", "mc_fee"=>"6.07", "address_country_code"=>"US", "address_name"=>"axat buyer", "notify_version"=>"3.5", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"ArI1vHfsQpytvhoUws7GgePD-uh8A30THm33A8n14qul7EyXao4kCt9z", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"47K73340TP0995614", "payment_type"=>"instant", "last_name"=>"buyer", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"6.07", "receiver_id"=>"L2BZ7SQMLEWUQ", "txn_type"=>"web_accept", "item_name"=>"test offer", "mc
+2012-07-30T07:12:01+00:00 app[web.1]: _currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"test offer", "payment_gross"=>"199.00", "shipping"=>"0.00", "ipn_track_id"=>"efef6efe8006", "secret"=>"foobar"}
+2012-07-30T07:12:01+00:00 app[web.1]: Completed 500 Internal Server Error in 37ms
+2012-07-30T07:12:01+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?secret=foobar dyno=web.1 queue=0 wait=0ms service=113ms status=500 bytes=643
+2012-07-30T07:12:12+00:00 app[web.1]: 
+2012-07-30T07:12:12+00:00 app[web.1]: 
+2012-07-30T07:12:12+00:00 app[web.1]: Started POST "/payment_notifications?secret=foobar" for 173.0.82.126 at 2012-07-30 09:12:12 +0200
+2012-07-30T07:12:12+00:00 app[web.1]: Param mc_gross: 199.00
+2012-07-30T07:12:12+00:00 app[web.1]: Param tax: 0.00
+2012-07-30T07:12:12+00:00 app[web.1]: Param invoice: 24
+2012-07-30T07:12:12+00:00 app[web.1]: Param protection_eligibility: Eligible
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_status: confirmed
+2012-07-30T07:12:12+00:00 app[web.1]: Param charset: windows-1252
+2012-07-30T07:12:12+00:00 app[web.1]: Param payment_date: 00:11:56 Jul 30, 2012 PDT
+2012-07-30T07:12:12+00:00 app[web.1]: Param payer_id: Z4RH6JYNVP9ES
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_street: 1 Main St
+2012-07-30T07:12:12+00:00 app[web.1]: Param payment_status: Completed
+2012-07-30T07:12:12+00:00 app[web.1]: Param first_name: axat
+2012-07-30T07:12:12+00:00 app[web.1]: Param mc_fee: 6.07
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_country_code: US
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_name: axat buyer
+2012-07-30T07:12:12+00:00 app[web.1]: Param notify_version: 3.5
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_zip: 95131
+2012-07-30T07:12:12+00:00 app[web.1]: Param payer_status: verified
+2012-07-30T07:12:12+00:00 app[web.1]: Param custom: 
+2012-07-30T07:12:12+00:00 app[web.1]: Param business: seller_1343207727_biz@axat-tech.com
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_country: United States
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_city: San Jose
+2012-07-30T07:12:12+00:00 app[web.1]: Param quantity: 1
+2012-07-30T07:12:12+00:00 app[web.1]: Param verify_sign: ArI1vHfsQpytvhoUws7GgePD-uh8A30THm33A8n14qul7EyXao4kCt9z
+2012-07-30T07:12:12+00:00 app[web.1]: Param payer_email: buyer_1343207814_per@axat-tech.com
+2012-07-30T07:12:12+00:00 app[web.1]: Param txn_id: 47K73340TP0995614
+2012-07-30T07:12:12+00:00 app[web.1]: Param payment_type: instant
+2012-07-30T07:12:12+00:00 app[web.1]: Param last_name: buyer
+2012-07-30T07:12:12+00:00 app[web.1]: Param receiver_email: seller_1343207727_biz@axat-tech.com
+2012-07-30T07:12:12+00:00 app[web.1]: Param address_state: CA
+2012-07-30T07:12:12+00:00 app[web.1]: Param payment_fee: 6.07
+2012-07-30T07:12:12+00:00 app[web.1]: Param receiver_id: L2BZ7SQMLEWUQ
+2012-07-30T07:12:12+00:00 app[web.1]: Param txn_type: web_accept
+2012-07-30T07:12:12+00:00 app[web.1]: Param item_name: test offer
+2012-07-30T07:12:12+00:00 app[web.1]: Param mc_currency: USD
+2012-07-30T07:12:12+00:00 app[web.1]: Param item_number: 
+2012-07-30T07:12:12+00:00 app[web.1]: Param residence_country: US
+2012-07-30T07:12:12+00:00 app[web.1]: Param test_ipn: 1
+2012-07-30T07:12:12+00:00 app[web.1]: Param handling_amount: 0.00
+2012-07-30T07:12:12+00:00 app[web.1]: Param transaction_subject: test offer
+2012-07-30T07:12:12+00:00 app[web.1]: Param payment_gross: 199.00
+2012-07-30T07:12:12+00:00 app[web.1]: Param shipping: 0.00
+2012-07-30T07:12:12+00:00 app[web.1]: Param ipn_track_id: efef6efe8006
+2012-07-30T07:12:12+00:00 app[web.1]: Param secret: foobar
+2012-07-30T07:12:12+00:00 app[web.1]: Param action: create
+2012-07-30T07:12:12+00:00 app[web.1]: Param controller: payment_notifications
+2012-07-30T07:12:12+00:00 app[web.1]: 
+2012-07-30T07:12:12+00:00 app[web.1]: NameError (undefined local variable or method `mc_gross' for #<PaymentNotification:0x00000005978808>):
+2012-07-30T07:12:12+00:00 app[web.1]:   app/models/payment_notification.rb:24:in `mark_cart_as_purchased'
+2012-07-30T07:12:12+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
+2012-07-30T07:12:12+00:00 app[web.1]: 
+2012-07-30T07:12:12+00:00 app[web.1]: 
+2012-07-30T07:12:12+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
+2012-07-30T07:12:12+00:00 app[web.1]:   Parameters: {"mc_gross"=>"199.00", "invoice"=>"24", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"Z4RH6JYNVP9ES", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"00:11:56 Jul 30, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"axat", "mc_fee"=>"6.07", "address_country_code"=>"US", "address_name"=>"axat buyer", "notify_version"=>"3.5", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"ArI1vHfsQpytvhoUws7GgePD-uh8A30THm33A8n14qul7EyXao4kCt9z", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"47K73340TP0995614", "payment_type"=>"instant", "last_name"=>"buyer", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"6.07", "receiver_id"=>"L2BZ7SQMLEWUQ", "txn_type"=>"web_accept", "item_name"=>"test offer", "mc
+2012-07-30T07:12:12+00:00 app[web.1]: _currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"test offer", "payment_gross"=>"199.00", "shipping"=>"0.00", "ipn_track_id"=>"efef6efe8006", "secret"=>"foobar"}
+2012-07-30T07:12:12+00:00 app[web.1]: Completed 500 Internal Server Error in 9ms
+2012-07-30T07:12:12+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?secret=foobar dyno=web.1 queue=0 wait=0ms service=79ms status=500 bytes=643

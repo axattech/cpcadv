@@ -16,12 +16,12 @@ class PaymentNotification < ActiveRecord::Base
       puts "Param #{key}: #{value}"
       
       if(key=="mc_gross")
-      mc_gross = value
+        @mc_gross = value
       end
      
     end
         
-     puts "key-value-mc_gross::#{mc_gross}"
+     puts "key-value-mc_gross::#{@mc_gross}"
       
   
 
