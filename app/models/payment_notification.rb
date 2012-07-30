@@ -11,7 +11,8 @@ class PaymentNotification < ActiveRecord::Base
   def mark_cart_as_purchased                               
                               
     puts "top-up-useraction: #{params[:useraction]}"    
-    puts "status: #{status}"           
+    puts "status: #{status}"      
+    puts "secret#{params[:secret]}"
                                                                                                                                     
     if status == "Completed" && params[:useraction] == "topup"                    
       TopupPayment.create!(:offers_id => offer_id, :amount => params[:mc_gross])
