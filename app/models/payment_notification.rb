@@ -23,25 +23,26 @@ class PaymentNotification < ActiveRecord::Base
         @user_action = value
       end
      
+     if(key=="invoice")
+        @offer_id = value
+      end
      
     end
         
-     puts "key-value-user-action::#{@user_action}"
+     puts "key-value-offer-id#{@offer_id}"
       
-  
-
-    
-    
-    
                                                                                                                                     
     if status == "Completed" && @user_action == "topup"                    
-      TopupPayment.create!(:offers_id => offer_id, :amount => @amount)
+      TopupPayment.create!(:offers_id => @offer_id, :amount => @amount)
+      puts "inside top up"
     else
+    
       if status == "Completed"             
-        logger.debug "test-offer-id-now: #{offer_id}"      
-        @offer = Offer.find_by_id(offer_id)
+        logger.debug "test-offer-id-now: #{@offer_id}"      
+        @offer = Offer.find_by_id(@offer_id)
         @offer.payment_status = 'true'       
-        @offer.save                       
+        @offer.save                    
+         puts "inside payment"   
       end           
     end            
   end
