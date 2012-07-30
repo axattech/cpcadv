@@ -12,11 +12,16 @@ class PaymentNotification < ActiveRecord::Base
                               
     puts "top-up-useraction: #{params[:useraction]}"    
     puts "status: #{status}"      
-    puts "secret#{params[:secret]}"
+   
     
     params.each do |key,value|
-  puts "Param #{key}: #{value}"
-end
+      puts "Param #{key}: #{value}"
+    end
+    
+    if request.post? 
+        secret= [params[:secret]]      
+        puts "secret:#{secret}"
+    end
 
     
     
