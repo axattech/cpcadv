@@ -8,27 +8,17 @@ class PaymentNotification < ActiveRecord::Base
 
   private
 
-  def mark_cart_as_purchased   
-                       
-              logger.debug "payment-secret: #{params[:secret]}"          
-                       
-                                                                                                 
-    if status == "Completed" && params[:secret] == APP_CONFIG[:paypal_secret]   
-      
-       logger.debug "test-offer-message: #{offer_id}"   
-      
-      @offer = Offer.find_by_id(offer_id)
-      @offer.offer_msg = 'test offer msg test again'       
-      @offer.save  
+  def mark_cart_as_purchased                                                                                                                                                                 
+    if status == "Completed" && params[:action] == "topup"                
+      TopupPayment.create!(:offer_id => offer_id, :amount => params[:mc_gross])
     else
       if status == "Completed"             
-         logger.debug "test-offer-id-now: #{offer_id}"      
+        logger.debug "test-offer-id-now: #{offer_id}"      
         @offer = Offer.find_by_id(offer_id)
         @offer.payment_status = 'true'       
         @offer.save                       
       end           
-    end
-            
+    end            
   end
   
   

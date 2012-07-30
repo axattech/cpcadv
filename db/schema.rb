@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726095625) do
+ActiveRecord::Schema.define(:version => 20120730042149) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(:version => 20120726095625) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "member_id"
+    t.boolean  "payment_status",                          :default => false, :null => false
   end
 
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
@@ -86,6 +87,15 @@ ActiveRecord::Schema.define(:version => 20120726095625) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
+
+  create_table "topup_payments", :force => true do |t|
+    t.integer  "offers_id"
+    t.integer  "amount"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "topup_payments", ["offers_id"], :name => "index_topup_payments_on_offers_id"
 
   create_table "users", :force => true do |t|
     t.string   "provider"
