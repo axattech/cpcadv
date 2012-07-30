@@ -16,8 +16,8 @@ class PaymentNotification < ActiveRecord::Base
       puts "Param #{key}: #{value}"
     end
         
-        secret= params[:secret]   
-        puts "secret:#{secret}"
+        secret= params[:mc_gross]   
+        puts "mc_gross::#{secret}"
   
 
     
