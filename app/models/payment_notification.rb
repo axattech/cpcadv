@@ -14,11 +14,14 @@ class PaymentNotification < ActiveRecord::Base
     
     params.each do |key,value|
       puts "Param #{key}: #{value}"
-      key = value
-      puts "key-value::#{key}"
+      
+      if(key=="mc_gross")
+      mc_gross = value
+      end
+     
     end
         
-          
+     puts "key-value-mc_gross::#{key}"
       
   
 
