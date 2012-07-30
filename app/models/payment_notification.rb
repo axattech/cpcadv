@@ -11,14 +11,11 @@ class PaymentNotification < ActiveRecord::Base
   def mark_cart_as_purchased                               
                               
    
+    puts params.inspect
     
-    params.each do |key,value|
-      puts "Param #{key}: #{value}"
-    end
         
           
-        puts "mc_gross::#{params[:mc_gross]}"
-  
+        
 
     
     
