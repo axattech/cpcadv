@@ -29,12 +29,27 @@ class PaymentNotification < ActiveRecord::Base
      
     end
         
-     puts "key-value-offer-id#{@offer_id}"
+    
       
                                                                                                                                     
     if status == "Completed" && @user_action == "topup"   
                      
-      TopupPayment.create!(:offers_id =>@offer_id.to_i, :amount => @amount)
+      #TopupPayment.create!(:offers_id =>@offer_id.to_i, :amount => @amount)
+      
+       puts "key-value-offer-id#{@offer_id}"
+      
+      
+      objTopupPayment = TopupPayment.new
+      objTopupPayment.offers_id = @offer_id
+      objTopupPayment.amount = @amount
+     
+      objTopupPayment.save!
+
+      
+      
+      
+      
+      
       puts "inside top up"
     else
     
