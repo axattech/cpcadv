@@ -18,10 +18,10 @@ class PaymentNotification < ActiveRecord::Base
       puts "Param #{key}: #{value}"
     end
     
-    if request.post? 
+    
         secret= [params[:secret]]      
         puts "secret:#{secret}"
-    end
+  
 
     
     
