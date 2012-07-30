@@ -13,7 +13,7 @@ class PaymentNotification < ActiveRecord::Base
    
     
     params.each do |key,value|
-      puts "Param #{key}: #{value}"
+     # puts "Param #{key}: #{value}"
       
       if(key=="mc_gross")
         @amount = value
@@ -23,9 +23,7 @@ class PaymentNotification < ActiveRecord::Base
         @user_action = value
       end
      
-     if(key=="invoice")
-        @offer_id = value
-      end
+     
      
     end
         
@@ -36,11 +34,11 @@ class PaymentNotification < ActiveRecord::Base
                      
       #TopupPayment.create!(:offers_id =>@offer_id.to_i, :amount => @amount)
       
-       puts "key-value-offer-id#{@offer_id}"
+       puts "key-value-offer-id#{offer_id}"
       
       
       objTopupPayment = TopupPayment.new
-      objTopupPayment.offers_id = @offer_id
+      objTopupPayment.offers_id = offer_id
       objTopupPayment.amount = @amount
      
       objTopupPayment.save!
@@ -54,8 +52,8 @@ class PaymentNotification < ActiveRecord::Base
     else
     
       if status == "Completed"             
-        logger.debug "test-offer-id-now: #{@offer_id}"      
-        @offer = Offer.find_by_id(@offer_id)
+        logger.debug "test-offer-id-now: #{offer_id}"      
+        @offer = Offer.find_by_id(offer_id)
         @offer.payment_status = 'true'       
         @offer.save                    
          puts "inside payment"   
