@@ -16,12 +16,17 @@ class PaymentNotification < ActiveRecord::Base
       puts "Param #{key}: #{value}"
       
       if(key=="mc_gross")
-        @mc_gross = value
+        @amount = value
       end
+      
+      if(key=="user_action")
+        @user_action = value
+      end
+     
      
     end
         
-     puts "key-value-mc_gross::#{@mc_gross}"
+     puts "key-value-user-action::#{@user_action}"
       
   
 
@@ -29,8 +34,8 @@ class PaymentNotification < ActiveRecord::Base
     
     
                                                                                                                                     
-    if status == "Completed" && params[:useraction] == "topup"                    
-      TopupPayment.create!(:offers_id => offer_id, :amount => params[:mc_gross])
+    if status == "Completed" && @user_action == "topup"                    
+      TopupPayment.create!(:offers_id => offer_id, :amount => @amount)
     else
       if status == "Completed"             
         logger.debug "test-offer-id-now: #{offer_id}"      
