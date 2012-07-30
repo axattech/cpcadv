@@ -11,9 +11,10 @@ class PaymentNotification < ActiveRecord::Base
   def mark_cart_as_purchased                               
                               
    
-    puts params.inspect
+    puts params[:protection_eligibility]
     
-        
+    abort("After protection_eligibility print")
+    
           
         
 
