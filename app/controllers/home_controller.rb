@@ -11,8 +11,10 @@ class HomeController < ApplicationController
         
         if member_detail
           objOff = Offer.new
-          @offers = objOff.listMyOffers(session[:user_id], params[:page])
-          render   'members/MemberDashboard'
+          @offers = objOff.listMyOffers(session[:user_id], params[:page])        
+          
+        redirect_to :controller=>"offers",:action => "promoteAndSortOffers", :qs=>"myoffer"
+          
         else
           render   'members/MemberSetValues'
         end      

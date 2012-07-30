@@ -4,19 +4,25 @@
     		<%= link_to('Settings', 'mySettings', :title => 'Settings') %>
     	<% end %>
         <h6>Sort Offers</h6>
+        
+        <%        	
+	        if  params[:qs] 
+	        	@qs = params[:qs]        	
+	        end            
+        %>
         <ul>
         	<li><a href="#">myOffer</a></li>
         	<li>
-        		<%=	link_to "Latest Offers First", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'latest' %>
+        		<%=	link_to "Latest Offers First", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => "latest" , :qs=>@qs  %>
 	        </li>
 	        <li>
-	        	<%=	link_to "Offers expiring soon", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'expsoon' %>
+	        	<%=	link_to "Offers expiring soon", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'expsoon', :qs=>@qs %>
 	        </li>
 	        <li>
-	        	<%=	link_to "Highest Credits Per Click", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'highcpc' %>
+	        	<%=	link_to "Highest Credits Per Click", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'highcpc' , :qs=>@qs %>
 	        </li>
 	        <li>
-	        	<%=	link_to "Max Number of Credits", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'maxnumcredits' %>
+	        	<%=	link_to "Max Number of Credits", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'maxnumcredits' , :qs=>@qs %>
 	        </li>
 	        <li>
 	            <a href="#">Categories</a>
@@ -27,7 +33,7 @@
 	            		@categoryList.each do |category| 
 	            	%>
 	                	<li>
-	                		<%= link_to category.category_name, :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'category', :category_id => category.id %>
+	                		<%= link_to category.category_name, :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => 'category', :category_id => category.id  , :qs=>@qs %>
 	                	</li>
 	                <% end %>
 	            </ul>

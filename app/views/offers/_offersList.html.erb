@@ -23,9 +23,14 @@
 			    </p>
 			    <p>
 			    	<strong>Category</strong> : 
-			    	<%= Category.getcategoryname(offer.category_id) %>
-			    	Entertainment  
+			    	<%= Category.getcategoryname(offer.category_id) %>			    
 			    	<strong>Duration</strong> : 
+			    	
+			    	<%
+			    		#startDate = DateTime.strptime("09/01/2009", "%d %b %y")
+			    	
+			    	%>			    				    				    	
+			    	
 			    	24th July 2012 to 30th July 2012&#13;
 			    </p>
 			    <% if @logged_user_id == offer.member_id %>
@@ -53,27 +58,17 @@
 						<% end %>
 					
 						
-					<div id="topUp_<%= index %>" style="display: none">
-					
-						<%= form_tag("/topup") do %>
-						
-						
-						
-													
+					<div id="topUp_<%= index %>" style="display: none">					
+						<%= form_tag("/topup") do %>														
 							<%= label_tag 'amount', 'Enter amount' %>
 							<%= text_field_tag :amount, params[:amount] %>	
 							<%  return_url = "http://#{request.host}:#{request.port.to_s + request.fullpath}" %>
 							<%= hidden_field_tag :return_url,return_url  %>
 							<%= hidden_field_tag :offer_id,offer.id  %>
-							<%= hidden_field_tag :offer_name,offer.offer_name  %>
-							
+							<%= hidden_field_tag :offer_name,offer.offer_name  %>							
 							<p><%= submit_tag "Pay" %></p>
 						<% end %>
-					</div>
-					
-							
-				    	
-				    	
+					</div>				
 				    </p>
 				<% else %>
 					<%= link_to "Share This Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('shareLink_#{index}');" %>

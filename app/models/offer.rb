@@ -37,32 +37,39 @@ class Offer < ActiveRecord::Base
   def getOffersToPromoteAndSort(*args)
     params = args.extract_options!
     
+    if params[:qs]=="myoffer"
+      @query = "member_id = #{params[:member_id]}"
+    else
+      @query = "member_id != #{params[:member_id]} and payment_status = TRUE AND (country_id = #{params[:country_id]} or offer_worldwide = TRUE )"
+    end
+    
+    
     if params[:sort_by] == 'all'
       offerList = Offer.find(:all, 
-      :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]])
+      :conditions => [@query])
     elsif params[:sort_by] == 'latest'
       offerList = Offer.find(:all, 
-          :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+          :conditions => [@query],
           :order => 'created_at desc'
         )
     elsif params[:sort_by] == 'expsoon'
       offerList = Offer.find(:all, 
-          :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+          :conditions => [@query],
           :order => ' offer_end_date asc'
         )  
      elsif params[:sort_by] == 'highcpc'
       offerList = Offer.find(:all, 
-          :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+          :conditions => [@query],
           :order => ' offer_cr_per_click desc'
         )
      elsif params[:sort_by] == 'maxnumcredits'
       offerList = Offer.find(:all, 
-        :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE )", params[:member_id], params[:country_id]],
+        :conditions => [@query],
         :order => ' offer_budget desc'
       )
      elsif params[:sort_by] == 'category'
       offerList = Offer.find(:all, 
-        :conditions => ["member_id != ? and (country_id = ? or offer_worldwide = TRUE ) and category_id = ? ", params[:member_id], params[:country_id], params[:category_id]],
+        :conditions => [@query],
         :order => ' offer_budget desc'
       )
     end

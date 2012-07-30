@@ -120,6 +120,9 @@ class OffersController < ApplicationController
   end
   
   def promoteAndSortOffers
+  
+   logger.debug "urlparam: #{params[:qs]}"
+  
     @logged_user_id = session[:user_id]
     if params[:sort_by]
       @sort_by = params[:sort_by]
@@ -134,7 +137,8 @@ class OffersController < ApplicationController
         :member_id    => session[:user_id],
         :country_id   => member_details.country_id,
         :category_id  => params[:category_id],
-        :sort_by      => @sort_by
+        :sort_by      => @sort_by,
+        :qs        => params[:qs]
       }
       
       objOff = Offer.new
