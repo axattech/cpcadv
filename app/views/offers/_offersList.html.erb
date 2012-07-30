@@ -47,7 +47,7 @@
 				    		<% return_url = "http://#{request.host}:#{request.port.to_s + request.fullpath}" %>
 							<%= form_tag APP_CONFIG[:paypal_url] do %>  
 								<%= hidden_field_tag :cmd, "_s-xclick" %>
-								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]), offer.id,false,0) %>
+								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,payment_notifications_url(:secret1 => APP_CONFIG[:paypal_secret]), offer.id,false,0) %>
 								<p><%= submit_tag "Pay for the offer" %></p>
 							<% end %>
 						<% end %>
