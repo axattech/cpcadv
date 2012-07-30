@@ -21,7 +21,7 @@ class PaymentNotification < ActiveRecord::Base
      
     end
         
-     puts "key-value-mc_gross::#{key}"
+     puts "key-value-mc_gross::#{mc_gross}"
       
   
 
