@@ -10,7 +10,7 @@ class PaymentNotification < ActiveRecord::Base
 
   def mark_cart_as_purchased                               
                               
-    logger.debug "top-up-useraction: #{params[:useraction]}"                   
+    puts "top-up-useraction: #{params[:useraction]}"                   
                                                                                                                                     
     if status == "Completed" && params[:useraction] == "topup" 
                    
