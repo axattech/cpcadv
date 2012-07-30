@@ -13,6 +13,14 @@ class PaymentNotification < ActiveRecord::Base
     puts "top-up-useraction: #{params[:useraction]}"    
     puts "status: #{status}"      
     puts "secret#{params[:secret]}"
+    
+    params.each do |key,value|
+  puts "Param #{key}: #{value}"
+end
+
+    
+    
+    
                                                                                                                                     
     if status == "Completed" && params[:useraction] == "topup"                    
       TopupPayment.create!(:offers_id => offer_id, :amount => params[:mc_gross])
