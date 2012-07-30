@@ -10,16 +10,13 @@ class PaymentNotification < ActiveRecord::Base
 
   def mark_cart_as_purchased                               
                               
-    puts "top-up-useraction: #{params[:useraction]}"    
-    puts "status: #{status}"      
    
     
     params.each do |key,value|
       puts "Param #{key}: #{value}"
     end
-    
-    
-        secret= [params[:secret]]      
+        
+        secret= params[:secret]   
         puts "secret:#{secret}"
   
 
