@@ -1,9 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  offers: 
-  amount: 1
+  IP: MyString
+  refer_url: MyString
+  members: 
 
 two:
-  offers: 
-  amount: 1
+  IP: MyString
+  refer_url: MyString
+  members: 

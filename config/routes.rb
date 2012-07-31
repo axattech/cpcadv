@@ -1,5 +1,7 @@
 CpcadvApp::Application.routes.draw do
   
+  get "visitor_tracker/track"
+
   resources :payment_notifications
 
   get "share_offer/CreateLink"
@@ -33,7 +35,7 @@ CpcadvApp::Application.routes.draw do
     #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
   #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
 
-  #post "members/:id"
+  get "/:member_id/:random_code" =>"visitor_tracker#track"
   
   
   post "members/:id" => "Members#banuser"

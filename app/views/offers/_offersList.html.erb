@@ -9,11 +9,6 @@
 		<% @offers.each_with_index do |offer, index| %>
 			<div class="rhs">
 				<p id="notice"><%= notice %></p>
-				
-			<%=	request.env['HTTP_REFERER'] %>
-				
-				
-				
 			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
 			    <h6><%= offer.offer_name %></h6>
 			    <p><%= offer.offer_description %></p>
@@ -77,8 +72,13 @@
 				    </p>
 				<% else %>
 					<%= link_to "Share This Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('shareLink_#{index}');" %>
-					<div id="shareLink_<%= index %>" style="display: none">
-						testing
+					<div id="shareLink_<%= index %>" style="display: none">												
+						<% 
+							current_url = "http://#{request.host}:#{request.port.to_s}/"	
+							random_code = offer.random_code								
+							full_url = "#{current_url}#{@logged_user_id}/#{random_code}"							
+						%>												
+						<%= link_to(full_url,full_url) %> 															
 					</div>
 			    <% end %>
 			</div>

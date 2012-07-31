@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TopupPaymentTest < ActiveSupport::TestCase
+class OfferRedeemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

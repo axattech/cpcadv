@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120730042149) do
+ActiveRecord::Schema.define(:version => 20120731103003) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -50,6 +50,19 @@ ActiveRecord::Schema.define(:version => 20120730042149) do
     t.boolean  "member_detail", :default => true
   end
 
+  create_table "offer_redeems", :force => true do |t|
+    t.integer  "offers_id"
+    t.integer  "members_id"
+    t.integer  "visitor_trackers_id"
+    t.float    "amount"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
+  add_index "offer_redeems", ["members_id"], :name => "index_offer_redeems_on_members_id"
+  add_index "offer_redeems", ["offers_id"], :name => "index_offer_redeems_on_offers_id"
+  add_index "offer_redeems", ["visitor_trackers_id"], :name => "index_offer_redeems_on_visitor_trackers_id"
+
   create_table "offers", :force => true do |t|
     t.string   "offer_name"
     t.string   "offer_link"
@@ -72,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20120730042149) do
     t.datetime "image_updated_at"
     t.integer  "member_id"
     t.boolean  "payment_status",                          :default => false, :null => false
+    t.string   "random_code"
   end
 
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
@@ -106,5 +120,15 @@ ActiveRecord::Schema.define(:version => 20120730042149) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
+
+  create_table "visitor_trackers", :force => true do |t|
+    t.string   "IP"
+    t.string   "refer_url"
+    t.integer  "members_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "visitor_trackers", ["members_id"], :name => "index_visitor_trackers_on_members_id"
 
 end

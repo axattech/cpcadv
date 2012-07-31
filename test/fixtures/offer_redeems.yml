@@ -2,8 +2,12 @@
 
 one:
   offers: 
-  amount: 1
+  members: 
+  visitor_trackers: 
+  amount: 
 
 two:
   offers: 
-  amount: 1
+  members: 
+  visitor_trackers: 
+  amount: 
