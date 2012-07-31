@@ -111,7 +111,6 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    rail_stat_generator (2.0.0)
     rails (3.2.6)
       actionmailer (= 3.2.6)
       actionpack (= 3.2.6)
@@ -164,7 +163,6 @@ DEPENDENCIES
   omniauth-twitter
   paperclip (~> 2.3)
   pg
-  rail_stat_generator
   rails (= 3.2.6)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
