@@ -9,6 +9,11 @@
 		<% @offers.each_with_index do |offer, index| %>
 			<div class="rhs">
 				<p id="notice"><%= notice %></p>
+				
+			<%=	request.env['HTTP_REFERER'] %>
+				
+				
+				
 			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
 			    <h6><%= offer.offer_name %></h6>
 			    <p><%= offer.offer_description %></p>
