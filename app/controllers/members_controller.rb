@@ -35,6 +35,11 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(params[:member])
     if @member.save  
+    
+      insert_id = @member.id
+      random_string = SecureRandom.hex(16)
+      Member.find(insert_id).update_attribute(:random_code, random_string)   
+    
       flash[:success] = "Member was successfully created."   
       render   'home/index'  
        flash[:success] = "";  

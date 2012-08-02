@@ -8,7 +8,13 @@
 			Total Number of Users: <%=  Member.all .size %>
 		</li>
 		<li>
-			Total Number of Offers Promoted: <%=  Offer.all .size %>
+			<%					
+				offerredeemList = OfferRedeem.find(:all, 
+             	                                   :select => "DISTINCT ON (offers_id) *")
+			%>
+			
+			
+			Total Number of Offers Promoted: <%=  offerredeemList.count %>
 		</li>
 		<li>
 			Total Number of Unique Clicks:

@@ -5,12 +5,26 @@
 </script>
 <div class="mainfrmcontainer">
 	<%= render 'home/lhs' %>
+		<p id="notice"><% if flash[:offer_stop_notice] %> <%= flash[:offer_stop_notice] %> <% end %></p>
 	<% if !@offers.empty? %>
-		<% @offers.each_with_index do |offer, index| %>
-			<div class="rhs">
-				<p id="notice"><%= notice %></p>
-			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>       
-			    <h6><%= offer.offer_name %></h6>
+		<% @offers.each_with_index do |offer, index| %>						
+			<div class="rhs">				
+			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>     
+			    
+			    <%= #offer.offer_status 
+			    %>  
+			    <%
+			    	if offer.offer_status
+				%>			    		
+			    	  <h6><%= offer.offer_name %></h6>	
+			    <%	  
+			    	else
+ 				%>			    		
+			    		  <h6><%= offer.offer_name %>&nbsp;(Awaiting Approval...)&nbsp;</h6>	
+			   <%
+			    	end					    	
+			   %>
+			  
 			    <p><%= offer.offer_description %></p>
 			
 			    <p>
@@ -26,8 +40,11 @@
 			    	<%= Category.getcategoryname(offer.category_id) %>			    
 			    	<strong>Duration</strong> : 
 			    	
-			    	<%
+			    	<%=
 			    		#startDate = DateTime.strptime("09/01/2009", "%d %b %y")
+			    		
+			    		#Date.today.strftime('%m/%d/%Y')
+
 			    	
 			    	%>			    				    				    	
 			    	
@@ -37,27 +54,79 @@
 			    
 			    	<% if offer.offer_status %>
 			        <p>
-			        	You have to pay : $<%= offer.offer_budget * 120/100 %> USD
+			        	<% if offer.payment_status %>
+			        		Payment of  $<%= offer.offer_budget * 120/100 %> USD has done.
+			        	<% else	%>
+			        		You have to pay : $<%= offer.offer_budget * 120/100 %> USD
+			        	<% end %>			        				        				        	
 			        </p>
 			        <% end %>
 				    <p>			    	
 				    <%=	link_to "Edit", :controller =>"offers", :action => "edit", :id=>offer.id %>			  
 				    </p>
-				    <p>
-				    	<%=	link_to "View Analytics of Offer", :controller =>"offers", :action => "edit", :id=>offer.id %> |
-				    	<%=	link_to "Top Up Offer Budget", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('topUp_#{index}');" %> |
-				    	<%=	link_to "Stop Offer", :controller =>"offers", :action => "edit", :id => offer.id %> 
+				    <p>				    	
+				    	<%=	link_to "View Analytics of Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('analytic_#{index}');" %> 
+				    	<% if offer.payment_status  %>
+				    	|
+				    	<%=	link_to "Top Up Offer Budget", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('topUp_#{index}');" %>
+				    	<% end %>
+				    	
+				    	<% if offer.offer_status %>
+				    		<% if offer.offer_stop %>
+				    		<% else %>
+				    			| <%= link_to 'Stop Offer', "offers/os/#{offer.id}", method: :stopoffer, data: { confirm: 'Are you sure want to stop this offer?' } %>				    	
+				    		<% end  %>
+				    	<% end %>	
+				    	
 				    	
 				    	<% if offer.offer_status %>
 				    		<% return_url = "http://#{request.host}:#{request.port.to_s + request.fullpath}" %>
 							<%= form_tag APP_CONFIG[:paypal_url] do %>  
 								<%= hidden_field_tag :cmd, "_s-xclick" %>
 								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]), offer.id,false,0) %>
+								<% if offer.payment_status == false	%>
 								<p><%= submit_tag "Pay for the offer" %></p>
+								<% end %>
 							<% end %>
 						<% end %>
 					
+					<div id="analytic_<%= index %>" style="display: none">
 						
+						<p><strong>Time since offer was lived:</strong>									
+						<%= 						
+						#Time.now
+						#Time.parse("2010-01-01 12:30:00")
+						if offer.offer_status
+							time_diff_format(offer.offer_live_date,Time.now)	
+						end						
+						%>
+						</p>
+						<%					
+						offerredeemList = OfferRedeem.find(:all, 
+             										 :select => "DISTINCT ON (members_id,offers_id) *")
+						%>
+						<p><strong>Total number of times offer is promoted:</strong>
+						<%= 	offerredeemList.count %>
+						</p>
+						<%											   
+							
+							offerredeemList1 = OfferRedeem.find(:all, 
+      												:conditions => ["offers_id = #{offer.id}"])									
+																
+						%>
+						<p>
+							<strong>Total number of unique users clicked:</strong>
+							<%= 	offerredeemList1.count %>							
+						</p>												
+						<%					
+							visitorTrackerList = VisitorTracker.find(:all,
+																	 :conditions => ["offers_id = #{offer.id}"])
+						%>
+						<p>
+							<strong>Total number of clicks:</strong>
+							<%= 	visitorTrackerList.count %>				
+						</p>
+					</div>																				
 					<div id="topUp_<%= index %>" style="display: none">					
 						<%= form_tag("/topup") do %>														
 							<%= label_tag 'amount', 'Enter amount' %>
@@ -75,10 +144,13 @@
 					<div id="shareLink_<%= index %>" style="display: none">												
 						<% 
 							current_url = "http://#{request.host}:#{request.port.to_s}/"	
-							random_code = offer.random_code								
-							full_url = "#{current_url}#{@logged_user_id}/#{random_code}"							
+							random_code = offer.random_code		
+							objMember = Member.new	
+							member_random_code = objMember.getMemberDataById(@logged_user_id).random_code
+												
+							full_url = "#{current_url}#{member_random_code}/#{random_code}"							
 						%>												
-						<%= link_to(full_url,full_url) %> 															
+						<%= full_url %> 															
 					</div>
 			    <% end %>
 			</div>

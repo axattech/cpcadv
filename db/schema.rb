@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120731103003) do
+ActiveRecord::Schema.define(:version => 20120802075106) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -41,13 +41,14 @@ ActiveRecord::Schema.define(:version => 20120731103003) do
     t.string   "password_salt"
     t.integer  "country_id"
     t.string   "provider"
-    t.boolean  "status",        :default => true, :null => false
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.boolean  "status",                      :default => true, :null => false
+    t.datetime "created_at",                                    :null => false
+    t.datetime "updated_at",                                    :null => false
     t.string   "password_hash"
     t.string   "gender"
     t.integer  "age"
-    t.boolean  "member_detail", :default => true
+    t.boolean  "member_detail",               :default => true
+    t.string   "random_code",   :limit => 50
   end
 
   create_table "offer_redeems", :force => true do |t|
@@ -86,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20120731103003) do
     t.integer  "member_id"
     t.boolean  "payment_status",                          :default => false, :null => false
     t.string   "random_code"
+    t.datetime "offer_live_date"
   end
 
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"
@@ -122,13 +124,15 @@ ActiveRecord::Schema.define(:version => 20120731103003) do
   end
 
   create_table "visitor_trackers", :force => true do |t|
-    t.string   "IP"
-    t.string   "refer_url"
+    t.string   "ip"
+    t.text     "refer_url"
+    t.integer  "offers_id"
     t.integer  "members_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
 
   add_index "visitor_trackers", ["members_id"], :name => "index_visitor_trackers_on_members_id"
+  add_index "visitor_trackers", ["offers_id"], :name => "index_visitor_trackers_on_offers_id"
 
 end

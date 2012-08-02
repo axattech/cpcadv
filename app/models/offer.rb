@@ -144,9 +144,23 @@ class Offer < ActiveRecord::Base
   def encrypt_for_paypal(values)
     signed = OpenSSL::PKCS7::sign(OpenSSL::X509::Certificate.new(APP_CERT_PEM), OpenSSL::PKey::RSA.new(APP_KEY_PEM, ''), values.map { |k, v| "#{k}=#{v}" }.join("\n"), [], OpenSSL::PKCS7::BINARY)
     OpenSSL::PKCS7::encrypt([OpenSSL::X509::Certificate.new(PAYPAL_CERT_PEM)], signed.to_der, OpenSSL::Cipher::Cipher::new("DES3"), OpenSSL::PKCS7::BINARY).to_s.gsub("\n", "")
-  end
-  
-  
-  
+  end      
   
 end
+
+def time_diff(from_time, to_time)
+  %w(year month day hour minute second).map do |interval|
+    distance_in_seconds = (to_time.to_i - from_time.to_i).round(1)
+    delta = (distance_in_seconds / 1.send(interval)).floor
+    delta -= 1 if from_time + delta.send(interval) > to_time
+    from_time += delta.send(interval)
+    delta    
+  end    
+end
+
+def time_diff_format(from_time, to_time)
+  arr = time_diff(from_time, to_time)
+  return "#{arr[0]}Year(s) #{arr[1]} Month(s) #{arr[2]} Day(s) #{arr[3]} Hour(s) #{arr[4]}Minute(s) #{arr[5]}Seconds"  
+end
+
+

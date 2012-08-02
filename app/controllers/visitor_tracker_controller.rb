@@ -3,12 +3,19 @@ class VisitorTrackerController < ApplicationController
   
   def track    
     
-    member_id = params[:member_id]
+    member_random_code = params[:member_random_code]
     random_code = params[:random_code]
     
   #  @query = "member_id = #{member_id} AND random_code = '#{random_code}'"
     
     offerList = Offer.find_by_random_code(random_code)
+    memberList = Member.find_by_random_code(member_random_code)
+    
+    if memberList       
+     else
+       redirect_to root_url
+       return
+    end
 
     if offerList      
       @refer_url = request.env['HTTP_REFERER']
@@ -17,7 +24,12 @@ class VisitorTrackerController < ApplicationController
       objVisitorTracker = VisitorTracker.new
       objVisitorTracker.ip = @ip_addr
       objVisitorTracker.refer_url = @refer_url
+     
+      member_id = memberList.id
+          
       objVisitorTracker.members_id =  member_id
+      objVisitorTracker.offers_id =  offerList.id
+      
      # objVisitorTracker.save!   
       
       if objVisitorTracker.save!
@@ -54,6 +66,7 @@ class VisitorTrackerController < ApplicationController
                
     else
       redirect_to root_url
+      return
       
     end
     

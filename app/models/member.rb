@@ -70,4 +70,13 @@ class Member < ActiveRecord::Base
     end
   end
   
+  def getMemberDataByRandomCode(random_code)
+    member_data = Member.find_by_random_code(random_code)
+    if member_data
+      return member_data
+    else
+      return false
+    end
+  end
+  
 end

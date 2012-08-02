@@ -94,25 +94,31 @@ class OffersController < ApplicationController
     end
   end
   
-  def approverejectoffer
-    
-    @offer1 = Offer.find(params[:id])
-    
-   
+  def approverejectoffer    
+    @offer1 = Offer.find(params[:id])       
      if @offer1.offer_status
        @offer1.update_attribute(:offer_status , "false")
        flash[:notice] = "You have successfully rejected offer"
      else
        @offer1.update_attribute(:offer_status , "true")
        flash[:notice] = "You have successfully approved offer"
-     end
-  
-    
-   
+     end        
     redirect_to :controller=>'offers', :action => 'index'    
-    #flash[:notice] = ""
-     
+    #flash[:notice] = ""     
   end
+  
+  def stopoffer    
+     @offer1 = Offer.find(params[:id])       
+     if @offer1.offer_stop == false
+       @offer1.update_attribute(:offer_stop , "true")
+       flash[:offer_stop_notice] = "You have successfully stoped the offer"   
+       redirect_url = "http://#{request.host}:#{request.port.to_s}/promoteOffers?qs=myoffer"
+       
+       redirect_to redirect_url          
+       return                      
+     end    
+  end
+  
   
   #method created by emamul khan
   def myOffers
@@ -170,5 +176,10 @@ class OffersController < ApplicationController
      redirect_to URI.encode("https://www.sandbox.paypal.com/cgi-bin/webscr" + "?cmd=_xclick&business=#{APP_CONFIG[:paypal_email]}&currency_code=USD&item_name=#{params[:offer_name]}&amount=#{params[:amount]}&invoice=#{params[:offer_id]}&return=#{params[:return_url]}&quantity=1&notify_url=#{notify_url}")     
      return
   end
+  
+  
+
+  
+  
   
   end
