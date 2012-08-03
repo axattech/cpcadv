@@ -44,9 +44,17 @@
     <%= f.label :offer_msg %><br />
     <%= f.text_area :offer_msg %>
   </div>
+  
+  <%
+  	if @offer.payment_status
+  		disable_status = true
+  	else
+  		disable_status = false	
+  	end	
+  %>
   <div class="field">
     <%= f.label :offer_budget %><br />
-    <%= f.number_field :offer_budget %>
+    <%= f.number_field :offer_budget ,:disabled => disable_status %>
   </div>
   <div class="field">
     <%= f.label :offer_cr_per_click %><br />
@@ -67,8 +75,7 @@
   <div class="field">
     <%= f.label :offer_worldwide %><br />
     <%= f.check_box :offer_worldwide %>
-  </div>    
-    <%= f.hidden_field :offer_status, :value => 'false' %>
+  </div>
     <%= f.hidden_field :member_id, :value => session[:user_id]  %>
     	    
     

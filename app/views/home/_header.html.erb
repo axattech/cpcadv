@@ -61,6 +61,7 @@
 						<%= link_to('PROMOTE OFFERS', '/promoteOffers', :title => 'PROMOTE OFFERS') %>
 						<%= link_to('LIST AN OFFER', 'offers/new', :title => 'LIST AN OFFER') %>
 						<%= link_to('YOUR OFFERS', '/promoteOffers?qs=myoffer', :title => 'YOUR OFFERS') %>
+						Credits:<%= getcredit(session[:user_id]) %>
 					</div>
 				<% end %>
 			</div>

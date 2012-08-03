@@ -39,16 +39,25 @@
 			    	<strong>Category</strong> : 
 			    	<%= Category.getcategoryname(offer.category_id) %>			    
 			    	<strong>Duration</strong> : 
-			    	
+			    	<%
+			    		require 'date'
+						start_date_format = format_date(offer.offer_start_date)
+						start_date = DateTime.parse(start_date_format)
+						
+						end_date_format = format_date(offer.offer_end_date)
+						end_date = DateTime.parse(end_date_format)
+						
+			    	%>		
+			    	    				    				    	
 			    	<%=
-			    		#startDate = DateTime.strptime("09/01/2009", "%d %b %y")
-			    		
-			    		#Date.today.strftime('%m/%d/%Y')
-
+						start_date.strftime("#{start_date.day.ordinalize} %b %Y")
+			    	%>
+			    	to
+			    	<%=
+						end_date.strftime("#{end_date.day.ordinalize} %b %Y")
+			    	%>
 			    	
-			    	%>			    				    				    	
-			    	
-			    	24th July 2012 to 30th July 2012&#13;
+			    
 			    </p>
 			    <% if @logged_user_id == offer.member_id %>
 			    

@@ -46,14 +46,28 @@ class VisitorTrackerController < ApplicationController
               findOfferRedeem =  OfferRedeem.find(:all,:conditions => [@query1])
               @total_count = findOfferRedeem.count
               
-              if @total_count < offerList.offer_max_clicks_per_user
-                objOfferRedeem =  OfferRedeem.new
-                objOfferRedeem.offers_id =   offerList.id
-                objOfferRedeem.members_id =   member_id
-                objOfferRedeem.visitor_trackers_id = objVisitorTracker.id
-                objOfferRedeem.amount = offerList.offer_cr_per_click            
-                objOfferRedeem.save!  
-              end
+             if member_id != offerList.  member_id    
+                        
+                if @total_count < offerList.offer_max_clicks_per_user
+                  objOfferRedeem =  OfferRedeem.new
+                  objOfferRedeem.offers_id =   offerList.id
+                  objOfferRedeem.members_id =   member_id
+                  objOfferRedeem.visitor_trackers_id = objVisitorTracker.id
+                  objOfferRedeem.amount = offerList.offer_cr_per_click            
+                  objOfferRedeem.save!  
+                                                                
+                  objOffer = Offer.new
+                  offer_data = Offer.find_by_id(offerList.id)       
+                     #logger.debug "MEMBER-UPDATE-TEST: #{params[:gender]}"
+                  offer_old_credit_value = offer_data.offer_credit
+                   
+                  offer_data.offer_credit =  offer_old_credit_value - offerList.offer_cr_per_click 
+                  offer_data.save!                                                                 
+                end              
+                
+             end
+              
+              
                                       
             end
                   

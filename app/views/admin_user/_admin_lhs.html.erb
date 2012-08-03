@@ -16,17 +16,26 @@
 			
 			Total Number of Offers Promoted: <%=  offerredeemList.count %>
 		</li>
-		<li>
-			Total Number of Unique Clicks:
+		<li>		
+			
+			Total Number of Unique Clicks: <%=  OfferRedeem.all .size %>
 		</li>
 		<li>
-			Total Number of Clicks:
+			Total Number of Clicks: <%=  VisitorTrackers.all .size %>
 		</li>
 		<li>
-			Live Offers:
+			<%					
+				liveofferList = Offer.find(:all, 
+             	                           :conditions => "payment_status = TRUE AND offer_status = TRUE")
+			%>
+			Live Offers: <%= liveofferList.count %>
 		</li>
 		<li>
-			Offers Awaiting Approval:
+			<%					
+				awaitingofferList = Offer.find(:all, 
+             	                           :conditions => "offer_status = FALSE")
+			%>
+			Offers Awaiting Approval:<%= awaitingofferList.count %>
 		</li>
 
 	</ul>

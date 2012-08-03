@@ -163,4 +163,29 @@ def time_diff_format(from_time, to_time)
   return "#{arr[0]}Year(s) #{arr[1]} Month(s) #{arr[2]} Day(s) #{arr[3]} Hour(s) #{arr[4]}Minute(s) #{arr[5]}Seconds"  
 end
 
+def format_date(var_date)
+    @var_date = var_date
+    @var_split = @var_date.split("/")
+    @return_date=@var_split[2] + "-" + @var_split[0] + "-" + @var_split[1];
+    return @return_date
+end
+
+def getcredit(member_id)  
+  
+    offer_redeem_credit = OfferRedeem.where(:members_id => member_id).sum(:amount)
+    offer_credit = Offer.where(:member_id => member_id).where(:payment_status => TRUE).sum(:offer_credit)  
+    return offer_redeem_credit + offer_credit
+  
+end
+
+def updateOfferCredit(new_value,offer_id)
+  
+    @old_val = Offer.find_by_id(offer_id).read_attribute(:offer_credit)
+    new_value = @old_val - new_value
+    
+    logger.debug "new_value: #{new_value}"
+    
+    Offer.find_by_id(offer_id).update_attribute(:offer_credit=>new_value)
+    
+end
 
