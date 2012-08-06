@@ -1,5 +1,7 @@
 CpcadvApp::Application.routes.draw do
   
+  get "credits_withdraw/list"
+
   get "visitor_tracker/track"
 
   resources :payment_notifications
@@ -42,6 +44,11 @@ CpcadvApp::Application.routes.draw do
   
   post "offers/:id" => "Offers#approverejectoffer"
   
+  post "credits_withdraw/:id" => "credits_withdraw#updateCreditStatus"
+  
+  
+  
+  
   post "offers/os/:id" => "Offers#stopoffer"
   
 
@@ -56,6 +63,7 @@ CpcadvApp::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'myOffers', to: 'offers#myOffers', as: 'myOffers'
   match 'mySettings', to: 'members#mySettings', as: 'mySettings'
+  match 'withDrawCash', to: 'members#withDrawCash', as: 'withDrawCash'
   match 'promoteOffers', to: 'offers#promoteAndSortOffers', as: 'promoteOffers'
   match 'sortOffers/:sort_by', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'sortOffers/:sort_by/:category_id', to: 'offers#promoteAndSortOffers', as: 'sortOffers'

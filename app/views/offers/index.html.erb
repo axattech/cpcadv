@@ -29,37 +29,21 @@
        				<strong>Category</strong>: <%= Category.getcategoryname(offer.category) %>
        				<strong>&nbsp;Duration</strong>: <%= offer.offer_start_date %> - <%= offer.offer_end_date %>        				
        			</p>
-        </div> 
-              			        			        				        				
-        				
-        				 <div class="butlfta">
-        					<h2>
-        						<%= link_to 'Reject Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>
-        						
-        					</h2>
-        				</div>
-        				
-        				<div class="butlft">
-                    		<h2>
-                    			<%= link_to 'Approve Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
-                    		</h2>
-        				</div>
-        				
-        			
-        				 	
-    	  	   	
-    	  
-        				
-        			
-                 	                 
-                    
+        </div>               			        			        				        				        				
+		 <div class="butlfta">
+			<h2>
+				<%= link_to 'Reject Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>
+				
+			</h2>
+		</div>
 		
-		
-		
-		
-		
-		<% end %>
-						   
+		<div class="butlft">
+    		<h2>
+    			<%= link_to 'Approve Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+    		</h2>
+		</div>
+        	
+		<% end %>						   
      
 	</div>
 

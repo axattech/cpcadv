@@ -36,13 +36,10 @@
                   
 					
 						<%=  link_to "Home", {:controller => "AdminUser", :action => "index"}, :class => "active" %>
-						
 						<%=  link_to "Offers", {:controller => "offers", :action => "index"} %>
-					
-											
 						<%= link_to "Users", :controller => "members", :action => "index"  %>
 						<%= link_to "Categories", :controller => "categories", :action => "index"  %>
-																			                                      				
+						<%= link_to "User Credits", :controller => "credits_withdraw", :action => "list"  %>													                                      				
                     
 					<script>
                     gooeymenu.setup({id:'gooeymenu1', selectitem:0})

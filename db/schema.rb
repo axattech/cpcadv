@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120802075106) do
+ActiveRecord::Schema.define(:version => 20120806072257) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "email"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(:version => 20120802075106) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "credits_withdraws", :force => true do |t|
+    t.integer  "members_id"
+    t.string   "paypal_email"
+    t.boolean  "status"
+    t.float    "credits"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "credits_withdraws", ["members_id"], :name => "index_credits_withdraws_on_members_id"
 
   create_table "members", :force => true do |t|
     t.string   "username"
@@ -75,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20120802075106) do
     t.string   "offer_start_date",          :limit => 50
     t.string   "offer_end_date",            :limit => 50
     t.boolean  "offer_worldwide",                         :default => false
-    t.boolean  "offer_status"
+    t.boolean  "offer_status",                            :default => false
     t.integer  "category_id"
     t.integer  "country_id"
     t.datetime "created_at",                                                 :null => false
@@ -88,6 +99,8 @@ ActiveRecord::Schema.define(:version => 20120802075106) do
     t.boolean  "payment_status",                          :default => false, :null => false
     t.string   "random_code"
     t.datetime "offer_live_date"
+    t.boolean  "offer_stop",                              :default => false, :null => false
+    t.float    "offer_credit"
   end
 
   add_index "offers", ["category_id"], :name => "index_offers_on_category_id"

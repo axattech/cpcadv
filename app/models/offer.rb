@@ -174,7 +174,8 @@ def getcredit(member_id)
   
     offer_redeem_credit = OfferRedeem.where(:members_id => member_id).sum(:amount)
     offer_credit = Offer.where(:member_id => member_id).where(:payment_status => TRUE).sum(:offer_credit)  
-    return offer_redeem_credit + offer_credit
+    credit_withdraw = CreditsWithdraw.where(:members_id => member_id).sum(:credits)
+    return offer_redeem_credit + offer_credit - credit_withdraw
   
 end
 
@@ -182,9 +183,6 @@ def updateOfferCredit(new_value,offer_id)
   
     @old_val = Offer.find_by_id(offer_id).read_attribute(:offer_credit)
     new_value = @old_val - new_value
-    
-    logger.debug "new_value: #{new_value}"
-    
     Offer.find_by_id(offer_id).update_attribute(:offer_credit=>new_value)
     
 end

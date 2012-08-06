@@ -1,0 +1,54 @@
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+
+<h1>User Credits</h1>
+
+<table>
+	
+<% if  flash[:cs_update_notice] %>
+<tr>
+  	<td colspan="5">  <%= flash[:cs_update_notice] %>	</td> 
+</tr>	
+<% end %>
+  <tr>
+    <th>User name</th>
+    <th>Paypal email</th>
+    <th>Status</th>
+    <th>Credits</th>   
+    <th>Credits in $</th>   
+    <th>Action</th>   
+  </tr>
+
+<% objMember  = Member.new %>
+<% @cw_results.each do |cw| %>
+  <tr>
+    <td><%= objMember.getMemberDataById(cw.members_id).username %></td>
+    <td><%= cw.paypal_email %></td>
+    <td>    	
+    	<% if cw.status %>
+    		Done
+    	<% else %>
+    	 Pending
+    	<% end %>    	
+   </td>
+    <td><%= cw.credits %> </td>
+    <td><%= cw.credits / 100 %></td>
+    <td>
+    	<%= link_to 'Update Status',  "/credits_withdraw/#{cw.id}" , method: :updateCreditStatus, data: { confirm: 'Are you sure want to update status?' } %>
+    </td>
+  </tr>
+    
+<% end %>
+	
+	<tr>
+		<td colspan="5" align="right"><%= paginate @cw_results %></td>
+	</tr>
+</table>
+<br />
+</div>
+
+</div>
+<%= render 'admin_user/admin_footer' %>

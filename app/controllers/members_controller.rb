@@ -105,17 +105,43 @@ class MembersController < ApplicationController
   def updateMemberSettings
     objMember = Member.new
     member_data = objMember.getMemberDataById(session[:user_id])        
-    #logger.debug "MEMBER-UPDATE-TEST: #{params[:gender]}"
-    member_data.password = params[:password]
-    member_data.password_confirmation =  params[:password_confirmation]
-    member_data.country_id = params[:country_id]
-     if member_data.save!
-       flash[:member_setting_update_notice] = "Updated successfully."
-    else
-       flash[:member_setting_update_notice] = "Oops! Something went wrong."
+           
+    if params[:password].blank?
+      flash[:member_setting_update_notice] = "Password can't be blank."
+      redirect_to '/mySettings' 
+      return   
     end
-     #render   'members/MemberSetValues' 
-     redirect_to root_url
+    
+    if params[:password] ==  params[:password_confirmation]       
+      member_data.password = params[:password]
+      member_data.password_confirmation =  params[:password_confirmation]
+      member_data.country_id = params[:country_id]
+    
+      if member_data.save!
+       flash[:member_setting_update_notice] = "Updated successfully."
+      else
+       flash[:member_setting_update_notice] = "Oops! Something went wrong."
+      end
+       redirect_to root_url         
+    else            
+       flash[:member_setting_update_notice] = "Password and confirmation password doesn't match"                
+       redirect_to '/mySettings'     
+    end
+       
+  end
+  
+  def withDrawCash
+    objCw = CreditsWithdraw.new      
+    objCw.members_id = session[:user_id]
+    objCw.paypal_email =  params[:email]     
+    objCw.credits = getcredit(session[:user_id])
+      
+    if objCw.save!   
+       flash[:cw_update_notice] = "Email id has added to our database. Within few days you will get credit."
+    else
+       flash[:cw_update_notice] = "Oops! Something went wrong."
+    end
+      redirect_to '/mySettings'    
   end
   
 end

@@ -130,7 +130,7 @@ class OffersController < ApplicationController
   
   def promoteAndSortOffers
   
-   logger.debug "urlparam: #{params[:qs]}"
+   #logger.debug "urlparam: #{params[:qs]}"
   
     @logged_user_id = session[:user_id]
     if params[:sort_by]

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VisitorTrackersTest < ActiveSupport::TestCase
+class CreditsWithdrawTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
