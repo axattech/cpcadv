@@ -5,9 +5,12 @@ class MembersController < ApplicationController
   layout false
    
   def index
+    
+     #logger.debug "admin-user-id: #{session[:admin_user_id]}"
              
      if session[:admin_user_id]
        members = Member.all
+       @member_page = Member.all
        @results = Kaminari.paginate_array(members).page(params[:page]).per(5)
        respond_to do |format|
           format.html # index.html.erb
@@ -66,7 +69,7 @@ class MembersController < ApplicationController
        @member1.update_attribute(:status , "true")
        flash[:notice] = "You have successfully permited user"
      end
-    redirect_to :controller=>'members', :action => 'index'   
+    redirect_to '/admin/members'  
     else
        redirect_to root_url    
        return

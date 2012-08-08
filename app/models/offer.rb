@@ -37,10 +37,16 @@ class Offer < ActiveRecord::Base
   def getOffersToPromoteAndSort(*args)
     params = args.extract_options!
     
-    if params[:qs]=="myoffer"
-      @query = "member_id = #{params[:member_id]}"
+    if params[:category_id]
+      cat_query = "AND category_id =#{params[:category_id]}"
     else
-      @query = "member_id != #{params[:member_id]} and payment_status = TRUE AND (country_id = #{params[:country_id]} or offer_worldwide = TRUE )"
+      cat_query = ""
+    end
+    
+    if params[:qs]=="myoffer"     
+      @query = "member_id = #{params[:member_id]}   #{cat_query}"
+    else
+      @query = "member_id != #{params[:member_id]} and payment_status = TRUE  AND (country_id = #{params[:country_id]} or offer_worldwide = TRUE )   #{cat_query}"
     end
     
     

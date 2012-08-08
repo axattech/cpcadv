@@ -23,7 +23,16 @@
   <tr>
     <td><%= mem.username %></td>
     <td><%= mem.email %></td>    
-    <td><%= Country.getcountryname(mem.country_id).country %></td>
+    <%
+    	 if mem.country_id != 0
+    %>
+    <td><%=   Country.getcountryname(mem.country_id).country %></td>
+    <%
+    	else
+	%>
+		 <td>None</td>    	
+    <%	end
+    %>
     <td>
     	
     	<% if mem.provider = 'CPC' %>
@@ -60,10 +69,19 @@
   </tr>
 <% end %>
 	<tr>
-		<td colspan="6"></td>
+		<td colspan="6"> </td>
 	</tr>
 	<tr>
-		<td colspan="6" align="right"><%= paginate @results %></td>
+		<td colspan="6" align="right">			
+			<%	logger.debug "paginate: #{paginate @results}"	%>
+			
+			
+			
+			<%= paginate @results, :params => {:controller => human_readable_tag(), :action => 'index'} %>
+		</td>
+
+
+		
 	</tr>
 </table>
 

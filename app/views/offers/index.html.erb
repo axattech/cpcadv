@@ -32,14 +32,30 @@
         </div>               			        			        				        				        				
 		 <div class="butlfta">
 			<h2>
-				<%= link_to 'Reject Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>
-				
+				<%
+					if offer.offer_status
+				%>
+						<%= link_to 'Reject Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>					
+				<%	else
+				%>
+						 <%= link_to 'Reject Offer','#', :onclick => 'javascript:void(0)' %>
+				<%	
+					end
+				%>
 			</h2>
 		</div>
-		
 		<div class="butlft">
     		<h2>
-    			<%= link_to 'Approve Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+    			<%
+					if offer.offer_status
+				%>						
+						<%= link_to 'Approve Offer','#', :onclick => 'javascript:void(0)' %>					
+				<%	else
+				%>
+						 <%= link_to 'Approve Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+				<%	
+					end
+				%>
     		</h2>
 		</div>
         	

@@ -28,4 +28,15 @@ class ApplicationController < ActionController::Base
     helper_method :redirect_to_other 
     
     
+    private
+    
+     def user_is_logged_in           
+      if !session[:user_id]      
+          redirect_to root_url                         
+      end       
+    end
+    
+    helper_method :user_is_logged_in 
+    
+    
 end

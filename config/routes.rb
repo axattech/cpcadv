@@ -12,7 +12,11 @@ CpcadvApp::Application.routes.draw do
 
   resources :categories
 
-  get "members" => "home#index"
+ # get "members" => "home#index"
+ 
+
+ 
+  get "offers" => "home#index"
   resources :members
 
   #match "admin/index" => "AdminUser#index", :as => "admin/dashboard"
@@ -21,8 +25,12 @@ CpcadvApp::Application.routes.draw do
   
   
   get "admin/dashboard" => "AdminUser#index"
-  
+  get 'admin/offers' => 'offers#index' 
   get "admin/members" => "members#index"
+  
+  
+  
+  
   
    post "topup" => "offers#topup"
   
@@ -69,6 +77,7 @@ CpcadvApp::Application.routes.draw do
   match 'sortOffers/:sort_by/:category_id', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'offerPayment/:offer_id', to: 'offers#offerPayment', as: 'offerPayment'
   match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

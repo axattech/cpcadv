@@ -4,6 +4,11 @@ class OffersController < ApplicationController
   
   layout  false
   
+  include ApplicationHelper
+
+   
+   before_filter :user_is_logged_in, :except => :index
+   before_filter :redirect_to_other, :only => :index
   
   def index       
     @offers = Offer.all
@@ -38,7 +43,16 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
-    @offer = Offer.find(params[:id])
+        
+    offerCheck = Offer.find(:all, 
+                           :conditions => ["id = ? and member_id = ?", params[:id], session[:user_id]])    
+    if offerCheck 
+       redirect_to root_url      
+    else
+      @offer = Offer.find(params[:id])
+      return
+    end  
+    
   end
 
   # POST /offers
@@ -131,8 +145,13 @@ class OffersController < ApplicationController
   def promoteAndSortOffers
   
    #logger.debug "urlparam: #{params[:qs]}"
-  
     @logged_user_id = session[:user_id]
+   
+    if !@logged_user_id
+      redirect_to root_url
+      return
+    end
+           
     if params[:sort_by]
       @sort_by = params[:sort_by]
     else
@@ -149,6 +168,8 @@ class OffersController < ApplicationController
         :sort_by      => @sort_by,
         :qs        => params[:qs]
       }
+      
+       logger.debug "arrParams #{arrParams}"
       
       objOff = Offer.new
       @offers = objOff.getOffersToPromoteAndSort(arrParams)
