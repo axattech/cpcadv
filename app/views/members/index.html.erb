@@ -29,9 +29,10 @@
     <td><%=   Country.getcountryname(mem.country_id).country %></td>
     <%
     	else
-	%>
-		 <td>None</td>    	
-    <%	end
+    %>
+    	Offer Worldwide		
+    <%
+    	end
     %>
     <td>
     	
@@ -73,11 +74,10 @@
 	</tr>
 	<tr>
 		<td colspan="6" align="right">			
-			<%	logger.debug "paginate: #{paginate @results}"	%>
-			
-			
-			
-			<%= paginate @results, :params => {:controller => human_readable_tag(), :action => 'index'} %>
+			<%	#logger.debug "paginate: #{paginate @results}"
+				
+			%>
+			<%= paginate @results, :params => {:controller => 'members', :action => 'index'} %>
 		</td>
 
 

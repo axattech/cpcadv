@@ -37,8 +37,8 @@
 					
 						<%=  link_to "Home", {:controller => "AdminUser", :action => "index"}, :class => "active" %>
 												
-						<%=  link_to "Offers",	"/admin/offers"  %>
-						<%= link_to "Users", "/admin/members"  %>
+						<%=  link_to "Offers",	:controller => "offers", :action => "index"  %>
+						<%= link_to "Users", :controller => "members", :action => "index" %>
 						<%= link_to "Categories", :controller => "categories", :action => "index"  %>
 						<%= link_to "User Credits", :controller => "credits_withdraw", :action => "list"  %>													                                      				
                     

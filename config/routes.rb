@@ -16,7 +16,7 @@ CpcadvApp::Application.routes.draw do
  
 
  
-  get "offers" => "home#index"
+  #get "offers" => "home#index"
   resources :members
 
   #match "admin/index" => "AdminUser#index", :as => "admin/dashboard"
@@ -25,7 +25,7 @@ CpcadvApp::Application.routes.draw do
   
   
   get "admin/dashboard" => "AdminUser#index"
-  get 'admin/offers' => 'offers#index' 
+  #get 'admin/offers' => 'offers#index' 
   get "admin/members" => "members#index"
   
   
