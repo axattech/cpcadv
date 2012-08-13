@@ -77,6 +77,7 @@ CpcadvApp::Application.routes.draw do
   match 'sortOffers/:sort_by/:category_id', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'offerPayment/:offer_id', to: 'offers#offerPayment', as: 'offerPayment'
   match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
+  match 'login', to: 'home#loginPage', as: 'login'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

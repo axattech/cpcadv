@@ -43,8 +43,11 @@ class MembersController < ApplicationController
       random_string = SecureRandom.hex(16)
       Member.find(insert_id).update_attribute(:random_code, random_string)   
     
-      flash[:success] = "Member was successfully created."   
-      render   'home/index'  
+       flash[:success] = "Member was successfully created."   
+       session[:user_id] = insert_id
+       redirect_to root_url
+       #render   'home/index'  
+       
        flash[:success] = "";  
        #render :partial => 'home/index', :locals => { :success => flash[:success] }
     else           

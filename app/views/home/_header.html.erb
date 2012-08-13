@@ -32,7 +32,7 @@
 							
 							<% else %>
 							
-						
+							<% if controller.action_name != 'loginPage' %> 
 							<div class="tpfrmsec">
 								  <% if  flash[:signin_notice] %>
 									<div class="error_messages" style="clear: left;">     
@@ -43,13 +43,16 @@
 							      <% end %>	
 															
 								<div style="float: left;">
-									<%= form_tag("/login", :method => "post") do  %>								
-								    <%= text_field_tag :email, params[:email],:class => 'headtopinput' %>  								  							
-								    <%= password_field_tag :password,'' ,:class => 'headtopinput' %>							
-								    <%= submit_tag "Log in",  :class => 'tplogin' %>								
-									<% end %>
+									
+										<%= form_tag("/login", :method => "post") do  %>								
+									    <%= text_field_tag :email, params[:email],:class => 'headtopinput' %>  								  							
+									    <%= password_field_tag :password,'' ,:class => 'headtopinput' %>							
+									    <%= submit_tag "Log in",  :class => 'tplogin' %>								
+										<% end %>
+									
 								</div>
 							</div>
+							<% end %>	
 							<% end %>						
 						<% end %>
 					</div>
@@ -57,7 +60,8 @@
 				<!--  Top menu start-->
 				<% if current_user && current_user.member_detail  %>
 					<div class="tpmenu">
-						<%= link_to('HOME', '/', :title => 'OFFER') %>
+						<%= #link_to('HOME', '/', :title => 'OFFER') 
+						%>
 						<%= link_to('PROMOTE OFFERS', '/promoteOffers', :title => 'PROMOTE OFFERS') %>
 						<%= link_to('LIST AN OFFER', 'offers/new', :title => 'LIST AN OFFER') %>
 						<%= link_to('YOUR OFFERS', '/promoteOffers?qs=myoffer', :title => 'YOUR OFFERS') %>

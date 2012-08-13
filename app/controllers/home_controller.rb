@@ -13,7 +13,8 @@ class HomeController < ApplicationController
           objOff = Offer.new
           @offers = objOff.listMyOffers(session[:user_id], params[:page])        
           
-        redirect_to :controller=>"offers",:action => "promoteAndSortOffers", :qs=>"myoffer"
+          #redirect_to :controller=>"offers",:action => "promoteAndSortOffers", :qs=>"myoffer"
+          redirect_to :controller => "offers", :action => "promoteAndSortOffers"
           
         else
           render   'members/MemberSetValues'
@@ -34,19 +35,30 @@ class HomeController < ApplicationController
         user = Member.authenticate_user(params[:email], params[:password])
         if user
           session[:user_id] = user.id
-           
+          redirect_to root_url    
           #redirect_to :controller=>'AdminUser', :action=>'index'         
           #render   'members/MemberDashboard'
         else
         #flash.now.alert = "Invalid email or password"        
            flash[:signin_notice] = "Invalid email or password" 
+           #logger.debug "TEST_KHAN: #{params[:page_name]}" 
+           if params[:page_name] == 'loginPage'
+             flash[:loginpage_signin_notice] = "Invalid email or password"  
+             redirect_to :controller => 'home', :action => 'loginPage'
+           else
+             redirect_to root_url
+           end
            #render   'home/index'
         end   
-        redirect_to root_url    
+        
     end
        return
   end
   
-  
+  def loginPage
+    if session[:user_id]
+      redirect_to root_url
+    end
+  end
   
 end
