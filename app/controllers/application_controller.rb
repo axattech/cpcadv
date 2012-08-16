@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     
     def redirect_to_other      
       if session[:admin_user_id]
-      else      
+      else     
           redirect_to root_url                         
       end      
        
@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
     
     private
     
-     def user_is_logged_in           
+     def user_is_logged_in   
       if !session[:user_id]      
           redirect_to root_url                         
       end       

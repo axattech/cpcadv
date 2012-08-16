@@ -7,7 +7,7 @@ class OffersController < ApplicationController
   include ApplicationHelper
 
    
-   before_filter :user_is_logged_in, :except => :index
+   before_filter :user_is_logged_in, :except => [:index, :approverejectoffer]
    before_filter :redirect_to_other, :only => :index
   
   def index       
@@ -43,14 +43,14 @@ class OffersController < ApplicationController
 
   # GET /offers/1/edit
   def edit
-        
+    #abort("afad:#{session[:user_id]}")
     offerCheck = Offer.find(:all, 
                            :conditions => ["id = ? and member_id = ?", params[:id], session[:user_id]])    
-    if offerCheck 
-       redirect_to root_url      
+    if offerCheck.count > 0 
+       @offer = Offer.find(params[:id])
+       return  
     else
-      @offer = Offer.find(params[:id])
-      return
+      redirect_to root_url     
     end  
     
   end
@@ -108,8 +108,8 @@ class OffersController < ApplicationController
     end
   end
   
-  def approverejectoffer    
-    @offer1 = Offer.find(params[:id])       
+  def approverejectoffer
+    @offer1 = Offer.find(params[:id])      
      if @offer1.offer_status
        @offer1.update_attribute(:offer_status , "false")
        flash[:notice] = "You have successfully rejected offer"
@@ -142,6 +142,37 @@ class OffersController < ApplicationController
     #logger.debug "OFFER-LIST: #{@offers}"
   end
   
+  
+  def sortMyOffers
+  #  logger.debug "check session #{session[:user_id]}"
+   # abort("aborting khan")
+    @logged_user_id = session[:user_id]
+   # abort('adfa')
+    #if !@logged_user_id
+     # redirect_to root_url
+      #return
+    #end
+           
+   
+    if session[:user_id]
+      objMember = Member.new
+      member_details = objMember.getMemberDataById(session[:user_id])
+      arrParams = {
+        :page_no      => params[:page],
+        :member_id    => session[:user_id],
+        :country_id   => member_details.country_id,
+        :category_id  => params[:category_id],
+        :sort_by      => params[:sort_by],
+      }
+      
+      objOff = Offer.new
+      @offers = objOff.sortMyOffers(arrParams)
+    end
+    render 'offers/promoteAndSortOffers'
+  end
+  
+  
+  
   def promoteAndSortOffers
   
    #logger.debug "urlparam: #{params[:qs]}"
@@ -169,8 +200,6 @@ class OffersController < ApplicationController
         :qs        => params[:qs]
       }
       
-       logger.debug "arrParams #{arrParams}"
-      
       objOff = Offer.new
       @offers = objOff.getOffersToPromoteAndSort(arrParams)
     end
@@ -186,10 +215,7 @@ class OffersController < ApplicationController
     
   end
   
-  def promoteOffers1        
-
-      
-  end 
+ 
      
   def topup   
      #encrypted = Offer.new.paypal_encrypted(params[:return_url],payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]),params[:offer_id],true,params[:amount])

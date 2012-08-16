@@ -40,7 +40,7 @@ CpcadvApp::Application.routes.draw do
   post "updateMemberSettings" =>"members#updateMemberSettings"
   
   get "sign_up" => "members#new", :as => "sign_up"
-
+  get 'sortMyOffers/:qs/:sort_by/' =>'offers#sortMyOffers'
 
     #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
   #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
@@ -67,7 +67,7 @@ CpcadvApp::Application.routes.draw do
   #get "admin_user/forgot_password"
 
   match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
+  #match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
   match 'myOffers', to: 'offers#myOffers', as: 'myOffers'
   match 'mySettings', to: 'members#mySettings', as: 'mySettings'
@@ -76,8 +76,9 @@ CpcadvApp::Application.routes.draw do
   match 'sortOffers/:sort_by', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'sortOffers/:sort_by/:category_id', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'offerPayment/:offer_id', to: 'offers#offerPayment', as: 'offerPayment'
-  match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
+  #match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
   match 'login', to: 'home#loginPage', as: 'login'
+  
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

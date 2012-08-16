@@ -34,6 +34,36 @@ class Offer < ActiveRecord::Base
     end
   end
   
+  def sortMyOffers(*args)
+   # abort('adfadsf')
+    params = args.extract_options!
+    if params[:sort_by] == 'current_live'
+      offerList = Offer.find(:all, 
+        :conditions => ["member_id = #{params[:member_id]} and payment_status = TRUE and offer_stop != TRUE"],
+        :order      => 'offer_live_date desc'
+      )
+    elsif params[:sort_by] == 'awaiting'
+      offerList = Offer.find(:all, 
+          :conditions => ["member_id = #{params[:member_id]} and offer_status != TRUE"],
+          :order => 'created_at desc'
+        )
+    elsif params[:sort_by] == 'expired'
+      offerList = Offer.find(:all, 
+          :conditions => ["member_id = #{params[:member_id]} and offer_stop = TRUE"],
+          :order => ' created_at desc'
+        )  
+    end
+    
+    if offerList
+      @offers = Kaminari.paginate_array(offerList).page(params[:page_no]).per(5)
+      return @offers
+    else
+      return ''
+    end
+    logger.debug "EMAMUL: #{offerList}"
+  end
+  
+  
   def getOffersToPromoteAndSort(*args)
     params = args.extract_options!
     

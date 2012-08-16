@@ -4,7 +4,12 @@
 	}
 </script>
 <div class="mainfrmcontainer">
-	<%= render 'home/lhs' %>
+	<% if params[:qs] == 'myoffer' %>
+		<%= render 'offers/myOfferLhs' %>
+	<% else %>
+		<%= render 'home/lhs' %>
+	<% end %>
+	
 		<p id="notice"><% if flash[:offer_stop_notice] %> <%= flash[:offer_stop_notice] %> <% end %></p>
 	<% if !@offers.empty? %>
 		<% @offers.each_with_index do |offer, index| %>						
@@ -166,10 +171,19 @@
 		<% end %>
 		<%= paginate @offers %>
 	<% else %>
-		<% if action_name == 'promoteAndSortOffers' %>
+		<% if action_name == 'promoteAndSortOffers' && params[:qs] != 'myoffer' %>
 			No Offers Found.
-		<% else %>
+		<% elsif action_name == 'promoteAndSortOffers' && params[:qs] == 'myoffer'%>	
 			You have not listed any offer yet, <%= link_to('click here', 'offers/new') %> to list an offer!
+		<% else %>
+			<% if params[:sort_by] = 'awaiting' %>
+				No offers awaiting approval
+			<% elsif params[:sort_by] = 'current_live' %>
+				No live offers are there
+			<% elsif params[:sort_by] = 'expired' %>
+				No expired offers are there
+			<% end %>
+			
 		<% end %>
 	<% end %>
 </div>
