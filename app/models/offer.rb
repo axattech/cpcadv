@@ -155,6 +155,7 @@ class Offer < ActiveRecord::Base
       amount = offerList.offer_budget*120/100
     end
     
+    
     values = {
       :business       => APP_CONFIG[:paypal_email],
       :cmd            => '_xclick',
@@ -165,10 +166,14 @@ class Offer < ActiveRecord::Base
       :item_name      => offerList.offer_name,
       :quantity       => 1,
       :currency_code  => 'USD',
-      :cert_id => 'UW7T4YNMGMBT2',
+      :cert_id => APP_CONFIG[:paypal_cert_id],
+      
+      
+     
       :notify_url => notify_url
     }
-    
+      logger.debug APP_CONFIG[:paypal_cert_id]
+      
     encrypt_for_paypal(values)
   end
   
