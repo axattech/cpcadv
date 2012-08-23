@@ -104,6 +104,8 @@ class MembersController < ApplicationController
   
   
   def mySettings
+  logger.debug "current datetime: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}"
+  
     objMember = Member.new
     @member_details = objMember.getMemberDataById(session[:user_id])
   end
