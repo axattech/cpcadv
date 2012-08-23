@@ -166,10 +166,7 @@ class Offer < ActiveRecord::Base
       :item_name      => offerList.offer_name,
       :quantity       => 1,
       :currency_code  => 'USD',
-      :cert_id => APP_CONFIG[:paypal_cert_id],
-      
-      
-     
+      :cert_id => APP_CONFIG[:paypal_cert_id],                
       :notify_url => notify_url
     }
       logger.debug APP_CONFIG[:paypal_cert_id]
