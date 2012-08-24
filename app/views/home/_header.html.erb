@@ -28,9 +28,7 @@
 						    <%= link_to "Sign out", signout_path, id: "sign_out" %>
 						<% else %>
 							
-							<% if current_admin_user %>
-							
-							<% else %>
+						
 							
 							<% if controller.action_name != 'loginPage' %> 
 							<div class="tpfrmsec">
@@ -52,7 +50,7 @@
 									
 								</div>
 							</div>
-							<% end %>	
+							
 							<% end %>						
 						<% end %>
 					</div>

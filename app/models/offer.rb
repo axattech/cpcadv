@@ -16,13 +16,53 @@ class Offer < ActiveRecord::Base
    
   validates_presence_of  :offer_max_clicks_per_user
   validates_numericality_of :offer_max_clicks_per_user, :only_integer => true, :message => "should be  whole number."
+  validate :maxcredit
+  validate :checkzero
   
   validates_presence_of :offer_start_date, :offer_end_date
+  validate :start_date_must_be_before_end_date
   
   validates_presence_of :category_id
    
   validates_presence_of :country_id, :unless => :offer_worldwide
 
+  
+  def maxcredit
+    
+     if offer_max_clicks_per_user.blank? || offer_cr_per_click.blank? || offer_budget.blank?
+      return
+     end
+    
+    if offer_max_clicks_per_user * offer_cr_per_click > offer_budget
+       errors.add(:offer_max_clicks_per_user," multiply Offer credit per click shouldn't exceed offer budeget")
+    end    
+    
+  end
+  
+  def checkzero
+      if offer_max_clicks_per_user==0 || offer_cr_per_click==0 || offer_budget==0
+         errors.add(:offer_max_clicks_per_user," or Offer credit per click or offer budget shouldn't be zero")
+      end
+  end 
+  
+  def start_date_must_be_before_end_date
+    
+    if offer_start_date.blank? || offer_end_date.blank?
+      return
+    end
+    start_date_format = format_date(offer_start_date)
+    start_date = DateTime.parse(start_date_format)
+       
+    end_date_format = format_date(offer_end_date)
+    end_date = DateTime.parse(end_date_format)
+             
+    if start_date > end_date
+       errors.add(:offer_start_date, "must be before end date")
+    end
+                                   
+  end 
+  
+  
 
   def listMyOffers(logged_user_id, page_no)
     offerList = Offer.find_all_by_member_id(logged_user_id)

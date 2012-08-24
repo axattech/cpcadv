@@ -50,11 +50,20 @@
 					<%
 						credits = getcredit(session[:user_id]) 
 						
-						if credits > 1500
+						if credits > -1
 					%>
 								
 						Credits: <%= credits %>
-						<br/>						
+						<br/>					
+						<%
+							@withdrawcredits = CreditsWithdraw.find_by_members_id(session[:user_id])		
+							if @withdrawcredits.email_verification == FALSE
+						%>		
+								Your email <%= @withdrawcredits.paypal_email %> is not verified yet. Please verify your email to get credits.								
+						<%
+							end					
+						%>	
+						
 						<%= tag "input", { "type" => "button", "value" => "WithDraw Credits to Cash", "onclick" => "toggleShareLinkDiv('withdrawCash')" } %>
 					
 						<div id="withdrawCash" style="display: none">						

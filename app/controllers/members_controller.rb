@@ -139,17 +139,39 @@ class MembersController < ApplicationController
   end
   
   def withDrawCash
-    objCw = CreditsWithdraw.new      
-    objCw.members_id = session[:user_id]
-    objCw.paypal_email =  params[:email]     
-    objCw.credits = getcredit(session[:user_id])
+         
+    
+    if  @withDrawCash = CreditsWithdraw.find_by_members_id(session[:user_id])  
+    
+      if @withDrawCash!= params[:email]
+         if @withDrawCash.update_attribute(:paypal_email , params[:email])
+          UserMailer.paypal_email_verification(session[:user_id]).deliver
+          flash[:cw_update_notice] = "Email id has updated successfully."
+         else
+          flash[:cw_update_notice] = "Oops! Something went wrong."
+         end
+         redirect_to '/mySettings'        
+      end
+                         
+    else        
+      objCw = CreditsWithdraw.new 
+      objCw.members_id = session[:user_id]
+      objCw.paypal_email =  params[:email]     
+      objCw.credits = getcredit(session[:user_id])
+      random_string = SecureRandom.hex(16)
+      objCw.email_verification_code = random_string
       
-    if objCw.save!   
-       flash[:cw_update_notice] = "Email id has added to our database. Within few days you will get credit."
-    else
-       flash[:cw_update_notice] = "Oops! Something went wrong."
+      UserMailer.paypal_email_verification(session[:user_id]).deliver
+      
+      if objCw.save!   
+         flash[:cw_update_notice] = "Email id has added to our database. Within few days you will get credit."
+      else
+         flash[:cw_update_notice] = "Oops! Something went wrong."
+      end
+        redirect_to '/mySettings'  
+                          
     end
-      redirect_to '/mySettings'    
+                   
   end
   
 end

@@ -37,8 +37,15 @@
 			    	<%= offer.offer_cr_per_click %> 
 			    	<strong> Max Credit</strong> : 
 			    	<%= offer.offer_budget %>
-			    	<strong>Country</strong> : 
-			    	<%= offer.offer_worldwide %>
+			    	<strong>Country</strong> : 			    				    	
+			    	<% if offer.offer_worldwide %>
+			    		Worldwide
+			    	<% else %>
+			    		<%= Country.getcountryname(offer.country_id).country %>
+			    	<% end %>
+			    	
+			    	
+			    	
 			    </p>
 			    <p>
 			    	<strong>Category</strong> : 
@@ -53,7 +60,14 @@
 						end_date = DateTime.parse(end_date_format)
 						
 			    	%>		
-			    	    				    				    	
+			    
+			    	    		
+			    	<%
+			    		if Date.today > end_date    	
+			    			
+			    	%>	
+			    	testing
+			    	<% end %>	    				    	
 			    	<%=
 						start_date.strftime("#{start_date.day.ordinalize} %b %Y")
 			    	%>

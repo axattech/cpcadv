@@ -17,6 +17,21 @@ class VisitorTrackerController < ApplicationController
        return
     end
 
+    end_date_format = format_date(offerList.offer_end_date)
+    end_date = DateTime.parse(end_date_format)
+      
+      
+    if Date.today > end_date
+        redirect_to root_url
+    end
+       
+    offer_redeem_credit = OfferRedeem.where(:offers_id => offerList.id).sum(:amount)
+    
+    if offer_redeem_credit >= offerList.offer_budget
+      redirect_to root_url
+    end
+    
+
     if offerList      
       @refer_url = request.env['HTTP_REFERER']
       @ip_addr = request.env['REMOTE_ADDR']    
@@ -46,8 +61,7 @@ class VisitorTrackerController < ApplicationController
               findOfferRedeem =  OfferRedeem.find(:all,:conditions => [@query1])
               @total_count = findOfferRedeem.count
               
-             if member_id != offerList.  member_id    
-                        
+             if member_id != offerList.  member_id                            
                 if @total_count < offerList.offer_max_clicks_per_user
                   objOfferRedeem =  OfferRedeem.new
                   objOfferRedeem.offers_id =   offerList.id
@@ -62,14 +76,12 @@ class VisitorTrackerController < ApplicationController
                   offer_old_credit_value = offer_data.offer_credit
                    
                   offer_data.offer_credit =  offer_old_credit_value - offerList.offer_cr_per_click 
-                  offer_data.save!                                                                 
-                end              
-                
+                  offer_data.save!                                                                                                
+                end                              
              end
-              
-              
-                                      
+                                                                  
             end
+              redirect_to offerList.offer_link    
                   
         else
           
