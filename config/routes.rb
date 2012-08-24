@@ -46,7 +46,7 @@ CpcadvApp::Application.routes.draw do
   #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
 
   get "/:member_random_code/:random_code" =>"visitor_tracker#track"
-  
+  get "mailverify" => "Members#mailverify"
   
   post "members/:id" => "Members#banuser"
   

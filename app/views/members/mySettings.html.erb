@@ -61,7 +61,10 @@
 						%>		
 								Your email <%= @withdrawcredits.paypal_email %> is not verified yet. Please verify your email to get credits.								
 						<%
-							end					
+							else
+						%>		
+								Your email <%= @withdrawcredits.paypal_email %> is  verified.
+						<%	end					
 						%>	
 						
 						<%= tag "input", { "type" => "button", "value" => "WithDraw Credits to Cash", "onclick" => "toggleShareLinkDiv('withdrawCash')" } %>

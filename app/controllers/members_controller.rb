@@ -178,4 +178,22 @@ class MembersController < ApplicationController
                    
   end
   
+  def mailverify
+    
+    user_id = params[:user_id]
+    code = params[:code]
+    
+     @withDrawCash = CreditsWithdraw.find_by_members_id(session[:user_id])  
+     
+     @withDrawCash.update_attribute(:email_verification,TRUE)
+     
+     if @withDrawCash.email_verification_code == code
+       render 'members/mailverify'              
+     else
+       redirect_to root_url  
+     end
+     
+     
+  end
+  
 end
