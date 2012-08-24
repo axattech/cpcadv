@@ -185,6 +185,11 @@ class MembersController < ApplicationController
     user_id = params[:user_id]
     code = params[:code]
     
+     if user_id.blank? || code.blank?
+      redirect_to root_url  
+      return
+    end
+    
      @withDrawCash = CreditsWithdraw.find_by_members_id(user_id)  
           
      if @withDrawCash.email_verification_code == code

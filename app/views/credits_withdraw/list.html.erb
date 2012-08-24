@@ -10,12 +10,13 @@
 	
 <% if  flash[:cs_update_notice] %>
 <tr>
-  	<td colspan="5">  <%= flash[:cs_update_notice] %>	</td> 
+  	<td colspan="6">  <%= flash[:cs_update_notice] %>	</td> 
 </tr>	
 <% end %>
   <tr>
     <th>User name</th>
     <th>Paypal email</th>
+    <th>Email verification status</th>
     <th>Status</th>
     <th>Credits</th>   
     <th>Credits in $</th>   
@@ -27,6 +28,14 @@
   <tr>
     <td><%= objMember.getMemberDataById(cw.members_id).username %></td>
     <td><%= cw.paypal_email %></td>
+    <td>
+    	<% if  cw.email_verification %>
+    		Done
+    	<% else %>
+    		Not done		
+    	<% end %>
+    	
+    </td>
     <td>    	
     	<% if cw.status %>
     		Done
@@ -44,7 +53,7 @@
 <% end %>
 	
 	<tr>
-		<td colspan="5" align="right"><%= paginate @cw_results %></td>
+		<td colspan="6" align="right"><%= paginate @cw_results %></td>
 	</tr>
 </table>
 <br />
