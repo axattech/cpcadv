@@ -1,6 +1,6 @@
 class CreditsWithdraw < ActiveRecord::Base
   belongs_to :members
-  attr_accessible :credits, :paypal_email, :status
+  attr_accessible :credits, :paypal_email, :status, :email_verification, :email_verification_code
   
   
   def getCwDataById(member_id)       
