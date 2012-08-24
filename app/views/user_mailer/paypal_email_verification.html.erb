@@ -10,7 +10,11 @@ user_name = Member.find_by_id(member_id).username
 <%
 path = "mailverify?user_id=#{member_id}&code=#{code}"
 %>
-<% url = "http://#{request.host}:#{request.port.to_s}/#{path}" %>
+<% link = "#{@url}#{path}" %>
+<%
+logger.debug "urlparam: #{link}"
+%>
 
-<p><a href="<%= url %>">Verify email</a></p>
+
+<p><a href="<%= link %>">Verify email</a></p>
 <p>Thanks <br /> CPC Team</p>

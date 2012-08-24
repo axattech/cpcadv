@@ -145,7 +145,11 @@ class MembersController < ApplicationController
     
       if @withDrawCash!= params[:email]
          if @withDrawCash.update_attribute(:paypal_email , params[:email])
-          UserMailer.paypal_email_verification(session[:user_id]).deliver
+           
+          url = "http://#{request.host}:#{request.port.to_s}/"
+          
+          UserMailer.paypal_email_verification(session[:user_id],url).deliver
+          
           flash[:cw_update_notice] = "Email id has updated successfully."
          else
           flash[:cw_update_notice] = "Oops! Something went wrong."
@@ -161,7 +165,7 @@ class MembersController < ApplicationController
       random_string = SecureRandom.hex(16)
       objCw.email_verification_code = random_string
       
-      UserMailer.paypal_email_verification(session[:user_id]).deliver
+      UserMailer.paypal_email_verification(session[:user_id],url).deliver
       
       if objCw.save!   
          flash[:cw_update_notice] = "Email id has added to our database. Within few days you will get credit."
