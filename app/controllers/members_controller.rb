@@ -144,7 +144,9 @@ class MembersController < ApplicationController
     if  @withDrawCash = CreditsWithdraw.find_by_members_id(session[:user_id])  
     
       if @withDrawCash!= params[:email]
-         if @withDrawCash.update_attribute(:paypal_email , params[:email])
+        random_string = SecureRandom.hex(16)
+      
+         if @withDrawCash.update_attributes(:paypal_email => params[:email], :email_verification => FALSE, :email_verification_code => random_string )                    
            
           url = "http://#{request.host}:#{request.port.to_s}/"
           
