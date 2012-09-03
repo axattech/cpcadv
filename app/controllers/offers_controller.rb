@@ -67,7 +67,7 @@ class OffersController < ApplicationController
         Offer.find(insert_id).update_attribute(:random_code, random_string)
               
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }
-         redirect_to :action=>'myOffers' 
+         redirect_to :action=>'promoteOffers?qs=myoffer' 
          return
         format.json { render json: @offer, status: :created, location: @offer }
       else
