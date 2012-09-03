@@ -4,6 +4,7 @@ protect_from_forgery :except => [:create]
 
 def create
   PaymentNotification.create!(:params => params, :offer_id => params[:invoice], :status => params[:payment_status], :transaction_id => params[:txn_id])
+  session :on
   render :nothing => true
 end
 
