@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   layout false
   
   def index
-      abort('exit from home')
+       logger.debug "HOMEPAGECONTROLLER:"
       @member = Member.new(params[:member])   
       if session[:user_id]
         objMember = Member.new
