@@ -208,7 +208,10 @@ class Offer < ActiveRecord::Base
       :cert_id => APP_CONFIG[:paypal_cert_id],                
       :notify_url => notify_url
     }
-      logger.debug APP_CONFIG[:paypal_cert_id]
+     
+     logger.debug "return url: #{return_url}"
+      
+      
       
     encrypt_for_paypal(values)
   end
