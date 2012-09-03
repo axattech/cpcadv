@@ -108,7 +108,7 @@
 				    	
 				    	
 				    	<% if offer.offer_status %>
-				    		<% return_url = "https://#{request.host}#{request.fullpath}" %>
+				    		<% return_url = "http://simple-earth-5502.herokuapp.com/offers/new" %>
 							<%= form_tag APP_CONFIG[:paypal_url] do %>  
 								<%= hidden_field_tag :cmd, "_s-xclick" %>
 								<%= hidden_field_tag :return, return_url %>								
