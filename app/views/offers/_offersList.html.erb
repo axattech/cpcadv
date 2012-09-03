@@ -108,7 +108,7 @@
 				    	
 				    	
 				    	<% if offer.offer_status %>
-				    		<% return_url = "https://#{request.host}:#{request.port.to_s + request.fullpath}" %>
+				    		<% return_url = "https://#{request.host}#{request.fullpath}" %>
 							<%= form_tag APP_CONFIG[:paypal_url] do %>  
 								<%= hidden_field_tag :cmd, "_s-xclick" %>
 								<%= hidden_field_tag :rurl, return_url %>
@@ -161,7 +161,7 @@
 						<%= form_tag("/topup") do %>														
 							<%= label_tag 'amount', 'Enter amount' %>
 							<%= text_field_tag :amount, params[:amount] %>	
-							<%  return_url = "https://#{request.host}:#{request.port.to_s + request.fullpath}" %>
+							<%  return_url = "https://#{request.host}#{request.fullpath}" %>
 							<%= hidden_field_tag :return_url,return_url  %>
 							<%= hidden_field_tag :offer_id,offer.id  %>
 							<%= hidden_field_tag :offer_name,offer.offer_name  %>							
