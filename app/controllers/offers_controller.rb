@@ -63,7 +63,7 @@ class OffersController < ApplicationController
     
     if @offer.save        
         insert_id = @offer.id
-        random_string = SecureRandom.hex(16)
+        random_string = SecureRandom.hex(10)
         Offer.find(insert_id).update_attribute(:random_code, random_string)
               
         format.html { redirect_to @offer, notice: 'Offer was successfully created.' }

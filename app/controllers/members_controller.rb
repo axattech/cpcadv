@@ -40,7 +40,7 @@ class MembersController < ApplicationController
     if @member.save  
     
       insert_id = @member.id
-      random_string = SecureRandom.hex(16)
+      random_string = SecureRandom.hex(10)
       Member.find(insert_id).update_attribute(:random_code, random_string)   
     
        flash[:success] = "Member was successfully created."   
