@@ -2029,3 +2029,104 @@ m address_status: confirmed
 2012-07-30T08:03:03+00:00 app[web.1]:   Rendered text template (0.0ms)
 2012-07-30T08:03:03+00:00 app[web.1]: Completed 200 OK in 100ms (Views: 3.1ms | ActiveRecord: 34.2ms)
 2012-07-30T08:03:03+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=179ms status=200 bytes=1
+2012-09-03T13:03:52+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/47/small/Orange-Mobile-offer-from-The-London-Study.jpg"):
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 app[web.1]: Served asset /offers/47/small/Orange-Mobile-offer-from-The-London-Study.jpg - 404 Not Found (1ms)
+2012-09-03T13:03:52+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/47/small/Orange-Mobile-offer-from-The-London-Study.jpg?1346667536 dyno=web.1 queue=0 wait=0ms service=16ms status=404 bytes=728
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 app[web.1]: Started GET "/assets/offers/43/small/special-offer.jpg?1346654708" for 120.63.161.245 at 2012-09-03 15:03:52 +0200
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/43/small/special-offer.jpg"):
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-03T13:03:52+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 app[web.1]: Served asset /offers/43/small/special-offer.jpg - 404 Not Found (1ms)
+2012-09-03T13:03:52+00:00 app[web.1]: 
+2012-09-03T13:03:52+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/special-offer.jpg?1346654708 dyno=web.1 queue=0 wait=0ms service=15ms status=404 bytes=728
+2012-09-03T13:03:53+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
+2012-09-03T13:03:53+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2012-09-03T13:03:53+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2012-09-03T13:03:54+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
+2012-09-03T13:03:54+00:00 app[web.1]: [2012-09-03 15:03:54] INFO  WEBrick 1.3.1
+2012-09-03T13:03:54+00:00 app[web.1]: [2012-09-03 15:03:54] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
+2012-09-03T13:03:54+00:00 app[web.1]: [2012-09-03 15:03:54] INFO  WEBrick::HTTPServer#start: pid=2 port=50873
+2012-09-03T13:03:55+00:00 heroku[web.1]: Process exited with status 137
+2012-09-03T13:03:55+00:00 heroku[web.1]: State changed from starting to up
+2012-09-03T13:04:00+00:00 app[web.1]: 
+2012-09-03T13:04:00+00:00 app[web.1]: 
+2012-09-03T13:04:00+00:00 app[web.1]: Started GET "/assets/offers/39/small/special-offer.jpg?1346650929" for 120.63.161.245 at 2012-09-03 15:04:00 +0200
+2012-09-03T13:04:00+00:00 app[web.1]: 
+2012-09-03T13:04:00+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/39/small/special-offer.jpg"):
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-03T13:04:00+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-03T13:04:00+00:00 app[web.1]: 
+2012-09-03T13:04:00+00:00 app[web.1]: 
+2012-09-03T13:04:00+00:00 app[web.1]: Served asset /offers/39/small/special-offer.jpg - 404 Not Found (2ms)
+2012-09-03T13:04:00+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/39/small/special-offer.jpg?1346650929 dyno=web.1 queue=0 wait=0ms service=140ms status=404 bytes=728
