@@ -178,9 +178,9 @@
 							objMember = Member.new	
 							member_random_code = objMember.getMemberDataById(@logged_user_id).random_code
 												
-							full_url = "#{current_url}#{member_random_code}/#{random_code}/"							
+							full_url = "#{current_url}#{member_random_code}/#{random_code}"							
 						%>												
-						<%= full_url.strip %> 															
+						<%= "#{full_url.strip}/" %> 															
 					</div>
 			    <% end %>
 			</div>
