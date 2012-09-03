@@ -176,8 +176,6 @@ class OffersController < ApplicationController
   
   
   def promoteAndSortOffers
-    
-    abort('exit from pas')
   
    #logger.debug "urlparam: #{params[:qs]}"
     @logged_user_id = session[:user_id]
