@@ -15,7 +15,8 @@ class CreditsWithdrawController < ApplicationController
   end
   
   def updateCreditStatus
-    @cw = CreditsWithdraw.find(params[:id])       
+    @cw = CreditsWithdraw.find(params[:id])   
+        
     if @cw.status
       @cw.update_attribute(:status , "false")
       flash[:cs_update_notice] = "Updated successfully"

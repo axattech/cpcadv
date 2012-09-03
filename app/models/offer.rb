@@ -99,8 +99,7 @@ class Offer < ActiveRecord::Base
       return @offers
     else
       return ''
-    end
-    logger.debug "EMAMUL: #{offerList}"
+    end  
   end
   
   
