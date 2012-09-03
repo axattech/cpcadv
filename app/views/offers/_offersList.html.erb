@@ -161,10 +161,10 @@
 						<%= form_tag("/topup") do %>														
 							<%= label_tag 'amount', 'Enter amount' %>
 							<%= text_field_tag :amount, params[:amount] %>	
-							<%  return_url = "https://#{request.host}#{request.fullpath}" %>
-							<%= hidden_field_tag :rm,1  %>
-							<%= hidden_field_tag :return_url,return_url  %>
+							<%  return_url = "https://google.com" %>
 							
+							<%= hidden_field_tag :return_url,return_url  %>
+							<%= hidden_field_tag :rm,1  %>
 							<%= hidden_field_tag :offer_id,offer.id  %>
 							<%= hidden_field_tag :offer_name,offer.offer_name  %>							
 							<p><%= submit_tag "Pay" %></p>
