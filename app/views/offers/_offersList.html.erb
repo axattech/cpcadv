@@ -111,7 +111,7 @@
 				    		<% return_url = "https://#{request.host}#{request.fullpath}" %>
 							<%= form_tag APP_CONFIG[:paypal_url] do %>  
 								<%= hidden_field_tag :cmd, "_s-xclick" %>
-								<%= hidden_field_tag :rurl, return_url %>
+								
 								
 								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]), offer.id,false,0) %>
 								<% if offer.payment_status == false	%>
