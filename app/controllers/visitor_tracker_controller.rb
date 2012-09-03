@@ -12,6 +12,7 @@ class VisitorTrackerController < ApplicationController
     memberList = Member.find_by_random_code(member_random_code)
     
     if memberList       
+       redirect_to offerList.offer_link
      else
        redirect_to root_url
        return
