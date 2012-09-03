@@ -198,6 +198,7 @@ class Offer < ActiveRecord::Base
     values = {
       :business       => APP_CONFIG[:paypal_email],
       :cmd            => '_xclick',
+      :rm            => 1,
       :upload         => 1,
       :return         => return_url,
       :invoice        => offerList.id,
