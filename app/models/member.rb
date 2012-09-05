@@ -9,12 +9,14 @@ class Member < ActiveRecord::Base
   
   
   validates_uniqueness_of :username, :email
-  validates_format_of :email,
-:with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i
+  
   
   validates_confirmation_of :password
   
-  validates_presence_of :username, :email,  :password, :password_confirmation, :gender, :age, :country_id
+  validates_presence_of :username, :email
+  validates_format_of :email,
+  :with => /^([^\s]+)((?:[-a-z0-9]\.)[a-z]{2,})$/i  
+  validates_presence_of :password, :password_confirmation, :gender, :age, :country_id
   validates_numericality_of :age, :only_integer => true, :message => "should be  whole number."
   
   
