@@ -198,11 +198,11 @@
 		<% elsif action_name == 'promoteAndSortOffers' && params[:qs] == 'myoffer'%>	
 			You have not listed any offer yet, <%= link_to('click here', 'offers/new') %> to list an offer!
 		<% else %>
-			<% if params[:sort_by] = 'awaiting' %>
+			<% if params[:sort_by] == 'awaiting' %>
 				No offers awaiting approval
-			<% elsif params[:sort_by] = 'current_live' %>
+			<% elsif params[:sort_by] == 'current_live' %>
 				No live offers are there
-			<% elsif params[:sort_by] = 'expired' %>
+			<% elsif params[:sort_by] == 'expired' %>
 				No expired offers are there
 			<% end %>
 			
