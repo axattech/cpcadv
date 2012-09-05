@@ -189,6 +189,10 @@
 		<% end %>
 		<%= paginate @offers %>
 	<% else %>
+		<%= action_name %>
+		<%= params[:qs] %>
+		<%= params[:sort_by] %>
+		
 		<% if action_name == 'promoteAndSortOffers' && params[:qs] != 'myoffer' %>
 			No Offers Found.
 		<% elsif action_name == 'promoteAndSortOffers' && params[:qs] == 'myoffer'%>	
