@@ -13,7 +13,9 @@
 	        end            
         %>
         <ul>
-        	<li><%= link_to('My offers, '/promoteOffers?qs=myoffer', :title => 'My offers') %></li>
+        	<li>
+        		<%= link_to('My offers', '/promoteOffers?qs=myoffer', :title => 'My offers') %>
+        	</li>
         	
         	<li>
         		<%=	link_to "Latest Offers First", :controller =>"offers", :action => "promoteAndSortOffers", :sort_by => "latest" , :qs=>@qs  %>
