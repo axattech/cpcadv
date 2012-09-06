@@ -42,6 +42,8 @@ CpcadvApp::Application.routes.draw do
   get "admin/dashboard" => "AdminUser#index"
   #get 'admin/offers' => 'offers#index'
   get "admin/members" => "members#index"
+  
+  post "/admin/members/:id" => "members#banuser"
 
   get "admin/categories" => "categories#index"
   get "admin/categories/new" => "categories#new"

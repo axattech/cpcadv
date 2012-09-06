@@ -53,9 +53,9 @@
     </td>
     <td>
     	    <% if mem.status%>
-    	  		<%= link_to 'Ban User', mem, method: :banuser, data: { confirm: 'Are you sure want to ban this user?' } %>
+    	  		<%= link_to 'Ban User', "/admin/members/#{mem.id}", method: :banuser, data: { confirm: 'Are you sure want to ban this user?' } %>
     	  	<% else %>
-    	  	   	<%= link_to 'Permit User', mem, method: :permituser, data: { confirm: 'Are you sure want to permit this user?' } %>
+    	  	   	<%= link_to 'Permit User', "/admin/members/#{mem.id}", method: :banuser, data: { confirm: 'Are you sure want to permit this user?' } %>
     	  	<% end %>    	      	  	    	      	 
     </td>
    
