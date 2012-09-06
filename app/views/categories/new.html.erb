@@ -6,9 +6,19 @@
 
 <h1>New category</h1>
 
-<%= render 'form' %>
+<% if @category.errors.any? %>
+    <div class="error_messages">     
+      <ul>
+        <% for message in @category.errors.full_messages %>
+          <li><%= message %></li> 
+        <% end %>
+      </ul>
+    </div>
+<% end %>
 
-<%= link_to 'Back', categories_path %>
+
+<%= render 'form' %>
+<%=  link_to "Back", {:controller => "categories", :action => "index"} %>
 
 </div>
 

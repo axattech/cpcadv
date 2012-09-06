@@ -34,10 +34,7 @@ class CategoriesController < ApplicationController
   def new
     @category = Category.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @category }
-    end
+  
   end
 
   # GET /categories/1/edit
@@ -50,15 +47,14 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(params[:category])
 
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render json: @category, status: :created, location: @category }
+    
+      if @category.save              
+         flash[:cat_create_success] = "Category was successfully created."                     
+         redirect_to :controller=>'categories', :action => 'index'                     
       else
-        format.html { render action: "new" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+                 render "categories/new"      
       end
-    end
+   
   end
 
   # PUT /categories/1
@@ -66,15 +62,16 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
 
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-        format.json { head :no_content }
+    
+      if @category.update_attributes(params[:category])                   
+         # render "categories/edit"
+          flash[:cat_update_success] = "Category was successfully updated."                     
+          redirect_to :controller=>'categories', :action => 'index'
+
       else
-        format.html { render action: "edit" }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
+          render "categories/edit"           
       end
-    end
+   
   end
 
   # DELETE /categories/1
@@ -83,9 +80,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
 
-    respond_to do |format|
-      format.html { redirect_to categories_url }
-      format.json { head :no_content }
-    end
+     redirect_to :controller=>'categories', :action => 'index'  
   end
 end

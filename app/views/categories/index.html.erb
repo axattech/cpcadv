@@ -3,18 +3,32 @@
 <%= render 'admin_user/admin_lhs' %>
 
 <div class="rhscontent">
-
+<% if @cat_results.count == 0 %>
+<h1>There is no categories.</h1>
+<% else %>
 
 
 <h1>List of Categories</h1>
-
 <table>
+	<% if flash[:cat_create_success] %>
+		<tr>
+			<td colspan="5"><%= flash[:cat_create_success] %></td>
+		<tr>
+	<% end %>
+	
+	
+	
+	<% if flash[:cat_update_success] %>
+		<tr>
+			<td colspan="5"><%= flash[:cat_update_success] %></td>
+		<tr>
+	<% end %>
+	
+	
   <tr>
     <th>Category name</th>
     <th>Status</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan="2">Action</th>
   </tr>
 
 <% @cat_results.each do |category| %>
@@ -29,23 +43,35 @@
     	<% end %>
     	
    </td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Delete', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+ 	<td >
+			<%= link_to "Edit", :controller => "categories", :action => "update", :id => category.id %>
+			<%= link_to 'Delete', "/admin/categories/#{category.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+			
+		</td>
+    
   </tr>
 <% end %>
 <tr>
-		<td colspan="4"></td>
+		
+
 	</tr>
 	<tr>
-		<td colspan="4" align="right"><%= paginate @cat_results %></td>
+		<td colspan="3" align="right"><%= paginate @cat_results %></td>
 	</tr>
 </table>
 
+
+<% end %>
+
+
+
+
+
 <br />
 
-<%= link_to 'New Category', new_category_path %>
 
- 
+
+ <%=  link_to "New Category", {:controller => "categories", :action => "new"} %>
 
 </div>
 

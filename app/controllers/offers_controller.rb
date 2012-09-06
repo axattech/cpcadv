@@ -177,7 +177,7 @@ class OffersController < ApplicationController
   
   def promoteAndSortOffers
   
-   #logger.debug "urlparam: #{params[:qs]}"
+   
     @logged_user_id = session[:user_id]
    
     if !@logged_user_id
@@ -205,6 +205,7 @@ class OffersController < ApplicationController
       objOff = Offer.new
       @offers = objOff.getOffersToPromoteAndSort(arrParams)
     end
+    logger.debug "urlparam: #{params[:qs]}"
   end 
   
   

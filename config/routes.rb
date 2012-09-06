@@ -1,64 +1,83 @@
 CpcadvApp::Application.routes.draw do
-  
-  get "credits_withdraw/list"
+
+  get "admin/credits_withdraw/list" => "credits_withdraw#list"
 
   get "visitor_tracker/track"
 
   resources :payment_notifications
 
   get "share_offer/CreateLink"
-
-  resources :offers
-
-  resources :categories
-
- # get "members" => "home#index"
+  get "admin/offers" => "offers#index"
+  get "/offers/new" =>"offers#new"
+  post "/offers/create" =>"offers#create"
+  get "/offers/promoteOffers" =>"offers#promoteAndSortOffers"
+  get "/promoteOffers" =>"offers#promoteAndSortOffers"
+  
+  get "offers/:id/edit" => "offers#edit"
+  
+ put "offers/:id/edit" => "offers#update"
  
-
+ post "/admin/offers/:id" => "offers#approverejectoffer"
  
+  #resources :offers
+
+  #resources :categories
+
+
+
+
+  # get "members" => "home#index"
+
   #get "offers" => "home#index"
-  resources :members
+  #resources :members
+
+  get "admin/members" => "members#index"
+  post "/members" => "members#create"
+  
 
   #match "admin/index" => "AdminUser#index", :as => "admin/dashboard"
-  
+
   #g 'admin/dashboard', to: 'AdminUser#index'
-  
-  
+
   get "admin/dashboard" => "AdminUser#index"
-  #get 'admin/offers' => 'offers#index' 
+  #get 'admin/offers' => 'offers#index'
   get "admin/members" => "members#index"
+
+  get "admin/categories" => "categories#index"
+  get "admin/categories/new" => "categories#new"
   
+  get "admin/categories/:id/edit" => "categories#edit"
+  put "admin/categories/:id/edit" => "categories#update"
+  delete "admin/categories/:id" => "categories#destroy"
   
+  post "admin/categories/new" => "categories#create"
   
+  put "admin/categories/new" => "categories#update"
   
-  
-   post "topup" => "offers#topup"
-  
+
+  post "topup" => "offers#topup"
+
   post "login" => "home#login"
-  
+
   post "updateMemberDetail" =>"members#updateMemberDetail"
   post "updateMemberSettings" =>"members#updateMemberSettings"
-  
+
   get "sign_up" => "members#new", :as => "sign_up"
   get 'sortMyOffers/:qs/:sort_by/' =>'offers#sortMyOffers'
 
-    #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
+  #get "admin_user/index" => "AdminUser#index", :as => "admin/index"
   #post "admin_user/index" => "AdminUser#index", :as => "admin/index"
 
   get "/:member_random_code/:random_code" =>"visitor_tracker#track"
   get "mailverify" => "Members#mailverify"
-  
+
   post "members/:id" => "Members#banuser"
-  
+
   post "offers/:id" => "Offers#approverejectoffer"
-  
+
   post "credits_withdraw/:id" => "credits_withdraw#updateCreditStatus"
-  
-  
-  
-  
+
   post "offers/os/:id" => "Offers#stopoffer"
-  
 
   #get "admin_user/logout"
 
@@ -72,14 +91,13 @@ CpcadvApp::Application.routes.draw do
   match 'myOffers', to: 'offers#myOffers', as: 'myOffers'
   match 'mySettings', to: 'members#mySettings', as: 'mySettings'
   match 'withDrawCash', to: 'members#withDrawCash', as: 'withDrawCash'
-  match 'promoteOffers', to: 'offers#promoteAndSortOffers', as: 'promoteOffers'
+  
   match 'sortOffers/:sort_by', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'sortOffers/:sort_by/:category_id', to: 'offers#promoteAndSortOffers', as: 'sortOffers'
   match 'offerPayment/:offer_id', to: 'offers#offerPayment', as: 'offerPayment'
-  #match 'promoteOffers1', to: 'offers#promoteOffers1', as: 'promoteOffers1'
+ 
   match 'login', to: 'home#loginPage', as: 'login'
-  
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -130,22 +148,17 @@ CpcadvApp::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'home#index'
-  
+
   #admin_root :to => 'AdminUser#index'
-  
+
   get "admin" => "AdminUser#login"
   post  "admin" => "AdminUser#login"
-  
-    
-  get "log_out" => "AdminUser#logout"#, :as => "log_out"
- 
- 
 
+  get "admin/log_out" => "AdminUser#logout"#, :as => "log_out"
 
+# See how all your routes lay out with "rake routes"
 
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+# This is a legacy wild controller route that's not recommended for RESTful applications.
+# Note: This route will make all actions in every controller accessible via GET requests.
+# match ':controller(/:action(/:id))(.:format)'
 end

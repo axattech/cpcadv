@@ -123,13 +123,12 @@
 					<div id="analytic_<%= index %>" style="display: none">
 						
 						<p><strong>Time since offer was lived:</strong>									
-						<%= 						
-						#Time.now
-						#Time.parse("2010-01-01 12:30:00")
-						if offer.payment_status
-							time_diff_format(offer.offer_live_date,Time.now)	
-						end						
-						%>
+						
+						<% if offer.payment_status %>
+						<%=	time_diff_format(offer.offer_live_date,Time.now)	%>	
+						<%	else %>	
+						Offer is not lived yet	
+						<% end %>
 						</p>
 						<%					
 						offerredeemList = OfferRedeem.find(:all, 

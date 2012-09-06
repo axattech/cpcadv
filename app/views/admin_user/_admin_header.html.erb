@@ -47,7 +47,7 @@
                     </script>                    
                 </div>
                  <div class="tpmenu-rht"><strong>Welcome Admin!</strong><img src="images/user-icon.png" alt="" class="imgsz"/>
-                    	<%= link_to "Log out", log_out_path %>
+                    	<%= link_to "Log out", :controller => "AdminUser", :action => "logout"  %>
 				</div>
             </div>
             <% end %>

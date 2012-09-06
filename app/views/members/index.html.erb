@@ -7,9 +7,11 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>List of users</h1>
-
-<table>
+	<% if @results.count == 0 %>	
+		<h1>There is no users.</h1>	
+	<% else %>
+		<h1>List of users</h1>
+		<table>
   <tr>
     <th>Username</th>
     <th>Email</th>   
@@ -50,21 +52,11 @@
     	<% end %>        	    
     </td>
     <td>
-    	  <td>
-    	  	<% if mem.status%>
+    	    <% if mem.status%>
     	  		<%= link_to 'Ban User', mem, method: :banuser, data: { confirm: 'Are you sure want to ban this user?' } %>
     	  	<% else %>
     	  	   	<%= link_to 'Permit User', mem, method: :permituser, data: { confirm: 'Are you sure want to permit this user?' } %>
-    	  	<% end %>
-    	      	  	    	  
-    	  </td>
-    	  
-    	 
-    	  
-    	 <td>
-    	
-    	 	
-    	 </td>
+    	  	<% end %>    	      	  	    	      	 
     </td>
    
   </tr>
@@ -79,11 +71,16 @@
 			%>
 			<%= paginate @results, :params => {:controller => 'members', :action => 'index'} %>
 		</td>
-
-
-		
 	</tr>
 </table>
+	
+		
+	<% end %>
+
+
+
+
+
 
 </div>
 

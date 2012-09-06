@@ -5,10 +5,22 @@
 <div class="rhscontent">
 <h1>Editing category</h1>
 
+
+<% if @category.errors.any? %>
+    <div class="error_messages">     
+      <ul>
+        <% for message in @category.errors.full_messages %>
+          <li><%= message %></li> 
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+
+
 <%= render 'form' %>
 
-<!--<%= link_to 'Show', @category %> | -->
-<%= link_to 'Back', categories_path %>
 
 
 </div>

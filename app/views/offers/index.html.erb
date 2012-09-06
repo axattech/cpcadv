@@ -7,7 +7,9 @@
 <p id="notice"><%= notice %></p>
 	<div id="user-conatiner">
 		
-		
+		<% if @offers.count == 0 %>
+			<h1>No offers found.</h1>
+		<% end %>
 		<% @offers.each do |offer| %>
 		
 			
@@ -35,7 +37,7 @@
 				<%
 					if offer.offer_status
 				%>
-						<%= link_to 'Reject Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>					
+						<%= link_to 'Reject Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>					
 				<%	else
 				%>
 						 <%= link_to 'Reject Offer','#', :onclick => 'javascript:void(0)' %>
@@ -50,9 +52,9 @@
 					if offer.offer_status
 				%>						
 						<%= link_to 'Approve Offer','#', :onclick => 'javascript:void(0)' %>					
-				<%	else
-				%>
-						 <%= link_to 'Approve Offer', offer, method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+				<%	else %>
+						 <%= link_to 'Approve Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+						 <%= link_to 'Approve Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
 				<%	
 					end
 				%>
