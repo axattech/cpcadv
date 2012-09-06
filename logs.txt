@@ -1,102 +1,101 @@
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/initializable.rb:54:in `run_initializers'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:136:in `initialize!'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `initialize'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/config.ru:4:in `block in <main>'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/config.ru:1:in `new'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `instance_eval'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/config.ru:4:in `require'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `eval'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/config.ru:1:in `<main>'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `parse_file'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands/server.rb:46:in `app'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:200:in `app'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:252:in `start'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands/server.rb:70:in `start'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands.rb:55:in `block in <top (required)>'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:301:in `wrapped_app'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands.rb:50:in `tap'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands.rb:50:in `<top (required)>'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from script/rails:6:in `require'
-2012-09-05T07:03:36+00:00 app[web.1]: 	from script/rails:6:in `<main>'
-2012-09-05T07:03:37+00:00 heroku[web.1]: Process exited with status 1
-2012-09-05T07:03:37+00:00 heroku[web.1]: State changed from starting to crashed
-2012-09-05T07:03:37+00:00 heroku[web.1]: State changed from crashed to starting
-2012-09-05T07:03:38+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-05T07:03:38+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-05T07:03:40+00:00 heroku[web.1]: Process exited with status 137
-2012-09-05T07:03:40+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 19780`
-2012-09-05T07:03:46+00:00 app[web.1]: => Booting WEBrick
-2012-09-05T07:03:46+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:19780
-2012-09-05T07:03:46+00:00 app[web.1]: => Call with -d to detach
-2012-09-05T07:03:46+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-05T07:03:46+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-05T07:03:46+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-05T07:03:47+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-05T07:03:53+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-05T07:03:54+00:00 app[web.1]: Exiting
-2012-09-05T07:03:54+00:00 app[web.1]: /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:251:in `require': /app/app/models/member.rb:13: syntax error, unexpected tASSOC, expecting keyword_end (SyntaxError)
-2012-09-05T07:03:54+00:00 app[web.1]:     :with => /^(+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-2012-09-05T07:03:54+00:00 app[web.1]:             ^
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:251:in `block in require'
-2012-09-05T07:03:54+00:00 app[web.1]: target of repeat operator is not specified: /^(+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:236:in `load_dependency'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:251:in `require'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:359:in `require_or_load'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:502:in `load_missing_constant'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:192:in `block in const_missing'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:190:in `each'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:190:in `const_missing'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/inflector/methods.rb:229:in `block in constantize'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/inflector/methods.rb:228:in `each'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/inflector/methods.rb:228:in `constantize'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/inflector/methods.rb:259:in `safe_constantize'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_controller/metal/params_wrapper.rb:152:in `_default_wrap_model'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/core_ext/string/inflections.rb:66:in `safe_constantize'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_controller/metal/params_wrapper.rb:169:in `_set_wrapper_defaults'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_controller/metal/params_wrapper.rb:133:in `inherited'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/abstract_controller/railties/routes_helpers.rb:7:in `block (2 levels) in with'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_controller/railties/paths.rb:7:in `block (2 levels) in with'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:251:in `require'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/app/controllers/members_controller.rb:1:in `<top (required)>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:251:in `block in require'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:236:in `load_dependency'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:251:in `require'
-2012-09-0
-5T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:359:in `require_or_load'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:313:in `depend_on'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/dependencies.rb:225:in `require_dependency'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:439:in `block (2 levels) in eager_load!'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:438:in `each'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:438:in `block in eager_load!'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:436:in `each'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:436:in `eager_load!'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application/finisher.rb:53:in `block in <module:Finisher>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/initializable.rb:30:in `instance_exec'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/initializable.rb:30:in `run'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/initializable.rb:55:in `block in run_initializers'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/initializable.rb:54:in `each'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/initializable.rb:54:in `run_initializers'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/railtie/configurable.rb:30:in `method_missing'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/config/environment.rb:5:in `<top (required)>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:136:in `initialize!'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/config.ru:4:in `require'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/config.ru:4:in `block in <main>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `instance_eval'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:51:in `initialize'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `eval'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/builder.rb:40:in `parse_file'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:200:in `app'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/config.ru:1:in `new'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/config.ru:1:in `<main>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands/server.rb:46:in `app'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:301:in `wrapped_app'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/server.rb:252:in `start'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands/server.rb:70:in `start'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands.rb:55:in `block in <top (required)>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands.rb:50:in `tap'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from /app/vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/commands.rb:50:in `<top (required)>'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from script/rails:6:in `require'
-2012-09-05T07:03:54+00:00 app[web.1]: 	from script/rails:6:in `<main>'
-2012-09-05T07:03:55+00:00 heroku[web.1]: Process exited with status 1
-2012-09-05T07:03:55+00:00 heroku[web.1]: State changed from starting to crashed
-2012-09-05T07:03:56+00:00 heroku[router]: Error H10 (App crashed) -> POST simple-earth-5502.herokuapp.com/members dyno= queue= wait= service= status=503 bytes=
+2012-09-06T14:39:50+00:00 app[web.1]: Completed 200 OK in 3002ms (Views: 1997.0ms | ActiveRecord: 770.2ms)
+2012-09-06T14:39:50+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/promoteOffers?qs=myoffer dyno=web.1 queue=0 wait=0ms service=3380ms status=200 bytes=8420
+2012-09-06T14:39:51+00:00 app[web.1]: 
+2012-09-06T14:39:51+00:00 app[web.1]: 
+2012-09-06T14:39:51+00:00 app[web.1]: Started GET "/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css" for 120.63.161.245 at 2012-09-06 16:39:51 +0200
+2012-09-06T14:39:51+00:00 app[web.1]: Served asset /frontend-93e0f2471a626f680d5355d81b94d2f3.css - 304 Not Modified (0ms)
+2012-09-06T14:39:51+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css dyno=web.1 queue=0 wait=2ms service=14ms status=304 bytes=0
+2012-09-06T14:39:53+00:00 app[web.1]: 
+2012-09-06T14:39:53+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-06 16:39:52 +0200
+2012-09-06T14:39:53+00:00 app[web.1]: 
+2012-09-06T14:39:53+00:00 app[web.1]: WARN: tilt autoloading 'coffee_script' in a non thread-safe way; explicit require 'coffee_script' suggested.
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled jquery.js  (17ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled jquery_ujs.js  (0ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled jquery-ui.js  (46ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled admin_user.js  (1285ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled credits_withdraw.js  (306ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled categories.js  (166ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled home.js  (156ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled members.js  (143ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled offers.js  (152ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled share_offer.js  (145ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled visitor_tracker.js  (147ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Compiled application.js  (3741ms)  (pid 2)
+2012-09-06T14:40:02+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (10580ms)
+2012-09-06T14:40:02+00:00 app[web.1]: 
+2012-09-06T14:40:02+00:00 app[web.1]: 
+2012-09-06T14:40:02+00:00 app[web.1]: Started GET "/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css" for 120.63.161.245 at 2012-09-06 16:40:02 +0200
+2012-09-06T14:40:03+00:00 app[web.1]: Served asset /application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css - 304 Not Modified (41ms)
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: Started GET "/assets/offers/37/small/logo.png?1346927450" for 120.63.161.245 at 2012-09-06 16:40:03 +0200
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/37/small/logo.png"):
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-06T14:40:03+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=10697ms status=304 bytes=0
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-06T14:40:03+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css dyno=web.1 queue=0 wait=1ms service=10639ms status=304 bytes=0
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-06T14:40:03+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: Served asset /offers/37/small/logo.png - 404 Not Found (2ms)
+2012-09-06T14:40:03+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/37/small/logo.png?1346927450 dyno=web.1 queue=0 wait=0ms service=10321ms status=404 bytes=728
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: 
+2012-09-06T14:40:03+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-06 16:40:03 +0200
+2012-09-06T14:40:03+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (0ms)
+2012-09-06T14:40:03+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=9ms status=304 bytes=0
+2012-09-06T14:40:04+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=2028
+2012-09-06T14:40:04+00:00 app[web.1]: 
+2012-09-06T14:40:04+00:00 app[web.1]: 
+2012-09-06T14:40:04+00:00 app[web.1]: Started GET "/assets/offers/37/small/logo.png?1346927450" for 120.63.161.245 at 2012-09-06 16:40:04 +0200
+2012-09-06T14:40:04+00:00 app[web.1]: 
+2012-09-06T14:40:04+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/37/small/logo.png"):
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-06T14:40:04+00:00 app[web.1]: 
+2012-09-06T14:40:04+00:00 app[web.1]: 
+2012-09-06T14:40:04+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-06T14:40:04+00:00 app[web.1]: Served asset /offers/37/small/logo.png - 404 Not Found (2ms)
+2012-09-06T14:40:04+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/37/small/logo.png?1346927450 dyno=web.1 queue=0 wait=0ms service=20ms status=404 bytes=728
+2012-09-06T14:40:04+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=2329
