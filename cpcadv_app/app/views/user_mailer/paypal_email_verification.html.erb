@@ -1,0 +1,20 @@
+<%
+@withDrawCash = CreditsWithdraw.find_by_members_id(@user_id)
+member_id = @withDrawCash.members_id
+code = @withDrawCash.email_verification_code
+user_name = Member.find_by_id(member_id).username
+%>
+<p>Hello, <%=  user_name %></p>
+<p> To verify your paypal email click on below link</p>
+
+<%
+path = "mailverify?user_id=#{member_id}&code=#{code}"
+%>
+<% link = "#{@url}#{path}" %>
+<%
+logger.debug "urlparam: #{link}"
+%>
+
+
+<p><a href="<%= link %>">Verify email</a></p>
+<p>Thanks <br /> CPC Team</p>

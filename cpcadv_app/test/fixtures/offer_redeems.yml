@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offers: 
+  members: 
+  visitor_trackers: 
+  amount: 
+
+two:
+  offers: 
+  members: 
+  visitor_trackers: 
+  amount: 

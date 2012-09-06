@@ -1,0 +1,41 @@
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent" style="width:200px;margin-left: 400px">
+
+
+<%= stylesheet_link_tag    "admin_user", :media => "all" %>
+<h1>Log in</h1>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+
+
+
+<%= form_tag("", :method => "post") do  %>
+
+  <p>
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email] %>
+  </p>
+  <p>
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </p>
+  <p class="button"><%= submit_tag "Log in" %></p>
+<% end %>
+ 
+
+
+
+
+              
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>
+

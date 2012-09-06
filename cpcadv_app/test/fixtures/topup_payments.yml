@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offers: 
+  amount: 1
+
+two:
+  offers: 
+  amount: 1

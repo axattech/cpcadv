@@ -1,0 +1,97 @@
+
+<%= form_for @offer, :html => { :multipart => true } do |f| %>
+  <% if @offer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+
+      <ul>
+      <% @offer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :offer_name %><br />
+    <%= f.text_field :offer_name %>
+  </div>
+  
+  <% if params[:id]%>
+  <div class="field">
+  	<%= f.label :current_image %><br />
+  	<%= image_tag @offer.image.url(:small) %>
+  </div>
+  
+  <% end %>
+
+
+
+  
+  <div class="field">
+  	<%= f.label :select_image %><br />
+  	<%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_link %><br />
+    <%= f.text_field :offer_link %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_description %><br />
+    <%= f.text_area :offer_description %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_msg %><br />
+    <%= f.text_area :offer_msg %>
+  </div>
+  
+  <%
+  	if @offer.payment_status
+  		disable_status = true
+  	else
+  		disable_status = false	
+  	end	
+  %>
+  <div class="field">
+    <%= f.label :offer_budget %><br />
+    <%= f.number_field :offer_budget ,:disabled => disable_status %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_cr_per_click %><br />
+    <%= f.number_field :offer_cr_per_click %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_max_clicks_per_user %><br />
+    <%= f.number_field :offer_max_clicks_per_user %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_start_date %><br />          
+    <%= f.text_field :offer_start_date, :readonly => 'true'%>
+  </div>
+  <div class="field">
+    <%= f.label :offer_end_date %><br />
+    <%= f.text_field :offer_end_date,:readonly => 'true' %>
+  </div>
+  <div class="field">
+    <%= f.label :offer_worldwide %><br />
+    <%= f.check_box :offer_worldwide %>
+  </div>
+    <%= f.hidden_field :member_id, :value => session[:user_id]  %>
+    	    
+    
+  <div class="field">
+  	
+  	<%= f.label :category %><br />
+  	<%=select("offer", "category_id", Category.all.collect {|ca| [ ca.category_name, ca.id ] }, {:prompt => 'Select Category'}) %>
+  	
+  </div>
+  <div class="field" id="field_country">
+    <%= f.label :country %><br />
+    
+    <%=select("offer", "country_id", Country.all.collect {|c| [ c.country, c.id ] }, {:prompt => 'Select Country'}) %>
+    
+   </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

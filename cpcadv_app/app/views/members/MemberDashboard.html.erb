@@ -1,0 +1,7 @@
+<%= render 'home/header' %>
+	<div class="mainfrmcontainer">
+	    <% if current_user %>
+	        <%= render 'offers/offersList' %>
+	    <% end %>
+	</div>
+<%= render 'home/footer' %>

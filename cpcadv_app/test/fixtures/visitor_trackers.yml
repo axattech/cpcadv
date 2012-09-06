@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ip: MyString
+  refer_url: MyText
+  offers: 
+  members: 
+
+two:
+  ip: MyString
+  refer_url: MyText
+  offers: 
+  members: 

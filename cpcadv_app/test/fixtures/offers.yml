@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  offer_name: MyString
+  offer_link: MyString
+  offer_description: MyText
+  offer_msg: MyText
+  offer_budget: 1
+  offer_cr_per_click: 1
+  offer_max_clicks_per_user: 1
+  offer_start_date: 2012-07-16
+  offer_end_date: 2012-07-16
+  offer_worldwide: false
+  offer_status: false
+  category: 
+  country: 
+
+two:
+  offer_name: MyString
+  offer_link: MyString
+  offer_description: MyText
+  offer_msg: MyText
+  offer_budget: 1
+  offer_cr_per_click: 1
+  offer_max_clicks_per_user: 1
+  offer_start_date: 2012-07-16
+  offer_end_date: 2012-07-16
+  offer_worldwide: false
+  offer_status: false
+  category: 
+  country: 
