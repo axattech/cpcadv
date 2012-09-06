@@ -1,2 +1,0 @@
-module VisitorTrackerHelper
-end
