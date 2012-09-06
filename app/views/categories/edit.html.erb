@@ -1,0 +1,28 @@
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+<h1>Editing category</h1>
+
+
+<% if @category.errors.any? %>
+    <div class="error_messages">     
+      <ul>
+        <% for message in @category.errors.full_messages %>
+          <li><%= message %></li> 
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+
+
+
+<%= render 'form' %>
+
+
+
+</div>
+</div>
+<%= render 'admin_user/admin_footer' %>

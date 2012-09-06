@@ -1,0 +1,206 @@
+<script type="text/javascript">
+	function toggleShareLinkDiv(divId) {
+		$('#'+divId).toggle('slow');
+	}
+</script>
+<div class="mainfrmcontainer">
+	<% if params[:qs] == 'myoffer' %>
+		<%= render 'offers/myOfferLhs' %>
+	<% else %>
+		<%= render 'home/lhs' %>
+	<% end %>
+	
+		<p id="notice"><% if flash[:offer_stop_notice] %> <%= flash[:offer_stop_notice] %> <% end %></p>
+	<% if !@offers.empty? %>
+		<% @offers.each_with_index do |offer, index| %>						
+			<div class="rhs">				
+			    <%= image_tag(offer.image.url(:small), alt: offer.offer_name, class: 'imgr') %>     
+			    
+			    <%= #offer.offer_status 
+			    %>  
+			    <%
+			    	if offer.offer_status
+				%>			    		
+			    	  <h6><%= offer.offer_name %></h6>	
+			    <%	  
+			    	else
+ 				%>			    		
+			    		  <h6><%= offer.offer_name %>&nbsp;(Awaiting Approval...)&nbsp;</h6>	
+			   <%
+			    	end					    	
+			   %>
+			  
+			    <p><%= offer.offer_description %></p>
+			
+			    <p>
+			    	<strong>CPC</strong> : 
+			    	<%= offer.offer_cr_per_click %> 
+			    	<strong> Max Credit</strong> : 
+			    	<%= offer.offer_budget %>
+			    	<strong>Country</strong> : 			    				    	
+			    	<% if offer.offer_worldwide %>
+			    		Worldwide
+			    	<% else %>
+			    		<%= Country.getcountryname(offer.country_id).country %>
+			    	<% end %>
+			    	
+			    	
+			    	
+			    </p>
+			    <p>
+			    	<strong>Category</strong> : 
+			    	<%= Category.getcategoryname(offer.category_id) %>			    
+			    	<strong>Duration</strong> : 
+			    	<%
+			    		require 'date'
+						start_date_format = format_date(offer.offer_start_date)
+						start_date = DateTime.parse(start_date_format)
+						
+						end_date_format = format_date(offer.offer_end_date)
+						end_date = DateTime.parse(end_date_format)
+						
+			    	%>		
+			    
+			    	    		
+			    	<%
+			    		if Date.today > end_date    	
+			    			
+			    	%>	
+			    	testing
+			    	<% end %>	    				    	
+			    	<%=
+						start_date.strftime("#{start_date.day.ordinalize} %b %Y")
+			    	%>
+			    	to
+			    	<%=
+						end_date.strftime("#{end_date.day.ordinalize} %b %Y")
+			    	%>
+			    	
+			    
+			    </p>
+			    <% if @logged_user_id == offer.member_id %>
+			    
+			    	<% if offer.offer_status %>
+			        <p>
+			        	<% if offer.payment_status %>
+			        		Payment of  $<%= offer.offer_budget * 120/100 %> USD has done.
+			        	<% else	%>
+			        		You have to pay : $<%= offer.offer_budget * 120/100 %> USD
+			        	<% end %>			        				        				        	
+			        </p>
+			        <% end %>
+				    <p>			    	
+				    <%=	link_to "Edit", :controller =>"offers", :action => "edit", :id=>offer.id %>			  
+				    </p>
+				    <p>				    	
+				    	<%=	link_to "View Analytics of Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('analytic_#{index}');" %> 
+				    	<% if offer.payment_status  %>
+				    	|
+				    	<%=	link_to "Top Up Offer Budget", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('topUp_#{index}');" %>
+				    	<% end %>
+				    	
+				    	<% if offer.offer_status %>
+				    		<% if offer.offer_stop %>
+				    		<% else %>
+				    			| <%= link_to 'Stop Offer', "offers/os/#{offer.id}", method: :stopoffer, data: { confirm: 'Are you sure want to stop this offer?' } %>				    	
+				    		<% end  %>
+				    	<% end %>	
+				    	
+				    	
+				    	<% if offer.offer_status %>
+				    		<% return_url = "https://#{request.host}#{request.fullpath}" %>
+							<%= form_tag APP_CONFIG[:paypal_url] do %>  
+								<%= hidden_field_tag :cmd, "_s-xclick" %>
+								<%= hidden_field_tag :rurl, return_url %>
+								
+								<%= hidden_field_tag :encrypted, Offer.new.paypal_encrypted(return_url,payment_notifications_url(:secret => APP_CONFIG[:paypal_secret]), offer.id,false,0) %>
+								<% if offer.payment_status == false	%>
+								<p><%= submit_tag "Pay for the offer" %></p>
+								<% end %>
+							<% end %>
+						<% end %>
+					
+					<div id="analytic_<%= index %>" style="display: none">
+						
+						<p><strong>Time since offer was lived:</strong>									
+						
+						<% if offer.payment_status %>
+						<%=	time_diff_format(offer.offer_live_date,Time.now)	%>	
+						<%	else %>	
+						Offer is not lived yet	
+						<% end %>
+						</p>
+						<%					
+						offerredeemList = OfferRedeem.find(:all, 
+             										 :select => "DISTINCT ON (members_id,offers_id) *")
+						%>
+						<p><strong>Total number of times offer is promoted:</strong>
+						<%= 	offerredeemList.count %>
+						</p>
+						<%											   
+							
+							offerredeemList1 = OfferRedeem.find(:all, 
+      												:conditions => ["offers_id = #{offer.id}"])									
+																
+						%>
+						<p>
+							<strong>Total number of unique users clicked:</strong>
+							<%= 	offerredeemList1.count %>							
+						</p>												
+						<%					
+							visitorTrackerList = VisitorTracker.find(:all,
+																	 :conditions => ["offers_id = #{offer.id}"])
+						%>
+						<p>
+							<strong>Total number of clicks:</strong>
+							<%= 	visitorTrackerList.count %>				
+						</p>
+					</div>																				
+					<div id="topUp_<%= index %>" style="display: none">					
+						<%= form_tag("/topup") do %>														
+							<%= label_tag 'amount', 'Enter amount' %>
+							<%= text_field_tag :amount, params[:amount] %>	
+							<%  return_url = "https://#{request.host}#{request.fullpath}" %>
+							
+							<%= hidden_field_tag :return_url,return_url  %>
+							<%= hidden_field_tag :rm,1  %>
+							<%= hidden_field_tag :offer_id,offer.id  %>
+							<%= hidden_field_tag :offer_name,offer.offer_name  %>							
+							<p><%= submit_tag "Pay" %></p>
+						<% end %>
+					</div>				
+				    </p>
+				<% else %>
+					<%= link_to "Share This Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('shareLink_#{index}');" %>
+					<div id="shareLink_<%= index %>" style="display: none">												
+						<% 
+							current_url = "http://#{request.host}/"	
+							random_code = offer.random_code		
+							objMember = Member.new	
+							member_random_code = objMember.getMemberDataById(@logged_user_id).random_code
+												
+							full_url = "#{current_url}#{member_random_code}/#{random_code}"							
+						%>												
+						<%= "#{full_url.strip}/" %> 															
+					</div>
+			    <% end %>
+			</div>
+		<% end %>
+		<%= paginate @offers %>
+	<% else %>			
+		<% if action_name == 'promoteAndSortOffers' && params[:qs] != 'myoffer' %>
+			No Offers Found.
+		<% elsif action_name == 'promoteAndSortOffers' && params[:qs] == 'myoffer'%>	
+			You have not listed any offer yet, <%= link_to('click here', 'offers/new') %> to list an offer!
+		<% else %>
+			<% if params[:sort_by] == 'awaiting' %>
+				No offers awaiting approval.
+			<% elsif params[:sort_by] == 'current_live' %>
+				No live offers are there.
+			<% elsif params[:sort_by] == 'expired' %>
+				No expired offers are there.
+			<% end %>
+			
+		<% end %>
+	<% end %>
+</div>

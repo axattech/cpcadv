@@ -1,0 +1,83 @@
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+<% if @cat_results.count == 0 %>
+<h1>There is no categories.</h1>
+<% else %>
+
+
+<h1>List of Categories</h1>
+<table>
+	<% if flash[:cat_create_success] %>
+		<tr>
+			<td colspan="5"><%= flash[:cat_create_success] %></td>
+		<tr>
+	<% end %>
+	
+	
+	
+	<% if flash[:cat_update_success] %>
+		<tr>
+			<td colspan="5"><%= flash[:cat_update_success] %></td>
+		<tr>
+	<% end %>
+	
+	
+  <tr>
+    <th>Category name</th>
+    <th>Status</th>
+    <th colspan="2">Action</th>
+  </tr>
+
+<% @cat_results.each do |category| %>
+  <tr>
+    <td><%= category.category_name %></td>
+    <td>
+    	
+    	<% if category.status %>
+    	 Active
+    	<% else %>
+    	 Inactive
+    	<% end %>
+    	
+   </td>
+ 	<td >
+			<%= link_to "Edit", :controller => "categories", :action => "update", :id => category.id %>
+			<%= link_to 'Delete', "/admin/categories/#{category.id}", method: :delete, data: { confirm: 'Are you sure?' } %>
+			
+		</td>
+    
+  </tr>
+<% end %>
+<tr>
+		
+
+	</tr>
+	<tr>
+		<td colspan="3" align="right"><%= paginate @cat_results %></td>
+	</tr>
+</table>
+
+
+<% end %>
+
+
+
+
+
+<br />
+
+
+
+ <%=  link_to "New Category", {:controller => "categories", :action => "new"} %>
+
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>
+
+

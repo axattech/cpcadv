@@ -1,0 +1,45 @@
+<div class="mainfrmcontainera">
+		<% if session[:admin_user_id] %>
+<div class="lhscontainer">
+<div class="lhs">	
+	<ul>
+		<li>
+		
+			Total Number of Users: <%=  Member.all .size %>
+		</li>
+		<li>
+			<%					
+				offerredeemList = OfferRedeem.find(:all, 
+             	                                   :select => "DISTINCT ON (offers_id) *")
+			%>
+			
+			
+			Total Number of Offers Promoted: <%=  offerredeemList.count %>
+		</li>
+		<li>		
+			
+			Total Number of Unique Clicks: <%=  OfferRedeem.all .size %>
+		</li>
+		<li>
+			Total Number of Clicks: <%=  VisitorTrackers.all .size %>
+		</li>
+		<li>
+			<%					
+				liveofferList = Offer.find(:all, 
+             	                           :conditions => "payment_status = TRUE AND offer_status = TRUE")
+			%>
+			Live Offers: <%= liveofferList.count %>
+		</li>
+		<li>
+			<%					
+				awaitingofferList = Offer.find(:all, 
+             	                           :conditions => "offer_status = FALSE")
+			%>
+			Offers Awaiting Approval:<%= awaitingofferList.count %>
+		</li>
+
+	</ul>
+
+</div>
+</div>
+<% end %>

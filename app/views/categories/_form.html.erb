@@ -1,0 +1,44 @@
+
+  <% if params[:id] %>
+ 
+  <%= form_for(@category,:url => url_for(:controller => 'categories', :action => 'update')) do |f| %>
+  <div class="field">
+    <%= f.label :category_name %><br />
+    <%= f.text_field :category_name %>
+  </div>
+  <div class="field">
+   <%= f.label :status %><br />
+   <%= f.radio_button :status, TRUE, :checked => true %>Active
+   <%= f.radio_button :status, FALSE %>Inactive
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+  
+  
+  <% else %>
+  
+  <%= form_for(@category,:url => url_for(:controller => 'categories', :action => 'new')) do |f| %>
+  <div class="field">
+    <%= f.label :category_name %><br />
+    <%= f.text_field :category_name %>
+  </div>
+  <div class="field">
+   <%= f.label :status %><br />
+   <%= f.radio_button :status, TRUE, :checked => true %>Active
+   <%= f.radio_button :status, FALSE %>Inactive
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+  
+  
+  
+  <% end %>
+  
+  
+  

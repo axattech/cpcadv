@@ -1,0 +1,43 @@
+<%= render 'home/header' %>
+
+<script type="text/javascript">
+	/*if(window.opener) {
+	   window.opener.location.reload(true);
+	   window.close()
+	}*/
+</script>
+  
+
+<div class="mainfrmcontainer">
+        <div class="rhs">
+        	<% if  flash[:user_update_valuse_notice] %>
+				<div class="error_messages" style="clear: left;">     
+			      <ul>
+			       <%=    flash[:user_update_valuse_notice] %>
+			      </ul>
+			    </div>
+			<% end %>	
+			<div style="float: left;">
+			<%= form_tag("/updateMemberDetail", :method => "post") do  %>		   		
+			 <p>
+		      	<%= label_tag :gender %><br />
+		       	<%= radio_button_tag :gender, 'm', :checked => true %>Male   
+		       	<%= radio_button_tag :gender, 'f' %>Female             
+      		</p>
+			 <p>
+		      	<%= label_tag :age %><br />
+		      	<%= text_field_tag :age %>
+      		</p>
+      		<p>
+      			<%= label_tag :country, "country" %><br />
+      			<%= select_tag "country_id",   options_from_collection_for_select(Country.all.collect, "id", "country") , {:prompt => 'Select Country'} %>
+      		</p> 
+			<p>							
+		    <%= submit_tag "Update",  :class => 'tplogin' %>
+		    </p>								
+			<% end %>
+			</div>
+        </div>
+	
+</div>
+<%= render 'home/footer' %>

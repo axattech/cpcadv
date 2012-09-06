@@ -1,0 +1,90 @@
+<%= render 'admin_user/admin_header' %>
+
+<%= render 'admin_user/admin_lhs' %>
+
+<div class="rhscontent">
+
+
+<p id="notice"><%= notice %></p>
+
+	<% if @results.count == 0 %>	
+		<h1>There is no users.</h1>	
+	<% else %>
+		<h1>List of users</h1>
+		<table>
+  <tr>
+    <th>Username</th>
+    <th>Email</th>   
+    <th>Country</th>
+    <th>Account Type</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+
+<% @results.each do |mem| %>
+  <tr>
+    <td><%= mem.username %></td>
+    <td><%= mem.email %></td>    
+    <%
+    	 if mem.country_id != 0
+    %>
+    <td><%=   Country.getcountryname(mem.country_id).country %></td>
+    <%
+    	else
+    %>
+    	Offer Worldwide		
+    <%
+    	end
+    %>
+    <td>
+    	
+    	<% if mem.provider = 'CPC' %>
+    		Normal
+    	<% else %>
+    		 	<%= mem.provider %>
+    	<% end %>    	    	
+    </td>
+    <td>
+    	<% if mem.status %>
+    	 Active
+    	<% else %>
+    	 Inactive
+    	<% end %>        	    
+    </td>
+    <td>
+    	    <% if mem.status%>
+    	  		<%= link_to 'Ban User', mem, method: :banuser, data: { confirm: 'Are you sure want to ban this user?' } %>
+    	  	<% else %>
+    	  	   	<%= link_to 'Permit User', mem, method: :permituser, data: { confirm: 'Are you sure want to permit this user?' } %>
+    	  	<% end %>    	      	  	    	      	 
+    </td>
+   
+  </tr>
+<% end %>
+	<tr>
+		<td colspan="6"> </td>
+	</tr>
+	<tr>
+		<td colspan="6" align="right">			
+			<%	#logger.debug "paginate: #{paginate @results}"
+				
+			%>
+			<%= paginate @results, :params => {:controller => 'members', :action => 'index'} %>
+		</td>
+	</tr>
+</table>
+	
+		
+	<% end %>
+
+
+
+
+
+
+</div>
+
+
+
+</div>
+<%= render 'admin_user/admin_footer' %>

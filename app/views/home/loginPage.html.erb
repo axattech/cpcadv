@@ -1,0 +1,25 @@
+<%= render 'home/header' %>
+	<div class="mainfrmcontainer">
+		<div class="frmmainbody">
+			
+			<div class="mainfrmbrlow">
+                <div class="frmright">
+                    <h2>Login</h2>
+                    <div class="tpfrmsec">
+                    	<% if  flash[:loginpage_signin_notice] %>
+						<div class="error_messages" >     
+						   <%=  flash[:loginpage_signin_notice] %> 
+						</div>
+						<% end %>
+	                    <%= form_tag("/login", :method => "post") do  %>								
+					    <%= text_field_tag :email, params[:email],:class => 'headtopinput' %>  
+					    <%= hidden_field_tag(:page_name, '', :value => controller.action_name) %>								  							
+					    <%= password_field_tag :password, '' ,:class => 'headtopinput' %>							
+					    <%= submit_tag "Log in",  :class => 'tplogin' %>
+					    <% end %>
+					</div>    
+                </div>  
+			</div>
+		</div>
+	</div>
+<%= render 'home/footer' %>
