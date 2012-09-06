@@ -124,6 +124,7 @@
 						
 						<p><strong>Time since offer was lived:</strong>									
 						<%= Time.now %>
+						<%= offer.offer_live_date %>
 						<% if offer.payment_status %>
 						<%=	time_diff_format(offer.offer_live_date,Time.now)	%>	
 						<%	else %>	
