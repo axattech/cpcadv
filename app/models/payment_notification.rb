@@ -35,10 +35,10 @@ class PaymentNotification < ActiveRecord::Base
       
       @old_offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_credit)
       @amount = @amount * 100
-      logger.debug "Offer credit amount: #{@amount}"
+      puts "Offer credit amount: #{@amount}"
       @new_offer_credit = @amount.to_s  + @old_offer_credit.to_s
       
-       logger.debug "Offer credit: #{@new_offer_credit}"
+       puts "Offer credit: #{@new_offer_credit}"
       
 
       Offer.find_by_id(offer_id).update_attribute(:offer_credit=>@new_offer_credit)
