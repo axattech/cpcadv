@@ -34,7 +34,8 @@ class PaymentNotification < ActiveRecord::Base
       objTopupPayment.save!
       
       @old_offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_credit)
-      @new_offer_credit =  @amount * 100 + @old_offer_credit
+      @amount = @amount * 100
+      @new_offer_credit = @amount.to_s  + @old_offer_credit.to_s
       
        logger.debug "Offer credit: #{@new_offer_credit}"
       
