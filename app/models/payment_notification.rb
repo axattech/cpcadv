@@ -41,7 +41,7 @@ class PaymentNotification < ActiveRecord::Base
        logger.debug "Offer credit: #{@new_offer_credit}"
       
 
-      #Offer.find_by_id(offer_id).update_attribute(:offer_credit=>@new_offer_credit)
+      Offer.find_by_id(offer_id).update_attribute(:offer_credit=>@new_offer_credit)
 
 
 
