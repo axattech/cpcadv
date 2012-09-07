@@ -1,102 +1,101 @@
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
-2012-09-07T13:49:20+00:00 app[web.1]: Served asset /offers/44/small/sarjan.jpeg - 404 Not Found (1ms)
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/44/small/sarjan.jpeg?1347011891 dyno=web.1 queue=0 wait=0ms service=12ms status=404 bytes=728
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: Started GET "/assets/offers/42/small/hme.JPG?1347003666" for 120.63.161.245 at 2012-09-07 15:49:20 +0200
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/42/small/hme.JPG"):
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: Served asset /offers/42/small/hme.JPG - 404 Not Found (1ms)
-2012-09-07T13:49:20+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/42/small/hme.JPG?1347003666 dyno=web.1 queue=0 wait=0ms service=15ms status=404 bytes=728
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: Started GET "/assets/offers/41/small/axat-logo.png?1347003334" for 120.63.161.245 at 2012-09-07 15:49:20 +0200
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/41/small/axat-logo.png"):
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-2012-09-
-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
-2012-09-07T13:49:20+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 app[web.1]: Served asset /offers/41/small/axat-logo.png - 404 Not Found (1ms)
-2012-09-07T13:49:20+00:00 app[web.1]: 
-2012-09-07T13:49:20+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/41/small/axat-logo.png?1347003334 dyno=web.1 queue=0 wait=0ms service=11ms status=404 bytes=728
-2012-09-07T13:49:21+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
-2012-09-07T13:49:39+00:00 app[web.1]: 
-2012-09-07T13:49:39+00:00 app[web.1]: 
-2012-09-07T13:49:39+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 15:49:39 +0200
-2012-09-07T13:49:39+00:00 app[web.1]: Offer credit amount: 299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00
-2012-09-07T13:49:39+00:00 app[web.1]: Offer credit: 299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.00299.0024000.0
-2012-09-07T13:49:39+00:00 app[web.1]: 
-2012-09-07T13:49:39+00:00 app[web.1]: ArgumentError (wrong number of arguments (1 for 2)):
-2012-09-07T13:49:39+00:00 app[web.1]:   app/models/payment_notification.rb:44:in `mark_cart_as_purchased'
-2012-09-07T13:49:39+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
-2012-09-07T13:49:39+00:00 app[web.1]: 
-2012-09-07T13:49:39+00:00 app[web.1]: 
-2012-09-07T13:49:39+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
-2012-09-07T13:49:39+00:00 app[web.1]:  "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"hi offer", "payment_gross"=>"299.00", "shipping"=>"0.00", "ipn_track_id"=>"4479b7c7b2ec7", "user_action"=>"topup"}
-2012-09-07T13:49:39+00:00 app[web.1]:   Parameters: {"mc_gross"=>"299.00", "invoice"=>"44", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"06:48:54 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"8.97", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"AO668qFeuGIWuoJGQfyIPB-pet38A03DoONVkv4.zpzGZuHVi6tTRlhe", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"4TW41833GY907584H", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"8.97", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"hi offer",
-2012-09-07T13:49:39+00:00 app[web.1]: Completed 500 Internal Server Error in 76ms
-2012-09-07T13:49:39+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=146ms status=500 bytes=643
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]: Served asset /offers/43/small/mod_security_process.png - 404 Not Found (1ms)
+2012-09-07T14:01:07+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/mod_security_process.png?1347011554 dyno=web.1 queue=0 wait=0ms service=10ms status=404 bytes=728
+2012-09-07T14:01:07+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]: Started GET "/assets/offers/42/small/hme.JPG?1347003666" for 120.63.161.245 at 2012-09-07 16:01:07 +0200
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-07T14:01:07+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/42/small/hme.JPG"):
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-07T14:01:07+00:00 app[web.1]: Served asset /offers/42/small/hme.JPG - 404 Not Found (1ms)
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-07T14:01:07+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/42/small/hme.JPG?1347003666 dyno=web.1 queue=0 wait=0ms service=8ms status=404 bytes=728
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]: Started GET "/assets/offers/41/small/axat-logo.png?1347003334" for 120.63.161.245 at 2012-09-07 16:01:07 +0200
+2012-09-07T14:01:07+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/41/small/axat-logo.png"):
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-07T14:01:07+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/41/small/axat-logo.png?1347003334 dyno=web.1 queue=0 wait=0ms service=22ms status=404 bytes=728
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-07T14:01:07+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-07T14:01:07+00:00 app[web.1]: 
+2012-09-07T14:01:07+00:00 app[web.1]: Served asset /offers/41/small/axat-logo.png - 404 Not Found (1ms)
+2012-09-07T14:01:07+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-09-07T14:01:17+00:00 app[web.1]: 
+2012-09-07T14:01:17+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 16:01:17 +0200
+2012-09-07T14:01:17+00:00 app[web.1]: 
+2012-09-07T14:01:17+00:00 app[web.1]: Offer credit amount: 199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00
+2012-09-07T14:01:17+00:00 app[web.1]: Offer credit: 199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.00199.0024000.0
+2012-09-07T14:01:17+00:00 app[web.1]: old Offer credit: 24000.0
+2012-09-07T14:01:17+00:00 app[web.1]: 
+2012-09-07T14:01:17+00:00 app[web.1]: ArgumentError (wrong number of arguments (1 for 2)):
+2012-09-07T14:01:17+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
+2012-09-07T14:01:17+00:00 app[web.1]:   app/models/payment_notification.rb:46:in `mark_cart_as_purchased'
+2012-09-07T14:01:17+00:00 app[web.1]: 
+2012-09-07T14:01:17+00:00 app[web.1]: 
+2012-09-07T14:01:17+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
+2012-09-07T14:01:17+00:00 app[web.1]:   Parameters: {"mc_gross"=>"199.00", "invoice"=>"44", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"07:00:58 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"6.07", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"Ae3ZORiJTgAaOrWszeaQu8Gla8PnAp5QgZnt51lAD2Dfnrrxq.oYNT9p", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"83X918388M9863147", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"6.07", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"hi offer",
+2012-09-07T14:01:17+00:00 app[web.1]:  "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"hi offer", "payment_gross"=>"199.00", "shipping"=>"0.00", "ipn_track_id"=>"e2649c4d7bc3", "user_action"=>"topup"}
+2012-09-07T14:01:17+00:00 app[web.1]: Completed 500 Internal Server Error in 14ms
+2012-09-07T14:01:17+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=117ms status=500 bytes=643
