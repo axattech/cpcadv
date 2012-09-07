@@ -15,7 +15,7 @@ class PaymentNotification < ActiveRecord::Base
     params.each do |key,value|
      # puts "Param #{key}: #{value}"      
       if(key=="mc_gross")
-        @amount = value
+        amount = value
       end
       
       if(key=="user_action")
@@ -34,7 +34,7 @@ class PaymentNotification < ActiveRecord::Base
       objTopupPayment.save!
       
       old_offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_credit)
-      amount = @amount*100
+      amount = amount*100
       puts "Offer credit amount: #{amount}"
       new_offer_credit = amount + old_offer_credit
       
