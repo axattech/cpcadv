@@ -122,9 +122,7 @@
 					
 					<div id="analytic_<%= index %>" style="display: none">
 						
-						<p><strong>Time since offer was lived:</strong>									
-						<%= Time.now %>
-						<%= offer.offer_live_date %>
+						<p><strong>Time since offer was lived:</strong>														
 						<% if offer.payment_status %>
 						<%=	time_diff_format(offer.offer_live_date,Time.now)	%>	
 						<%	else %>	

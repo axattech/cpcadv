@@ -230,15 +230,20 @@ class Offer < ActiveRecord::Base
 end
 
 def time_diff(from_time, to_time)
+  
+   logger.debug "From-time: #{from_time.to_i}:To-time:to_time.to_i#{to_time.to_i}"
   %w(year month day hour minute second).map do |interval|
-    logger.debug "Totime: #{from_time.to_i}"
+   
     distance_in_seconds = (to_time.to_i - from_time.to_i).round(1)
-    logger.debug "DIS: #{distance_in_seconds}"
+   
     delta = (distance_in_seconds / 1.send(interval)).floor
     delta -= 1 if from_time + delta.send(interval) > to_time
     from_time += delta.send(interval)
     delta    
+    
+   
   end    
+   
 end
 
 def time_diff_format(from_time, to_time)
