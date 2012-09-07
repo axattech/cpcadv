@@ -39,7 +39,7 @@ class PaymentNotification < ActiveRecord::Base
         logger.debug "test-offer-id-now: #{offer_id}"      
         @offer = Offer.find_by_id(offer_id)
         
-        @offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_budget) * 120/100
+        @offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_budget) * 12000/100
         
         @offer.offer_credit = @offer_credit
         
