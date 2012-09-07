@@ -39,7 +39,7 @@ class PaymentNotification < ActiveRecord::Base
         logger.debug "test-offer-id-now: #{offer_id}"      
         @offer = Offer.find_by_id(offer_id)
         @offer.payment_status = 'true'       
-        @offer.offer_live_date = Time.now.strftime("%Y-%m-%d %H:%M:%S")              
+        @offer.offer_live_date = Time.now             
         @offer.save        
         
          #logger.debug "current datetime: #{Time.now.strftime("%Y-%m-%d %H:%M:%S")}"
