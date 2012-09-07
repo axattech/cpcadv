@@ -38,6 +38,12 @@ class PaymentNotification < ActiveRecord::Base
       if status == "Completed"             
         logger.debug "test-offer-id-now: #{offer_id}"      
         @offer = Offer.find_by_id(offer_id)
+        
+        @offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_budget) * 120/100
+        
+        @offer.offer_credit = @offer_credit
+        
+        
         @offer.payment_status = 'true'       
         @offer.offer_live_date = Time.now             
         @offer.save        

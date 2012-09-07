@@ -54,7 +54,6 @@
 						<%= link_to 'Approve Offer','#', :onclick => 'javascript:void(0)' %>					
 				<%	else %>
 						 <%= link_to 'Approve Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
-						 <%= link_to 'Approve Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
 				<%	
 					end
 				%>
