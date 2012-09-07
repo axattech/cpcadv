@@ -1,101 +1,101 @@
-2012-09-07T14:46:50+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
-2012-09-07T14:46:50+00:00 app[web.1]: Completed 500 Internal Server Error in 15ms
-2012-09-07T14:46:50+00:00 app[web.1]: ", "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"hi offer", "payment_gross"=>"655.00", "shipping"=>"0.00", "ipn_track_id"=>"811b2d40b10a8", "user_action"=>"topup"}
-2012-09-07T14:46:50+00:00 app[web.1]:   Parameters: {"mc_gross"=>"655.00", "invoice"=>"44", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"07:35:39 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"19.30", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"AFcWxV21C7fd0v3bYYYRCpSSRl31AMbxigjrDnofei6l8Nz3dO.4qhDi", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"1KU11142NM916021C", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"19.30", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"hi offer
-2012-09-07T14:46:50+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=120ms status=500 bytes=643
-2012-09-07T14:46:59+00:00 heroku[web.1]: State changed from up to starting
-2012-09-07T14:47:02+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 17717`
-2012-09-07T14:47:02+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-07T14:47:03+00:00 app[web.1]: [2012-09-07 16:47:03] ERROR SignalException: SIGTERM
-2012-09-07T14:47:03+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-07T14:47:06+00:00 app[web.1]: => Booting WEBrick
-2012-09-07T14:47:06+00:00 app[web.1]: => Call with -d to detach
-2012-09-07T14:47:06+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:17717
-2012-09-07T14:47:06+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-07T14:47:06+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-07T14:47:06+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-07T14:47:06+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-07T14:47:09+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-07T14:47:09+00:00 app[web.1]: [2012-09-07 16:47:09] INFO  WEBrick 1.3.1
-2012-09-07T14:47:09+00:00 app[web.1]: [2012-09-07 16:47:09] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-07T14:47:09+00:00 app[web.1]: [2012-09-07 16:47:09] INFO  WEBrick::HTTPServer#start: pid=2 port=17717
-2012-09-07T14:47:10+00:00 heroku[web.1]: State changed from starting to up
-2012-09-07T14:47:12+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-07T14:47:12+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-07T14:47:14+00:00 heroku[web.1]: Process exited with status 137
-2012-09-07T14:47:38+00:00 app[web.1]: 
-2012-09-07T14:47:38+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 16:47:38 +0200
-2012-09-07T14:47:38+00:00 app[web.1]: 
-2012-09-07T14:47:38+00:00 app[web.1]: 
-2012-09-07T14:47:38+00:00 app[web.1]: NoMethodError (undefined method `read_attribute' for nil:NilClass):
-2012-09-07T14:47:38+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
-2012-09-07T14:47:38+00:00 app[web.1]:   app/models/payment_notification.rb:36:in `mark_cart_as_purchased'
-2012-09-07T14:47:38+00:00 app[web.1]: 
-2012-09-07T14:47:38+00:00 app[web.1]: 
-2012-09-07T14:47:38+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
-2012-09-07T14:47:38+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=576ms status=500 bytes=643
-2012-09-07T14:47:38+00:00 app[web.1]:  "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"hi offer", "payment_gross"=>"255.00", "shipping"=>"0.00", "ipn_track_id"=>"767abb158dccf", "user_action"=>"topup"}
-2012-09-07T14:47:38+00:00 app[web.1]: Completed 500 Internal Server Error in 355ms
-2012-09-07T14:47:38+00:00 app[web.1]:   Parameters: {"mc_gross"=>"255.00", "invoice"=>"44", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"07:25:44 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"7.70", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"Au88ZCQphnOKxbaxtV4ydYoNLFN6AMl7IfzPe947JxdFVre8eZZinJCD", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"3RG75673GY8384258", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"7.70", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"hi offer",
-2012-09-07T14:48:01+00:00 app[web.1]: 
-2012-09-07T14:48:01+00:00 app[web.1]: 
-2012-09-07T14:48:01+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 16:48:01 +0200
-2012-09-07T14:48:01+00:00 app[web.1]: Offer credit amount: 786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00
-2012-09-07T14:48:01+00:00 app[web.1]: 
-2012-09-07T14:48:01+00:00 app[web.1]: new Offer credit: 180786.00786
-2012-09-07T14:48:01+00:00 app[web.1]:   app/models/payment_notification.rb:45:in `mark_cart_as_purchased'
-2012-09-07T14:48:01+00:00 app[web.1]: ArgumentError (wrong number of arguments (1 for 2)):
-2012-09-07T14:48:01+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
-2012-09-07T14:48:01+00:00 app[web.1]: 
-2012-09-07T14:48:01+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
-2012-09-07T14:48:01+00:00 app[web.1]: 
-2012-09-07T14:48:01+00:00 app[web.1]:  offer my test offer", "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"my first offer my test offer", "payment_gross"=>"786.00", "shipping"=>"0.00", "ipn_track_id"=>"452eb1ef9234d", "user_action"=>"topup"}
-2012-09-07T14:48:01+00:00 app[web.1]:   Parameters: {"mc_gross"=>"786.00", "invoice"=>"41", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"07:47:58 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"23.09", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"A1d2Q2MugnJewW2jg8.sN7UK1qs7AuRP-hUL14z.O3R5byYI4sE93GXe", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"06J328068K728505R", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"23.09", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"my first
-2012-09-07T14:48:01+00:00 app[web.1]: Completed 500 Internal Server Error in 71ms
-2012-09-07T14:48:01+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=220ms status=500 bytes=643
-2012-09-07T14:48:09+00:00 app[web.1]: 
-2012-09-07T14:48:09+00:00 app[web.1]: 
-2012-09-07T14:48:09+00:00 app[web.1]: Started GET "/promoteOffers?qs=myoffer" for 120.63.161.245 at 2012-09-07 16:48:09 +0200
-2012-09-07T14:48:10+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
-2012-09-07T14:48:10+00:00 app[web.1]: Processing by OffersController#promoteAndSortOffers as HTML
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled categories.css  (2ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]:   Parameters: {"qs"=>"myoffer"}
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled application.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: urlparam: myoffer
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled admin_user.css  (479ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled share_offer.css  (1ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled credits_withdraw.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled visitor_tracker.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled gooeymenu.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled scaffolds.css  (7ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled home.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]:   Rendered home/_header.html.erb (663.0ms)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled members.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled offers.css  (0ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]: Compiled frontend.css  (620ms)  (pid 2)
-2012-09-07T14:48:10+00:00 app[web.1]:   Rendered offers/_myOfferLhs.html.erb (1.9ms)
-2012-09-07T14:48:10+00:00 app[web.1]: From-time: 1347029175:To-time:to_time.to_i1347029290
-2012-09-07T14:48:10+00:00 app[web.1]:   Rendered offers/_offersList.html.erb (99.8ms)
-2012-09-07T14:48:10+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.2ms)
-2012-09-07T14:48:10+00:00 app[web.1]: Completed 200 OK in 873ms (Views: 742.7ms | ActiveRecord: 115.6ms)
-2012-09-07T14:48:10+00:00 app[web.1]:   Rendered offers/promoteAndSortOffers.html.erb (773.6ms)
-2012-09-07T14:48:10+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/promoteOffers?qs=myoffer dyno=web.1 queue=0 wait=0ms service=901ms status=200 bytes=8387
-2012-09-07T14:48:11+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-09-07T14:48:11+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/41/small/hme.JPG?1347003894 dyno=web.1 queue=0 wait=0ms service=3ms status=304 bytes=0
-2012-09-07T14:48:12+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
-2012-09-07T14:48:17+00:00 app[web.1]: 
-2012-09-07T14:48:17+00:00 app[web.1]: 
-2012-09-07T14:48:17+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 16:48:17 +0200
-2012-09-07T14:48:17+00:00 app[web.1]: Offer credit amount: 786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00786.00
-2012-09-07T14:48:17+00:00 app[web.1]: new Offer credit: 180786.00786
-2012-09-07T14:48:17+00:00 app[web.1]: 
-2012-09-07T14:48:17+00:00 app[web.1]: ArgumentError (wrong number of arguments (1 for 2)):
-2012-09-07T14:48:17+00:00 app[web.1]:   app/models/payment_notification.rb:45:in `mark_cart_as_purchased'
-2012-09-07T14:48:17+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
-2012-09-07T14:48:17+00:00 app[web.1]: 
-2012-09-07T14:48:17+00:00 app[web.1]: 
-2012-09-07T14:48:17+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
-2012-09-07T14:48:17+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=203ms status=500 bytes=643
-2012-09-07T14:48:17+00:00 app[web.1]:   Parameters: {"mc_gross"=>"786.00", "invoice"=>"41", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"07:47:58 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"23.09", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"A1d2Q2MugnJewW2jg8.sN7UK1qs7AuRP-hUL14z.O3R5byYI4sE93GXe", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"06J328068K728505R", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"23.09", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"my first
-2012-09-07T14:48:17+00:00 app[web.1]:  offer my test offer", "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"my first offer my test offer", "payment_gross"=>"786.00", "shipping"=>"0.00", "ipn_track_id"=>"452eb1ef9234d", "user_action"=>"topup"}
-2012-09-07T14:48:17+00:00 app[web.1]: Completed 500 Internal Server Error in 47ms
+2012-09-07T14:59:37+00:00 app[web.1]:   Rendered offers/_myOfferLhs.html.erb (0.8ms)
+2012-09-07T14:59:37+00:00 app[web.1]:   Rendered offers/_offersList.html.erb (22.4ms)
+2012-09-07T14:59:37+00:00 app[web.1]: From-time: 1347029970:To-time:to_time.to_i1347029977
+2012-09-07T14:59:37+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.0ms)
+2012-09-07T14:59:37+00:00 app[web.1]:   Rendered offers/promoteAndSortOffers.html.erb (34.8ms)
+2012-09-07T14:59:37+00:00 app[web.1]: Completed 200 OK in 41ms (Views: 20.7ms | ActiveRecord: 18.4ms)
+2012-09-07T14:59:37+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/promoteOffers?qs=myoffer dyno=web.1 queue=0 wait=0ms service=56ms status=200 bytes=8386
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: Started GET "/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css" for 120.63.161.245 at 2012-09-07 16:59:38 +0200
+2012-09-07T14:59:38+00:00 app[web.1]: Served asset /frontend-93e0f2471a626f680d5355d81b94d2f3.css - 304 Not Modified (0ms)
+2012-09-07T14:59:38+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css dyno=web.1 queue=0 wait=0ms service=8ms status=304 bytes=0
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-07 16:59:38 +0200
+2012-09-07T14:59:38+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (0ms)
+2012-09-07T14:59:38+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=8ms status=304 bytes=0
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: Started GET "/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css" for 120.63.161.245 at 2012-09-07 16:59:38 +0200
+2012-09-07T14:59:38+00:00 app[web.1]: Served asset /application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css - 304 Not Modified (0ms)
+2012-09-07T14:59:38+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css dyno=web.1 queue=0 wait=0ms service=7ms status=304 bytes=0
+2012-09-07T14:59:38+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=8ms status=304 bytes=0
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:38+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (0ms)
+2012-09-07T14:59:38+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-07 16:59:38 +0200
+2012-09-07T14:59:38+00:00 app[web.1]: 
+2012-09-07T14:59:39+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
+2012-09-07T14:59:39+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/41/small/hme.JPG?1347003894 dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
+2012-09-07T14:59:39+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
+2012-09-07T15:00:25+00:00 app[web.1]: 
+2012-09-07T15:00:25+00:00 app[web.1]: Started POST "/topup" for 120.63.161.245 at 2012-09-07 17:00:25 +0200
+2012-09-07T15:00:25+00:00 app[web.1]: 
+2012-09-07T15:00:25+00:00 app[web.1]: Processing by OffersController#topup as HTML
+2012-09-07T15:00:25+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"TRsQIRqbKVKLGO0edRuZ5INptYxx0wCpIt9ttwowNyc=", "amount"=>"200", "return_url"=>"https://simple-earth-5502.herokuapp.com/promoteOffers?qs=myoffer", "rm"=>"1", "offer_id"=>"41", "offer_name"=>"my first offer my test offer", "commit"=>"Pay"}
+2012-09-07T15:00:25+00:00 app[web.1]: Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+2012-09-07T15:00:25+00:00 app[web.1]: Redirected to https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_xclick&business=seller_1343207727_biz@axat-tech.com&currency_code=USD&item_name=my%20first%20offer%20my%20test%20offer&amount=200&invoice=41&rm=1&return=https://simple-earth-5502.herokuapp.com/promoteOffers?qs=myoffer&quantity=1&notify_url=https://simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup
+2012-09-07T15:00:25+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/topup dyno=web.1 queue=0 wait=1ms service=8ms status=302 bytes=472
+2012-09-07T15:00:38+00:00 app[web.1]: 
+2012-09-07T15:00:38+00:00 app[web.1]: 
+2012-09-07T15:00:38+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 17:00:38 +0200
+2012-09-07T15:00:38+00:00 app[web.1]: 
+2012-09-07T15:00:38+00:00 app[web.1]: NoMethodError (undefined method `read_attribute' for nil:NilClass):
+2012-09-07T15:00:38+00:00 app[web.1]:   app/models/payment_notification.rb:36:in `mark_cart_as_purchased'
+2012-09-07T15:00:38+00:00 app[web.1]:   app/controllers/payment_notifications_controller.rb:6:in `create'
+2012-09-07T15:00:38+00:00 app[web.1]: 
+2012-09-07T15:00:38+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
+2012-09-07T15:00:38+00:00 app[web.1]: 
+2012-09-07T15:00:38+00:00 app[web.1]:   Parameters: {"mc_gross"=>"499.00", "invoice"=>"44", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"07:17:21 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"14.77", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"AQU0e5vuZCvSg-XJploSa.sGUDlpAlWq.cs3SHxZaGSa-P4y-blXdfxr", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"0EE99867KJ3035111", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"14.77", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"hi offer
+2012-09-07T15:00:38+00:00 app[web.1]: ", "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"hi offer", "payment_gross"=>"499.00", "shipping"=>"0.00", "ipn_track_id"=>"34704ff0e83f7", "user_action"=>"topup"}
+2012-09-07T15:00:38+00:00 app[web.1]: Completed 500 Internal Server Error in 18ms
+2012-09-07T15:00:38+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=229ms status=500 bytes=643
+2012-09-07T15:01:03+00:00 app[web.1]: 
+2012-09-07T15:01:03+00:00 app[web.1]: 
+2012-09-07T15:01:03+00:00 app[web.1]: Started POST "/payment_notifications?user_action=topup" for 173.0.82.126 at 2012-09-07 17:01:03 +0200
+2012-09-07T15:01:04+00:00 app[web.1]: Offer credit amount: 200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00200.00
+2012-09-07T15:01:04+00:00 app[web.1]: new Offer credit: 180200.002
+2012-09-07T15:01:04+00:00 app[web.1]: [paperclip] Saving attachments.
+2012-09-07T15:01:04+00:00 app[web.1]: Processing by PaymentNotificationsController#create as HTML
+2012-09-07T15:01:04+00:00 app[web.1]:   Parameters: {"mc_gross"=>"200.00", "invoice"=>"41", "protection_eligibility"=>"Eligible", "address_status"=>"confirmed", "payer_id"=>"3E489BJ56P4HS", "tax"=>"0.00", "address_street"=>"1 Main St", "payment_date"=>"08:00:58 Sep 07, 2012 PDT", "payment_status"=>"Completed", "charset"=>"windows-1252", "address_zip"=>"95131", "first_name"=>"Jaison", "mc_fee"=>"6.10", "address_country_code"=>"US", "address_name"=>"Jaison Joseph", "notify_version"=>"3.6", "custom"=>"", "payer_status"=>"verified", "business"=>"seller_1343207727_biz@axat-tech.com", "address_country"=>"United States", "address_city"=>"San Jose", "quantity"=>"1", "verify_sign"=>"AMHw.6CtGbgE3jLHzpBXrpd7-FE9ATf1yc7wpAuBU5l4mDQM2Sv-3Fyh", "payer_email"=>"buyer_1343207814_per@axat-tech.com", "txn_id"=>"06X90882L3066605N", "payment_type"=>"instant", "last_name"=>"Joseph", "address_state"=>"CA", "receiver_email"=>"seller_1343207727_biz@axat-tech.com", "payment_fee"=>"6.10", "receiver_id"=>"HLGZCM636XN2Y", "txn_type"=>"web_accept", "item_name"=>"my first o
+2012-09-07T15:01:04+00:00 app[web.1]: ffer my test offer", "mc_currency"=>"USD", "item_number"=>"", "residence_country"=>"US", "test_ipn"=>"1", "handling_amount"=>"0.00", "transaction_subject"=>"my first offer my test offer", "payment_gross"=>"200.00", "shipping"=>"0.00", "ipn_track_id"=>"6a17bac19b26d", "user_action"=>"topup"}
+2012-09-07T15:01:04+00:00 app[web.1]:   Rendered text template (0.0ms)
+2012-09-07T15:01:04+00:00 app[web.1]: Completed 200 OK in 88ms (Views: 0.6ms | ActiveRecord: 23.2ms)
+2012-09-07T15:01:04+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/payment_notifications?user_action=topup dyno=web.1 queue=0 wait=0ms service=192ms status=200 bytes=1
+2012-09-07T15:01:09+00:00 app[web.1]: Started GET "/promoteOffers?qs=myoffer" for 120.63.161.245 at 2012-09-07 17:01:09 +0200
+2012-09-07T15:01:09+00:00 app[web.1]: 
+2012-09-07T15:01:09+00:00 app[web.1]: 
+2012-09-07T15:01:09+00:00 app[web.1]: Processing by OffersController#promoteAndSortOffers as HTML
+2012-09-07T15:01:09+00:00 app[web.1]:   Parameters: {"qs"=>"myoffer"}
+2012-09-07T15:01:09+00:00 app[web.1]: urlparam: myoffer
+2012-09-07T15:01:09+00:00 app[web.1]:   Rendered offers/_offersList.html.erb (85.3ms)
+2012-09-07T15:01:09+00:00 app[web.1]:   Rendered offers/_myOfferLhs.html.erb (0.9ms)
+2012-09-07T15:01:09+00:00 app[web.1]:   Rendered home/_header.html.erb (22.3ms)
+2012-09-07T15:01:09+00:00 app[web.1]:   Rendered offers/promoteAndSortOffers.html.erb (121.2ms)
+2012-09-07T15:01:09+00:00 app[web.1]: From-time: 1347029970:To-time:to_time.to_i1347030069
+2012-09-07T15:01:09+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.0ms)
+2012-09-07T15:01:09+00:00 app[web.1]: Completed 200 OK in 155ms (Views: 120.6ms | ActiveRecord: 32.3ms)
+2012-09-07T15:01:09+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/promoteOffers?qs=myoffer dyno=web.1 queue=0 wait=0ms service=209ms status=200 bytes=8389
+2012-09-07T15:01:10+00:00 app[web.1]: 
+2012-09-07T15:01:10+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css dyno=web.1 queue=0 wait=0ms service=21ms status=304 bytes=0
+2012-09-07T15:01:10+00:00 app[web.1]: Started GET "/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css" for 120.63.161.245 at 2012-09-07 17:01:10 +0200
+2012-09-07T15:01:10+00:00 app[web.1]: Served asset /frontend-93e0f2471a626f680d5355d81b94d2f3.css - 304 Not Modified (0ms)
+2012-09-07T15:01:10+00:00 app[web.1]: 
+2012-09-07T15:01:10+00:00 app[web.1]: 
+2012-09-07T15:01:10+00:00 app[web.1]: 
+2012-09-07T15:01:10+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-07 17:01:10 +0200
+2012-09-07T15:01:10+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (0ms)
+2012-09-07T15:01:10+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=24ms status=304 bytes=0
+2012-09-07T15:01:11+00:00 app[web.1]: 
+2012-09-07T15:01:11+00:00 app[web.1]: 
+2012-09-07T15:01:11+00:00 app[web.1]: Started GET "/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css" for 120.63.161.245 at 2012-09-07 17:01:11 +0200
+2012-09-07T15:01:11+00:00 app[web.1]: Served asset /application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css - 304 Not Modified (0ms)
+2012-09-07T15:01:11+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css dyno=web.1 queue=0 wait=0ms service=41ms status=304 bytes=0
+2012-09-07T15:01:11+00:00 app[web.1]: 
+2012-09-07T15:01:11+00:00 app[web.1]: 
+2012-09-07T15:01:11+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-07 17:01:11 +0200
+2012-09-07T15:01:11+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (7ms)
+2012-09-07T15:01:11+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=26ms status=304 bytes=0
+2012-09-07T15:01:12+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=7ms status=304 bytes=0
+2012-09-07T15:01:12+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/41/small/hme.JPG?1347003894 dyno=web.1 queue=0 wait=0ms service=11ms status=304 bytes=0
+2012-09-07T15:01:12+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=34ms status=304 bytes=0
