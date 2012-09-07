@@ -32,6 +32,12 @@ class PaymentNotification < ActiveRecord::Base
       objTopupPayment.offers_id = offer_id
       objTopupPayment.amount = @amount
       objTopupPayment.save!
+      
+      @offer = Offer.find_by_id(offer_id)
+      @old_offer_credit = Offer.find_by_id(offer_id).read_attribute(:offer_credit)
+      @new_offer_credit =  @amount * 12000/100 + @old_offer_credit
+      @offer.offer_credit = @new_offer_credit
+      @offer.save 
 
       #puts "inside top up"
     else    
