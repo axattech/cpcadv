@@ -42,7 +42,14 @@ class PaymentNotification < ActiveRecord::Base
        
       
 
-      Offer.find_by_id(offer_id).update_attribute(:offer_credit=>new_offer_credit)
+     
+
+
+      @offer = Offer.find_by_id(offer_id)
+      @offer.offer_credit = new_offer_credit
+      @offer.save 
+
+
 
 
 
