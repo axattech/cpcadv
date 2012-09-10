@@ -34,7 +34,7 @@ class VisitorTrackerController < ApplicationController
     
 
     if offerList      
-      @refer_url = controller.request.env["HTTP_REFERER"]
+      @refer_url = request.referer
       
       
        request.env.each do |item| 
