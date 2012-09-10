@@ -37,6 +37,11 @@ class VisitorTrackerController < ApplicationController
       @refer_url = request.referer
       
       
+       request.env.each do |item| 
+        puts "#{item[0]} : #{item[1]}"
+      end
+      
+      
        
       @req_uri = request.env['REQUEST_URI']
       
