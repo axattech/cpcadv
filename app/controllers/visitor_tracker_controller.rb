@@ -3,7 +3,7 @@ class VisitorTrackerController < ApplicationController
   
   def track    
     
-        @refer_url = request.referer
+       
     
     member_random_code = params[:member_random_code]
     random_code = params[:random_code]
@@ -36,7 +36,7 @@ class VisitorTrackerController < ApplicationController
     
 
     if offerList      
-      @refer_url = request.env["HTTP_X_FORWARDED_REFERER"]
+      @refer_url = request.env[:REQUEST_URI]
       
       
       
