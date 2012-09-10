@@ -4,7 +4,7 @@ class VisitorTrackerController < ApplicationController
   def track    
     
         @refer_url = request.referer
-      puts "refer url#{@refer_url}"
+    
     member_random_code = params[:member_random_code]
     random_code = params[:random_code]
     
@@ -36,12 +36,9 @@ class VisitorTrackerController < ApplicationController
     
 
     if offerList      
-      @refer_url = request.referer
+      @refer_url = request.env[:HTTP_REFERER]
       
       
-       request.env.each do |item| 
-        puts "#{item[0]} : #{item[1]}"
-      end
       
       
        
@@ -50,7 +47,7 @@ class VisitorTrackerController < ApplicationController
       
       
       @ip_addr = request.remote_ip   
-    
+      puts "refer url#{@refer_url}"
       
       
       objVisitorTracker = VisitorTracker.new

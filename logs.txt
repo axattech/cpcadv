@@ -1,101 +1,101 @@
-2012-09-10T09:12:36+00:00 heroku[web.1]: State changed from up to starting
-2012-09-10T09:12:38+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 16178`
-2012-09-10T09:12:41+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-10T09:12:42+00:00 app[web.1]: [2012-09-10 11:12:42] ERROR SignalException: SIGTERM
-2012-09-10T09:12:42+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-10T09:12:43+00:00 app[web.1]: => Booting WEBrick
-2012-09-10T09:12:43+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:16178
-2012-09-10T09:12:43+00:00 app[web.1]: => Call with -d to detach
-2012-09-10T09:12:43+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-10T09:12:43+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T09:12:43+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T09:12:43+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T09:12:43+00:00 app[web.1]: 
-2012-09-10T09:12:43+00:00 app[web.1]: 
-2012-09-10T09:12:43+00:00 app[web.1]: Started GET "/d9c6ba51e0/248c8ee311/" for 120.63.161.245 at 2012-09-10 11:12:43 +0200
-2012-09-10T09:12:43+00:00 app[web.1]: refer url
-2012-09-10T09:12:44+00:00 app[web.1]: GATEWAY_INTERFACE : CGI/1.1
-2012-09-10T09:12:44+00:00 app[web.1]: PATH_INFO : /d9c6ba51e0/248c8ee311
-2012-09-10T09:12:44+00:00 app[web.1]: QUERY_STRING : 
-2012-09-10T09:12:44+00:00 app[web.1]: REMOTE_ADDR : 10.44.103.109
-2012-09-10T09:12:44+00:00 app[web.1]: REMOTE_HOST : ip-10-44-103-109.ec2.internal
-2012-09-10T09:12:44+00:00 app[web.1]: REQUEST_METHOD : GET
-2012-09-10T09:12:44+00:00 app[web.1]: REQUEST_URI : http://simple-earth-5502.herokuapp.com/d9c6ba51e0/248c8ee311/
-2012-09-10T09:12:44+00:00 app[web.1]: SCRIPT_NAME : 
-2012-09-10T09:12:44+00:00 app[web.1]: SERVER_NAME : simple-earth-5502.herokuapp.com
-2012-09-10T09:12:44+00:00 app[web.1]: SERVER_PORT : 80
-2012-09-10T09:12:44+00:00 app[web.1]: SERVER_PROTOCOL : HTTP/1.1
-2012-09-10T09:12:44+00:00 app[web.1]: SERVER_SOFTWARE : WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_FORWARDED_PROTO : http
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_FORWARDED_PORT : 80
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_FORWARDED_FOR : 120.63.161.245
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_USER_AGENT : Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.168 Chrome/18.0.1025.168 Safari/535.19
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_HOST : simple-earth-5502.herokuapp.com
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_COOKIE : _cpcadv_app_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTdmMjExN2UyYTc4OTBlMjVjZWVkMTlmN2VmMjI2YjEwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlGTmNFQmozNGsyN2g0T0xaRTR6NmFyRmdPU3Uwc0xnT2tmOEJIeWdGWVU9BjsARkkiDHVzZXJfaWQGOwBGaSQ%3D--387c40b5b863b306df75e2b390a96835c8be0b05
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_CONNECTION : keep-alive
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_ACCEPT_LANGUAGE : en-US,en;q=0.8
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_ACCEPT_ENCODING : gzip,deflate,sdch
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_ACCEPT_CHARSET : ISO-8859-1,utf-8;q=0.7,*;q=0.3
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_ACCEPT : text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_HEROKU_QUEUE_WAIT_TIME : 1
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_HEROKU_QUEUE_DEPTH : 0
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_HEROKU_DYNOS_IN_USE : 1
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_X_REQUEST_START : 1347268363985
-2012-09-10T09:12:44+00:00 app[web.1]: rack.input : #<StringIO:0x00000006984b20>
-2012-09-10T09:12:44+00:00 app[web.1]: rack.errors : #<IO:0x00000001b00198>
-2012-09-10T09:12:44+00:00 app[web.1]: rack.multithread : false
-2012-09-10T09:12:44+00:00 app[web.1]: rack.run_once : false
-2012-09-10T09:12:44+00:00 app[web.1]: rack.version : [1, 1]
-2012-09-10T09:12:44+00:00 app[web.1]: rack.url_scheme : http
-2012-09-10T09:12:44+00:00 app[web.1]: HTTP_VERSION : HTTP/1.1
-2012-09-10T09:12:44+00:00 app[web.1]: rack.multiprocess : false
-2012-09-10T09:12:44+00:00 app[web.1]: REQUEST_PATH : /d9c6ba51e0/248c8ee311/
-2012-09-10T09:12:44+00:00 app[web.1]: ORIGINAL_FULLPATH : /d9c6ba51e0/248c8ee311/
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.routes : #<ActionDispatch::Routing::RouteSet:0x00000003e11ab0>
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.parameter_filter : [:password]
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.show_exceptions : true
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.secret_token : f6930f08170cb96c1f3ec8f6d3d060042ad38f325717fa736705f03902b65d234e80fa0a125076ffe8eef91624a6eaff85a360449ac98a132e76598d76722b5a
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.show_detailed_exceptions : false
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.logger : #<ActiveSupport::TaggedLogging:0x00000001fb9798>
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.backtrace_cleaner : #<Rails::BacktraceCleaner:0x00000005bcef80>
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.cache_key : Rack::Cache::Key
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.verbose : false
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.storage : #<Rack::Cache::Storage:0x00000004dd0528>
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.entitystore : rails:/
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.metastore : rails:/
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.default_ttl : 0
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.ignore_headers : ["Set-Cookie"]
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.allow_reload : false
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.private_headers : ["Authorization", "Cookie"]
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.use_native_ttl : false
-2012-09-10T09:12:44+00:00 app[web.1]: rack-cache.allow_revalidate : false
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request_id : 91358759d64d62401d4053aa9c3334fb
-2012-09-10T09:12:44+00:00 app[web.1]: rack.session.options : {:path=>"/", :domain=>nil, :expire_after=>nil, :secure=>false, :httponly=>true, :defer=>false, :renew=>false, :coder=>#<Rack::Session::Cookie::Base64::Marshal:0x00000004fd3b68>, :id=>"7f2117e2a7890e25ceed19f7ef226b10"}
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.remote_ip : 120.63.161.245
-2012-09-10T09:12:44+00:00 app[web.1]: rack.session : {"session_id"=>"7f2117e2a7890e25ceed19f7ef226b10", "_csrf_token"=>"YFNcEBj34k27h4OLZE4z6arFgOSu0sLgOkf8BHygFYU=", "user_id"=>31}
-2012-09-10T09:12:44+00:00 app[web.1]: rack.request.cookie_hash : {"_cpcadv_app_session"=>"BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTdmMjExN2UyYTc4OTBlMjVjZWVkMTlmN2VmMjI2YjEwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlGTmNFQmozNGsyN2g0T0xaRTR6NmFyRmdPU3Uwc0xnT2tmOEJIeWdGWVU9BjsARkkiDHVzZXJfaWQGOwBGaSQ=--387c40b5b863b306df75e2b390a96835c8be0b05"}
-2012-09-10T09:12:44+00:00 app[web.1]: rack.request.cookie_string : _cpcadv_app_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTdmMjExN2UyYTc4OTBlMjVjZWVkMTlmN2VmMjI2YjEwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlGTmNFQmozNGsyN2g0T0xaRTR6NmFyRmdPU3Uwc0xnT2tmOEJIeWdGWVU9BjsARkkiDHVzZXJfaWQGOwBGaSQ%3D--387c40b5b863b306df75e2b390a96835c8be0b05
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.cookies : #<ActionDispatch::Cookies::CookieJar:0x00000006981948>
-2012-09-10T09:12:44+00:00 app[web.1]: action_controller.instance : #<VisitorTrackerController:0x0000000697b368>
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.unsigned_session_cookie : {"session_id"=>"7f2117e2a7890e25ceed19f7ef226b10", "_csrf_token"=>"YFNcEBj34k27h4OLZE4z6arFgOSu0sLgOkf8BHygFYU=", "user_id"=>31}
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.path_parameters : {:controller=>"visitor_tracker", :action=>"track", :member_random_code=>"d9c6ba51e0", :random_code=>"248c8ee311"}
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.content_type : 
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.request_parameters : {}
-2012-09-10T09:12:44+00:00 app[web.1]: rack.request.query_string : 
-2012-09-10T09:12:44+00:00 app[web.1]: rack.request.query_hash : {}
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.query_parameters : {}
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.parameters : {"controller"=>"visitor_tracker", "action"=>"track", "member_random_code"=>"d9c6ba51e0", "random_code"=>"248c8ee311"}
-2012-09-10T09:12:44+00:00 app[web.1]: action_dispatch.request.formats : [text/html]
-2012-09-10T09:12:44+00:00 app[web.1]: Redirected to http://www.google.com
-2012-09-10T09:12:44+00:00 app[web.1]: Completed 302 Found in 16ms (ActiveRecord: 7.6ms)
-2012-09-10T09:12:44+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
-2012-09-10T09:12:44+00:00 app[web.1]:   Parameters: {"member_random_code"=>"d9c6ba51e0", "random_code"=>"248c8ee311"}
-2012-09-10T09:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/d9c6ba51e0/248c8ee311/ dyno=web.1 queue=0 wait=0ms service=27ms status=302 bytes=87
-2012-09-10T09:12:46+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-10T09:12:46+00:00 app[web.1]: [2012-09-10 11:12:46] INFO  WEBrick 1.3.1
-2012-09-10T09:12:46+00:00 app[web.1]: [2012-09-10 11:12:46] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-10T09:12:46+00:00 app[web.1]: [2012-09-10 11:12:46] INFO  WEBrick::HTTPServer#start: pid=2 port=16178
-2012-09-10T09:12:47+00:00 heroku[web.1]: State changed from starting to up
-2012-09-10T09:12:50+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-10T09:12:50+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-10T09:12:52+00:00 heroku[web.1]: Process exited with status 137
+2012-09-10T09:52:31+00:00 app[web.1]: SERVER_PORT : 80
+2012-09-10T09:52:31+00:00 app[web.1]: SERVER_PROTOCOL : HTTP/1.1
+2012-09-10T09:52:31+00:00 app[web.1]: SERVER_SOFTWARE : WEBrick/1.3.1 (Ruby/1.9.2/2012-04-20)
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_FORWARDED_PROTO : http
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_FORWARDED_PORT : 80
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_FORWARDED_FOR : 120.63.161.245
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_USER_AGENT : Mozilla/5.0 (X11; Linux i686) AppleWebKit/535.19 (KHTML, like Gecko) Ubuntu/12.04 Chromium/18.0.1025.168 Chrome/18.0.1025.168 Safari/535.19
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_HOST : simple-earth-5502.herokuapp.com
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_COOKIE : _cpcadv_app_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTdmMjExN2UyYTc4OTBlMjVjZWVkMTlmN2VmMjI2YjEwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlGTmNFQmozNGsyN2g0T0xaRTR6NmFyRmdPU3Uwc0xnT2tmOEJIeWdGWVU9BjsARkkiDHVzZXJfaWQGOwBGaSQ%3D--387c40b5b863b306df75e2b390a96835c8be0b05
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_ACCEPT_ENCODING : gzip,deflate,sdch
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_CONNECTION : keep-alive
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_ACCEPT_LANGUAGE : en-US,en;q=0.8
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_ACCEPT_CHARSET : ISO-8859-1,utf-8;q=0.7,*;q=0.3
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_ACCEPT : text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_HEROKU_QUEUE_WAIT_TIME : 5
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_HEROKU_QUEUE_DEPTH : 0
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_HEROKU_DYNOS_IN_USE : 1
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_X_REQUEST_START : 1347270751350
+2012-09-10T09:52:31+00:00 app[web.1]: rack.version : [1, 1]
+2012-09-10T09:52:31+00:00 app[web.1]: rack.input : #<StringIO:0x000000064ca5a8>
+2012-09-10T09:52:31+00:00 app[web.1]: rack.errors : #<IO:0x00000001c421a0>
+2012-09-10T09:52:31+00:00 app[web.1]: rack.multithread : false
+2012-09-10T09:52:31+00:00 app[web.1]: rack.multiprocess : false
+2012-09-10T09:52:31+00:00 app[web.1]: rack.run_once : false
+2012-09-10T09:52:31+00:00 app[web.1]: rack.url_scheme : http
+2012-09-10T09:52:31+00:00 app[web.1]: HTTP_VERSION : HTTP/1.1
+2012-09-10T09:52:31+00:00 app[web.1]: REQUEST_PATH : /d9c6ba51e0/248c8ee311/
+2012-09-10T09:52:31+00:00 app[web.1]: ORIGINAL_FULLPATH : /d9c6ba51e0/248c8ee311/
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.routes : #<ActionDispatch::Routing::RouteSet:0x00000003e71000>
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.parameter_filter : [:password]
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.show_exceptions : true
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.secret_token : f6930f08170cb96c1f3ec8f6d3d060042ad38f325717fa736705f03902b65d234e80fa0a125076ffe8eef91624a6eaff85a360449ac98a132e76598d76722b5a
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.show_detailed_exceptions : false
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.cache_key : Rack::Cache::Key
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.verbose : false
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.logger : #<ActiveSupport::TaggedLogging:0x00000002f4cdb8>
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.storage : #<Rack::Cache::Storage:0x00000004e86440>
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.backtrace_cleaner : #<Rails::BacktraceCleaner:0x00000005d6ef70>
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.metastore : rails:/
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.entitystore : rails:/
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.default_ttl : 0
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.ignore_headers : ["Set-Cookie"]
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.private_headers : ["Authorization", "Cookie"]
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.allow_reload : false
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.allow_revalidate : false
+2012-09-10T09:52:31+00:00 app[web.1]: rack-cache.use_native_ttl : false
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request_id : 8b9e663b2d0cdf4c55db9e3400744e3a
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.remote_ip : 120.63.161.245
+2012-09-10T09:52:31+00:00 app[web.1]: rack.session : {"session_id"=>"7f2117e2a7890e25ceed19f7ef226b10", "_csrf_token"=>"YFNcEBj34k27h4OLZE4z6arFgOSu0sLgOkf8BHygFYU=", "user_id"=>31}
+2012-09-10T09:52:31+00:00 app[web.1]: rack.session.options : {:path=>"/", :domain=>nil, :expire_after=>nil, :secure=>false, :httponly=>true, :defer=>false, :renew=>false, :coder=>#<Rack::Session::Cookie::Base64::Marshal:0x000000051e30c0>, :id=>"7f2117e2a7890e25ceed19f7ef226b10"}
+2012-09-10T09:52:31+00:00 app[web.1]: rack.request.cookie_hash : {"_cpcadv_app_session"=>"BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTdmMjExN2UyYTc4OTBlMjVjZWVkMTlmN2VmMjI2YjEwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlGTmNFQmozNGsyN2g0T0xaRTR6NmFyRmdPU3Uwc0xnT2tmOEJIeWdGWVU9BjsARkkiDHVzZXJfaWQGOwBGaSQ=--387c40b5b863b306df75e2b390a96835c8be0b05"}
+2012-09-10T09:52:31+00:00 app[web.1]: rack.request.cookie_string : _cpcadv_app_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTdmMjExN2UyYTc4OTBlMjVjZWVkMTlmN2VmMjI2YjEwBjsAVEkiEF9jc3JmX3Rva2VuBjsARkkiMVlGTmNFQmozNGsyN2g0T0xaRTR6NmFyRmdPU3Uwc0xnT2tmOEJIeWdGWVU9BjsARkkiDHVzZXJfaWQGOwBGaSQ%3D--387c40b5b863b306df75e2b390a96835c8be0b05
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.cookies : #<ActionDispatch::Cookies::CookieJar:0x000000064c16d8>
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.unsigned_session_cookie : {"session_id"=>"7f2117e2a7890e25ceed19f7ef226b10", "_csrf_token"=>"YFNcEBj34k27h4OLZE4z6arFgOSu0sLgOkf8BHygFYU=", "user_id"=>31}
+2012-09-10T09:52:31+00:00 app[web.1]: action_controller.instance : #<VisitorTrackerController:0x000000064b4488>
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.path_parameters : {:controller=>"visitor_tracker", :action=>"track", :member_random_code=>"d9c6ba51e0", :random_code=>"248c8ee311"}
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.content_type : 
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.request_parameters : {}
+2012-09-10T09:52:31+00:00 app[web.1]: rack.request.query_string : 
+2012-09-10T09:52:31+00:00 app[web.1]: rack.request.query_hash : {}
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.query_parameters : {}
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.parameters : {"controller"=>"visitor_tracker", "action"=>"track", "member_random_code"=>"d9c6ba51e0", "random_code"=>"248c8ee311"}
+2012-09-10T09:52:31+00:00 app[web.1]: action_dispatch.request.formats : [text/html]
+2012-09-10T09:52:31+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
+2012-09-10T09:52:31+00:00 app[web.1]: Completed 302 Found in 34ms (ActiveRecord: 21.0ms)
+2012-09-10T09:52:31+00:00 app[web.1]:   Parameters: {"member_random_code"=>"d9c6ba51e0", "random_code"=>"248c8ee311"}
+2012-09-10T09:52:31+00:00 app[web.1]: Redirected to http://www.google.com
+2012-09-10T09:52:31+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/d9c6ba51e0/248c8ee311/ dyno=web.1 queue=0 wait=0ms service=49ms status=302 bytes=87
+2012-09-10T09:52:33+00:00 app[web.1]: Started GET "/assets/offers/43/small/special-offer-01.jpg?1347258575" for 120.63.161.245 at 2012-09-10 11:52:33 +0200
+2012-09-10T09:52:33+00:00 app[web.1]: 
+2012-09-10T09:52:33+00:00 app[web.1]: 
+2012-09-10T09:52:33+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/43/small/special-offer-01.jpg"):
+2012-09-10T09:52:33+00:00 app[web.1]: 
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-10T09:52:33+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-10T09:52:33+00:00 app[web.1]: 
+2012-09-10T09:52:33+00:00 app[web.1]: 
+2012-09-10T09:52:33+00:00 app[web.1]: Served asset /offers/43/small/special-offer-01.jpg - 404 Not Found (2ms)
+2012-09-10T09:52:33+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/special-offer-01.jpg?1347258575 dyno=web.1 queue=0 wait=0ms service=14ms status=404 bytes=728
+2012-09-10T09:52:34+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=7ms status=304 bytes=0
