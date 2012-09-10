@@ -34,7 +34,10 @@ class VisitorTrackerController < ApplicationController
     
 
     if offerList      
-      @refer_url = request.env['HTTP_REFERER']
+      @refer_url = request.referer
+      
+       
+      
       @ip_addr = request.env['REMOTE_ADDR']    
       puts "refer url#{@refer_url}"
       
