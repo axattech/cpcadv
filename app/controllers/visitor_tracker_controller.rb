@@ -34,12 +34,16 @@ class VisitorTrackerController < ApplicationController
     
 
     if offerList      
-      @refer_url = request.referer
+      @refer_url = request.headers['referer']
       
        
+      @req_uri = request.env['REQUEST_URI']
+      
+      
       
       @ip_addr = request.env['REMOTE_ADDR']    
       puts "refer url#{@refer_url}"
+      
       
       objVisitorTracker = VisitorTracker.new
       objVisitorTracker.ip = @ip_addr
