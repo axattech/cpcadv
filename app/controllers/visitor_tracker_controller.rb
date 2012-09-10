@@ -85,7 +85,7 @@ class VisitorTrackerController < ApplicationController
               redirect_to offerList.offer_link    
                   
         else
-          
+          redirect_to offerList.offer_link 
         end
         
       end
