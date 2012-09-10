@@ -41,7 +41,7 @@ class VisitorTrackerController < ApplicationController
       
       
       
-      @ip_addr = request.env['REMOTE_ADDR']    
+      @ip_addr = request.remote_ip   
       puts "refer url#{@refer_url}"
       
       
