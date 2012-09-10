@@ -34,7 +34,8 @@ class VisitorTrackerController < ApplicationController
     
 
     if offerList      
-      @refer_url = request.headers['referer']
+      @refer_url = request.referer
+      
       
        
       @req_uri = request.env['REQUEST_URI']
