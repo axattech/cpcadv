@@ -41,6 +41,7 @@ gem 'pg'
 
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem 'aweber'
 
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "paperclip", "~> 2.3"

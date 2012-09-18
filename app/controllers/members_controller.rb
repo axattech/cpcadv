@@ -36,6 +36,33 @@ class MembersController < ApplicationController
   # POST /members
   # POST /members.json
   def create
+    
+     
+     
+     require 'aweber'
+oauth = AWeber::OAuth.new('Ak8Buwis5Q1j0OwvVZ4eJROe', 'TjtgHED5PIYPqS85ZgBekIf9jol1PgpUEpETmrV9')
+#Rather than authorizing with the verification code, we use the token and secret
+#oauth.authorize_with_access(YOUR_ACCESS_TOKEN, YOUR_ACCESS_TOKEN_SECRET)
+
+oauth.request_token.authorize_url
+oauth.request_token(:oauth_callback => 'http://simple-earth-5502.herokuapp.com/').authorize_url
+#aweber = AWeber::Base.new(oauth)
+
+
+oauth.authorize_with_verifier('1dclo1')
+puts "Access token: #{oauth.access_token.token}"
+#puts 'Access token secret: ' + oauth.access_token.secret
+#aweber = AWeber::Base.new(oauth)
+
+ #logger.debug "aweberlist: #{aweber.account.lists}" 
+
+     
+  # logger.debug "aweber: #{oauth.request_token.authorize_url}"   
+     
+     
+    
+     
+     
     @member = Member.new(params[:member])
     if @member.save  
     
@@ -49,6 +76,8 @@ class MembersController < ApplicationController
        #render   'home/index'  
        
        flash[:success] = "";  
+       
+      
        #render :partial => 'home/index', :locals => { :success => flash[:success] }
     else           
      render   'home/index'             

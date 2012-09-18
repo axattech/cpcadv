@@ -33,7 +33,7 @@ CpcadvApp::Application.routes.draw do
 
   get "admin/members" => "members#index"
   post "/members" => "members#create"
-  
+  post "/test" => "members#test"
 
   #match "admin/index" => "AdminUser#index", :as => "admin/dashboard"
 

@@ -29,6 +29,9 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    aweber (1.4.3)
+      json
+      oauth
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
     cocaine (0.2.1)
@@ -152,6 +155,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aweber
   bcrypt-ruby
   coffee-rails (~> 3.2.1)
   debugger
