@@ -1,407 +1,101 @@
-2012-09-10T10:26:49+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/special-offer-01.jpg?1347258575 dyno=web.1 queue=0 wait=0ms service=149ms status=404 bytes=728
-2012-09-10T10:26:49+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-09-10T10:27:51+00:00 heroku[slugc]: Slug compilation started
-2012-09-10T10:29:27+00:00 heroku[api]: Release v200 created by mandal.saroj.mail@gmail.com
-2012-09-10T10:29:27+00:00 heroku[api]: Deploy bdd03e1 by mandal.saroj.mail@gmail.com
-2012-09-10T10:29:27+00:00 heroku[web.1]: State changed from up to starting
-2012-09-10T10:29:28+00:00 heroku[slugc]: Slug compilation finished
-2012-09-10T10:29:30+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 36691`
-2012-09-10T10:29:31+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-10T10:29:32+00:00 app[web.1]: [2012-09-10 12:29:32] ERROR SignalException: SIGTERM
-2012-09-10T10:29:32+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-10T10:29:35+00:00 app[web.1]: => Booting WEBrick
-2012-09-10T10:29:35+00:00 app[web.1]: => Call with -d to detach
-2012-09-10T10:29:35+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:36691
-2012-09-10T10:29:35+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-10T10:29:35+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T10:29:35+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T10:29:35+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T10:29:38+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-10T10:29:38+00:00 app[web.1]: [2012-09-10 12:29:38] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-10T10:29:38+00:00 app[web.1]: [2012-09-10 12:29:38] INFO  WEBrick 1.3.1
-2012-09-10T10:29:38+00:00 app[web.1]: [2012-09-10 12:29:38] INFO  WEBrick::HTTPServer#start: pid=2 port=36691
-2012-09-10T10:29:40+00:00 heroku[web.1]: State changed from starting to up
-2012-09-10T10:29:43+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-10T10:29:43+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-10T10:29:45+00:00 app[web.1]: 
-2012-09-10T10:29:45+00:00 app[web.1]: 
-2012-09-10T10:29:45+00:00 app[web.1]: Started GET "/d9c6ba51e0/248c8ee311/" for 120.63.161.245 at 2012-09-10 12:29:45 +0200
-2012-09-10T10:29:45+00:00 heroku[web.1]: Process exited with status 137
-2012-09-10T10:29:45+00:00 app[web.1]: refer url
-2012-09-10T10:29:45+00:00 app[web.1]:   Parameters: {"member_random_code"=>"d9c6ba51e0", "random_code"=>"248c8ee311"}
-2012-09-10T10:29:45+00:00 app[web.1]: Redirected to http://www.google.com
-2012-09-10T10:29:45+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
-2012-09-10T10:29:45+00:00 app[web.1]: Completed 302 Found in 508ms (ActiveRecord: 372.9ms)
-2012-09-10T10:29:45+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/d9c6ba51e0/248c8ee311/ dyno=web.1 queue=0 wait=0ms service=732ms status=302 bytes=87
-2012-09-10T10:30:50+00:00 app[web.1]: 
-2012-09-10T10:30:50+00:00 app[web.1]: 
-2012-09-10T10:30:50+00:00 app[web.1]: Started GET "/assets/offers/43/small/special-offer-01.jpg?1347258575" for 120.63.161.245 at 2012-09-10 12:30:50 +0200
-2012-09-10T10:30:51+00:00 app[web.1]: 
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/43/small/special-offer-01.jpg"):
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
-2012-09-10T10:30:51+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
-2012-09-10T10:30:51+00:00 app[web.1]: 
-2012-09-10T10:30:51+00:00 app[web.1]: 
-2012-09-10T10:30:51+00:00 app[web.1]: Served asset /offers/43/small/special-offer-01.jpg - 404 Not Found (4ms)
-2012-09-10T10:30:51+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/special-offer-01.jpg?1347258575 dyno=web.1 queue=0 wait=0ms service=57ms status=404 bytes=728
-2012-09-10T10:30:51+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=0
-2012-09-10T10:31:00+00:00 heroku[slugc]: Slug compilation started
-2012-09-10T10:31:28+00:00 heroku[api]: Release v201 created by mandal.saroj.mail@gmail.com
-2012-09-10T10:31:28+00:00 heroku[api]: Deploy 4101c60 by mandal.saroj.mail@gmail.com
-2012-09-10T10:31:28+00:00 heroku[web.1]: State changed from up to starting
-2012-09-10T10:31:29+00:00 heroku[slugc]: Slug compilation finished
-2012-09-10T10:31:31+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 58356`
-2012-09-10T10:31:31+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-10T10:31:32+00:00 app[web.1]: [2012-09-10 12:31:32] ERROR SignalException: SIGTERM
-2012-09-10T10:31:32+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-10T10:31:36+00:00
- app[web.1]: => Booting WEBrick
-2012-09-10T10:31:36+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:58356
-2012-09-10T10:31:36+00:00 app[web.1]: => Call with -d to detach
-2012-09-10T10:31:36+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-10T10:31:36+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T10:31:36+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T10:31:36+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-10T10:31:39+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-10T10:31:39+00:00 app[web.1]: [2012-09-10 12:31:39] INFO  WEBrick 1.3.1
-2012-09-10T10:31:39+00:00 app[web.1]: [2012-09-10 12:31:39] INFO  WEBrick::HTTPServer#start: pid=2 port=58356
-2012-09-10T10:31:39+00:00 app[web.1]: [2012-09-10 12:31:39] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-10T10:31:40+00:00 heroku[web.1]: State changed from starting to up
-2012-09-10T10:31:41+00:00 app[web.1]: 
-2012-09-10T10:31:41+00:00 app[web.1]: 
-2012-09-10T10:31:41+00:00 app[web.1]: Started GET "/d9c6ba51e0/248c8ee311/" for 120.63.161.245 at 2012-09-10 12:31:41 +0200
-2012-09-10T10:31:41+00:00 app[web.1]: refer url
-2012-09-10T10:31:41+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
-2012-09-10T10:31:41+00:00 app[web.1]:   Parameters: {"member_random_code"=>"d9c6ba51e0", "random_code"=>"248c8ee311"}
-2012-09-10T10:31:41+00:00 app[web.1]: Completed 302 Found in 601ms (ActiveRecord: 230.6ms)
-2012-09-10T10:31:41+00:00 app[web.1]: Redirected to http://www.google.com
-2012-09-10T10:31:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/d9c6ba51e0/248c8ee311/ dyno=web.1 queue=0 wait=0ms service=845ms status=302 bytes=87
-2012-09-10T10:31:42+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-10T10:31:42+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-10T10:31:44+00:00 heroku[web.1]: Process exited with status 137
-2012-09-18T14:44:23+00:00 app[web.1]: [2012-09-18 16:44:23] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-18T14:44:23+00:00 app[web.1]: [2012-09-18 16:44:23] INFO  WEBrick::HTTPServer#start: pid=2 port=8000
-2012-09-18T14:44:23+00:00 app[web.1]: [2012-09-18 16:44:23] INFO  WEBrick 1.3.1
-2012-09-18T14:44:26+00:00 heroku[web.1]: State changed from starting to up
-2012-09-18T14:44:26+00:00 app[web.1]: 
-2012-09-18T14:44:26+00:00 app[web.1]: 
-2012-09-18T14:44:26+00:00 app[web.1]: Started GET "/" for 120.63.161.245 at 2012-09-18 16:44:26 +0200
-2012-09-18T14:44:27+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
-2012-09-18T14:44:28+00:00 app[web.1]: Processing by HomeController#index as HTML
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled application.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: HOMEPAGECONTROLLER:
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled home.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled gooeymenu.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled admin_user.css  (479ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled categories.css  (47ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled credits_withdraw.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled members.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled scaffolds.css  (7ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled share_offer.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled visitor_tracker.css  (1ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled frontend.css  (826ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]:   Rendered members/_new.html.erb (199.0ms)
-2012-09-18T14:44:28+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.3ms)
-2012-09-18T14:44:28+00:00 app[web.1]:   Rendered home/index.html.erb (1138.5ms)
-2012-09-18T14:44:28+00:00 app[web.1]: Completed 200 OK in 1609ms (Views: 1071.4ms | ActiveRecord: 466.1ms)
-2012-09-18T14:44:28+00:00 app[web.1]: Compiled offers.css  (0ms)  (pid 2)
-2012-09-18T14:44:28+00:00 app[web.1]:   Rendered home/_header.html.erb (929.7ms)
-2012-09-18T14:44:28+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=1794ms status=200 bytes=15229
-2012-09-18T14:44:29+00:00 app[web.1]: 
-2012-09-18T14:44:29+00:00 app[web.1]: 
-2012-09-18T14:44:29+00:00 app[web.1]: Started GET "/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css" for 120.63.161.245 at 2012-09-18 16:44:29 +0200
-2012-09-18T14:44:29+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/frontend-93e0f2471a626f680d5355d81b94d2f3.css dyno=web.1 queue=0 wait=0ms service=14ms status=200 bytes=16458
-2012-09-18T14:44:29+00:00 app[web.1]: Served asset /frontend-93e0f2471a626f680d5355d81b94d2f3.css - 200 OK (0ms)
-2012-09-18T14:44:29+00:00 app[web.1]: 
-2012-09-18T14:44:29+00:00 app[web.1]: 
-2012-09-18T14:44:29+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-18 16:44:29 +0200
-2012-09-18T14:44:29+00:00 app[web.1]: Compiled jquery.js  (3ms)  (pid 2)
-2012-09-18T14:44:29+00:00 app[web.1]: Compiled jquery_ujs.js  (0ms)  (pid 2)
-2012-09-18T14:44:29+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=45ms status=200 bytes=2028
-2012-09-18T14:44:29+00:00 app[web.1]: WARN: tilt autoloading 'coffee_script' in a non thread-safe way; explicit require 'coffee_script' suggested.
-2012-09-18T14:44:36+00:00 app[web.1]: 
-2012-09-18T14:44:36+00:00 app[web.1]: Started GET "/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css" for 120.63.161.245 at 2012-09-18 16:44:36 +0200
-2012-09-18T14:44:36+00:00 app[web.1]: 
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled jquery-ui.js  (3ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled admin_user.js  (265ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled categories.js  (150ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled credits_withdraw.js  (150ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled home.js  (152ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled offers.js  (149ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled members.js  (151ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled share_offer.js  (153ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled visitor_tracker.js  (143ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled application.js  (1481ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 200 OK (7337ms)
-2012-09-18T14:44:36+00:00 app[web.1]: Served asset /application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css - 200 OK (4ms)
-2012-09-18T14:44:36+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css dyno=web.1 queue=0 wait=0ms service=7354ms status=200 bytes=0
-2012-09-18T14:44:36+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=7372ms status=200 bytes=303208
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/topinputbg.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=1390
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/loginbg_small.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=1324
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/lofinwidFBTW.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=9785
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=2329
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=0
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: Started POST "/members" for 120.63.161.245 at 2012-09-18 16:45:09 +0200
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]:   app/controllers/members_controller.rb:52:in `create'
-2012-09-18T14:45:09+00:00 app[web.1]: Completed 500 Internal Server Error in 418ms
-2012-09-18T14:45:09+00:00 app[web.1]: Processing by MembersController#create as HTML
-2012-09-18T14:45:09+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"VcbU0MEOxwtn0/5TQ7M3kM6qFv16rQPxEFnsKr31KjY=", "member"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"m", "age"=>"", "country_id"=>"", "provider"=>"CPC"}, "commit"=>"Sign Up!"}
-2012-09-18T14:45:09+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/members dyno=web.1 queue=0 wait=0ms service=439ms status=500 bytes=643
-2012-09-18T15:06:48+00:00 heroku[api]: Starting process with command `bundle exec rails console` by mandal.saroj.mail@gmail.com
-2012-09-18T15:06:52+00:00 heroku[run.1]: Awaiting client
-2012-09-18T15:06:52+00:00 heroku[run.1]: Starting process with command `bundle exec rails console`
-2012-09-18T15:06:53+00:00 heroku[run.1]: State changed from starting to up
-2012-09-18T15:07:13+00:00 heroku[run.1]: Client connection closed. Sending SIGHUP to all processes
-2012-09-18T15:07:14+00:00 heroku[run.1]: Process exited with status 0
-2012-09-18T15:07:14+00:00 heroku[run.1]: State changed from up to complete
-2012-09-18T15:11:22+00:00 heroku[web.1]: State changed from up to starting
-2012-09-18T15:11:25+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 8115`
-2012-09-18T15:11:27+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-18T15:11:29+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-18T15:11:29+00:00 app[web.1]: [2012-09-18 17:11:29] ERROR SignalException: SIGTERM
-2012-09-18T15:11:31+00:00 app[web.1]: => Booting WEBrick
-2012-09-18T15:11:31+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:8115
-2012-09-18T15:11:31+00:00 app[web.1]: => Call with -d to detach
-2012-09-18T15:11:31+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:35+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  WEBrick 1.3.1
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  WEBrick::HTTPServer#start: pid=2 port=8115
-2012-09-18T15:11:38+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-18T15:11:38+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-18T15:11:38+00:00 heroku[web.1]: State changed from starting to up
-2012-09-18T15:11:40+00:00 heroku[web.1]: Process exited with status 137
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled home.js  (152ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled offers.js  (149ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled members.js  (151ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled share_offer.js  (153ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled visitor_tracker.js  (143ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Compiled application.js  (1481ms)  (pid 2)
-2012-09-18T14:44:36+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 200 OK (7337ms)
-2012-09-18T14:44:36+00:00 app[web.1]: Served asset /application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css - 200 OK (4ms)
-2012-09-18T14:44:36+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css dyno=web.1 queue=0 wait=0ms service=7354ms status=200 bytes=0
-2012-09-18T14:44:36+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=7372ms status=200 bytes=303208
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/topinputbg.png dyno=web.1 queue=0 wait=0ms service=6ms status=200 bytes=1390
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/loginbg_small.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=1324
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/lofinwidFBTW.png dyno=web.1 queue=0 wait=0ms service=4ms status=200 bytes=9785
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=2329
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=0
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: Started POST "/members" for 120.63.161.245 at 2012-09-18 16:45:09 +0200
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]:   app/controllers/members_controller.rb:52:in `create'
-2012-09-18T14:45:09+00:00 app[web.1]: Completed 500 Internal Server Error in 418ms
-2012-09-18T14:45:09+00:00 app[web.1]: Processing by MembersController#create as HTML
-2012-09-18T14:45:09+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"VcbU0MEOxwtn0/5TQ7M3kM6qFv16rQPxEFnsKr31KjY=", "member"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"m", "age"=>"", "country_id"=>"", "provider"=>"CPC"}, "commit"=>"Sign Up!"}
-2012-09-18T14:45:09+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/members dyno=web.1 queue=0 wait=0ms service=439ms status=500 bytes=643
-2012-09-18T15:06:48+00:00 heroku[api]: Starting process with command `bundle exec rails console` by mandal.saroj.mail@gmail.com
-2012-09-18T15:06:52+00:00 heroku[run.1]: Awaiting client
-2012-09-18T15:06:52+00:00 heroku[run.1]: Starting process with command `bundle exec rails console`
-2012-09-18T15:06:53+00:00 heroku[run.1]: State changed from starting to up
-2012-09-18T15:07:13+00:00 heroku[run.1]: Client connection closed. Sending SIGHUP to all processes
-2012-09-18T15:07:14+00:00 heroku[run.1]: Process exited with status 0
-2012-09-18T15:07:14+00:00 heroku[run.1]: State changed from up to complete
-2012-09-18T15:11:22+00:00 heroku[web.1]: State changed from up to starting
-2012-09-18T15:11:25+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 8115`
-2012-09-18T15:11:27+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-18T15:11:29+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-18T15:11:29+00:00 app[web.1]: [2012-09-18 17:11:29] ERROR SignalException: SIGTERM
-2012-09-18T15:11:31+00:00 app[web.1]: => Booting WEBrick
-2012-09-18T15:11:31+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:8115
-2012-09-18T15:11:31+00:00 app[web.1]: => Call with -d to detach
-2012-09-18T15:11:31+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:35+00:00 app[web.1]: Connecting to database specified by DATABA
-SE_URL
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  WEBrick 1.3.1
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  WEBrick::HTTPServer#start: pid=2 port=8115
-2012-09-18T15:11:38+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-18T15:11:38+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-18T15:11:38+00:00 heroku[web.1]: State changed from starting to up
-2012-09-18T15:11:40+00:00 heroku[web.1]: Process exited with status 137
-2012-09-18T15:12:42+00:00 app[web.1]: 
-2012-09-18T15:12:42+00:00 app[web.1]: 
-2012-09-18T15:12:42+00:00 app[web.1]: Started GET "/" for 120.63.161.245 at 2012-09-18 17:12:42 +0200
-2012-09-18T15:12:43+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
-2012-09-18T15:12:43+00:00 app[web.1]: Processing by HomeController#index as HTML
-2012-09-18T15:12:43+00:00 app[web.1]: HOMEPAGECONTROLLER:
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled admin_user.css  (450ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled categories.css  (2ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled application.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled gooeymenu.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled credits_withdraw.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled home.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled members.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=1028ms status=304 bytes=0
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled scaffolds.css  (7ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled offers.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled share_offer.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled visitor_tracker.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered members/_new.html.erb (99.5ms)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered home/_header.html.erb (560.5ms)
-2012-09-18T15:12:43+00:00 app[web.1]: Completed 200 OK in 891ms (Views: 726.2ms | ActiveRecord: 46.7ms)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.3ms)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled frontend.css  (549ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered home/index.html.erb (705.8ms)
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=13ms status=304 bytes=0
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/topinputbg.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/loginbg_small.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/lofinwidFBTW.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-09-18T15:12:45+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-09-18T15:12:54+00:00 heroku[web.1]: State changed from up to starting
-2012-09-18T15:12:59+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-18T15:13:00+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 41979`
-2012-09-18T15:13:00+00:00 app[web.1]: [2012-09-18 17:13:00] ERROR SignalException: SIGTERM
-2012-09-18T15:13:00+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-18T15:13:05+00:00 app[web.1]: => Booting WEBrick
-2012-09-18T15:13:05+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:41979
-2012-09-18T15:13:05+00:00 app[web.1]: => Call with -d to detach
-2012-09-18T15:13:05+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-18T15:13:05+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:13:05+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:13:05+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:13:08+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-18T15:13:08+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-18T15:13:09+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-18T15:13:10+00:00 app[web.1]: [2012-09-18 17:13:10] INFO  WEBrick 1.3.1
-2012-09-18T15:13:10+00:00 app[web.1]: [2012-09-18 17:13:10] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-18T15:13:10+00:00 app[web.1]: [2012-09-18 17:13:10] INFO  WEBrick::HTTPServer#start: pid=2 port=41979
-2012-09-18T14:44:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=0
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: Started POST "/members" for 120.63.161.245 at 2012-09-18 16:45:09 +0200
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
-2012-09-18T14:45:09+00:00 app[web.1]: 
-2012-09-18T14:45:09+00:00 app[web.1]:   app/controllers/members_controller.rb:52:in `create'
-2012-09-18T14:45:09+00:00 app[web.1]: Completed 500 Internal Server Error in 418ms
-2012-09-18T14:45:09+00:00 app[web.1]: Processing by MembersController#create as HTML
-2012-09-18T14:45:09+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"VcbU0MEOxwtn0/5TQ7M3kM6qFv16rQPxEFnsKr31KjY=", "member"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"m", "age"=>"", "country_id"=>"", "provider"=>"CPC"}, "commit"=>"Sign Up!"}
-2012-09-18T14:45:09+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/members dyno=web.1 queue=0 wait=0ms service=439ms status=500 bytes=643
-2012-09-18T15:06:48+00:00 heroku[api]: Starting process with command `bundle exec rails console` by mandal.saroj.mail@gmail.com
-2012-09-18T15:06:52+00:00 heroku[run.1]: Awaiting client
-2012-09-18T15:06:52+00:00 heroku[run.1]: Starting process with command `bundle exec rails console`
-2012-09-18T15:06:53+00:00 heroku[run.1]: State changed from starting to up
-2012-09-18T15:07:13+00:00 heroku[run.1]: Client connection closed. Sending SIGHUP to all processes
-2012-09-18T15:07:14+00:00 heroku[run.1]: Process exited with status 0
-2012-09-18T15:07:14+00:00 heroku[run.1]: State changed from up to complete
-2012-09-18T15:11:22+00:00 heroku[web.1]: State changed from up to starting
-2012-09-18T15:11:25+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 8115`
-2012-09-18T15:11:27+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-18T15:11:29+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-18T15:11:29+00:00 app[web.1]: [2012-09-18 17:11:29] ERROR SignalException: SIGTERM
-2012-09-18T15:11:31+00:00 app[web.1]: => Booting WEBrick
-2012-09-18T15:11:31+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:8115
-2012-09-18T15:11:31+00:00 app[web.1]: => Call with -d to detach
-2012-09-18T15:11:31+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:31+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:11:35+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  WEBrick 1.3.1
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-18T15:11:35+00:00 app[web.1]: [2012-09-18 17:11:35] INFO  WEBrick::HTTPServer#start: pid=2 port=8115
-2012-09-18T15:11:38+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-18T15:11:38+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-18T15:11:38+00:00 heroku[web.1]: State changed from starting to up
-2012-09-18T15:11:40+00:00 heroku[web.1]: Process exited with status 137
-2012-09-18T15:12:42+00:00 app[web.1]: 
-2012-09-18T15:12:42+00:00 app[web.1]: 
-2012-09-18T15:12:42+00:00 app[web.1]: Started GET "/" for 120.63.161.245 at 2012-09-18 17:12:42 +0200
-2012-09-18T15:12:43+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
-2012-09-18T15:12:43+00:00 app[web.1]: Processing by HomeController#index as HTML
-2012-09-18T15:12:43+00:00 app[web.1]: HOMEPAGECONTROLLER:
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled admin_user.css  (450ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled categories.css  (2ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled application.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled gooeymenu.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled credits_withdraw.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled home.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled members.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/ dyno=web.1 queue=0 wait=0ms service=1028ms status=304 bytes=0
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled scaffolds.css  (7ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled offers.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled share_offer.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled visitor_tracker.css  (0ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered members/_new.html.erb (99.5ms)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered home/_header.html.erb (560.5ms)
-2012-09-18T15:12:43+00:00 app[web.1]: Completed 200 OK in 891ms (Views: 726.2ms | ActiveRecord: 46.7ms)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.3ms)
-2012-09-18T15:12:43+00:00 app[web.1]: Compiled frontend.css  (549ms)  (pid 2)
-2012-09-18T15:12:43+00:00 app[web.1]:   Rendered home/index.html.erb (705.8ms)
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=13ms status=304 bytes=0
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/topinputbg.png dyno=web.1 queue=0 wait=0ms service=5ms status=304 bytes=0
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/loginbg_small.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-09-18T15:12:44+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/lofinwidFBTW.png dyno=web.1 queue=0 wait=0ms service=5ms status=
-304 bytes=0
-2012-09-18T15:12:45+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=4ms status=304 bytes=0
-2012-09-18T15:12:54+00:00 heroku[web.1]: State changed from up to starting
-2012-09-18T15:12:59+00:00 heroku[web.1]: Stopping all processes with SIGTERM
-2012-09-18T15:13:00+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 41979`
-2012-09-18T15:13:00+00:00 app[web.1]: [2012-09-18 17:13:00] ERROR SignalException: SIGTERM
-2012-09-18T15:13:00+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
-2012-09-18T15:13:05+00:00 app[web.1]: => Booting WEBrick
-2012-09-18T15:13:05+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:41979
-2012-09-18T15:13:05+00:00 app[web.1]: => Call with -d to detach
-2012-09-18T15:13:05+00:00 app[web.1]: => Ctrl-C to shutdown server
-2012-09-18T15:13:05+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:13:05+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:13:05+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
-2012-09-18T15:13:08+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
-2012-09-18T15:13:08+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
-2012-09-18T15:13:09+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
-2012-09-18T15:13:10+00:00 app[web.1]: [2012-09-18 17:13:10] INFO  WEBrick 1.3.1
-2012-09-18T15:13:10+00:00 app[web.1]: [2012-09-18 17:13:10] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
-2012-09-18T15:13:10+00:00 app[web.1]: [2012-09-18 17:13:10] INFO  WEBrick::HTTPServer#start: pid=2 port=41979
-2012-09-18T15:13:11+00:00 heroku[web.1]: Process exited with status 137
-2012-09-18T15:13:11+00:00 heroku[web.1]: State changed from starting to up
-2012-09-18T15:13:54+00:00 app[web.1]: 
-2012-09-18T15:13:54+00:00 app[web.1]: 
-2012-09-18T15:13:54+00:00 app[web.1]: Started POST "/members" for 120.63.161.245 at 2012-09-18 17:13:54 +0200
-2012-09-18T15:13:55+00:00 app[web.1]: 
-2012-09-18T15:13:55+00:00 app[web.1]: OAuth::Unauthorized (401 Unauthorized):
-2012-09-18T15:13:55+00:00 app[web.1]:   app/controllers/members_controller.rb:52:in `create'
-2012-09-18T15:13:55+00:00 app[web.1]: 
-2012-09-18T15:13:55+00:00 app[web.1]: 
-2012-09-18T15:13:55+00:00 app[web.1]:   Parameters: {"utf8"=>"✓", "authenticity_token"=>"VcbU0MEOxwtn0/5TQ7M3kM6qFv16rQPxEFnsKr31KjY=", "member"=>{"username"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "gender"=>"m", "age"=>"", "country_id"=>"", "provider"=>"CPC"}, "commit"=>"Sign Up!"}
-2012-09-18T15:13:55+00:00 app[web.1]: Completed 500 Internal Server Error in 766ms
-2012-09-18T15:13:55+00:00 app[web.1]: Processing by MembersController#create as HTML
-2012-09-18T15:13:55+00:00 heroku[router]: POST simple-earth-5502.herokuapp.com/members dyno=web.1 queue=0 wait=0ms service=910ms status=500 bytes=643
+2012-09-26T07:33:40+00:00 app[web.1]: 
+2012-09-26T07:33:40+00:00 app[web.1]: 
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-26T07:33:40+00:00 app[web.1]: 
+2012-09-26T07:33:40+00:00 app[web.1]: Served asset /offers/43/small/special-offer-01.jpg - 404 Not Found (3ms)
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-26T07:33:40+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/special-offer-01.jpg?1347258575 dyno=web.1 queue=0 wait=0ms service=7158ms status=404 bytes=728
+2012-09-26T07:33:40+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-e3acd17b39739d8b4cfc67f9ea6d7bf0.css dyno=web.1 queue=0 wait=0ms service=7162ms status=304 bytes=0
+2012-09-26T07:33:40+00:00 app[web.1]: 
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-26T07:33:40+00:00 app[web.1]: 
+2012-09-26T07:33:40+00:00 app[web.1]: Served asset /application-2487d9c1d553690d06fd7de9d8e8e2b6.js - 304 Not Modified (0ms)
+2012-09-26T07:33:40+00:00 app[web.1]: 
+2012-09-26T07:33:40+00:00 app[web.1]: Started GET "/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js" for 120.63.161.245 at 2012-09-26 09:33:40 +0200
+2012-09-26T07:33:40+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/application-2487d9c1d553690d06fd7de9d8e8e2b6.js dyno=web.1 queue=0 wait=0ms service=12ms status=304 bytes=0
+2012-09-26T07:33:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/front-end-images/logo.png dyno=web.1 queue=0 wait=0ms service=11ms status=304 bytes=0
+2012-09-26T07:33:41+00:00 app[web.1]: 
+2012-09-26T07:33:41+00:00 app[web.1]: 
+2012-09-26T07:33:41+00:00 app[web.1]: Started GET "/assets/offers/43/small/special-offer-01.jpg?1347258575" for 120.63.161.245 at 2012-09-26 09:33:41 +0200
+2012-09-26T07:33:41+00:00 app[web.1]: 
+2012-09-26T07:33:41+00:00 app[web.1]: ActionController::RoutingError (No route matches [GET] "/assets/offers/43/small/special-offer-01.jpg"):
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:26:in `call_app'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/logger.rb:16:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/request_id.rb:22:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/methodoverride.rb:21:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/activesupport-3.2.6/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/runtime.rb:17:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/lock.rb:15:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/actionpack-3.2.6/lib/action_dispatch/middleware/static.rb:62:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:136:in `forward'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:245:in `fetch'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:185:in `lookup'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:66:in `call!'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/engine.rb:479:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/application.rb:220:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/content_length.rb:14:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/railties-3.2.6/lib/rails/rack/log_tailer.rb:17:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-cache-1.2/lib/rack/cache/context.rb:51:in `call'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/bundle/ruby/1.9.1/gems/rack-1.4.1/lib/rack/handler/webrick.rb:59:in `service'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+2012-09-26T07:33:41+00:00 app[web.1]:   vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+2012-09-26T07:33:41+00:00 app[web.1]: 
+2012-09-26T07:33:41+00:00 app[web.1]: 
+2012-09-26T07:33:41+00:00 app[web.1]: Served asset /offers/43/small/special-offer-01.jpg - 404 Not Found (1ms)
+2012-09-26T07:33:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/offers/43/small/special-offer-01.jpg?1347258575 dyno=web.1 queue=0 wait=0ms service=12ms status=404 bytes=728
+2012-09-26T07:33:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/arrow_inner.png dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
+2012-09-26T07:33:41+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/assets/admin-images/social_icon.png dyno=web.1 queue=0 wait=0ms service=6ms status=304 bytes=0
+2012-09-26T07:37:15+00:00 heroku[web.1]: State changed from up to starting
+2012-09-26T07:37:18+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2012-09-26T07:37:18+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 18905`
+2012-09-26T07:37:19+00:00 app[web.1]: [2012-09-26 09:37:19] ERROR SignalException: SIGTERM
+2012-09-26T07:37:19+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2012-09-26T07:37:22+00:00 app[web.1]: => Booting WEBrick
+2012-09-26T07:37:22+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:18905
+2012-09-26T07:37:22+00:00 app[web.1]: => Call with -d to detach
+2012-09-26T07:37:22+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-09-26T07:37:22+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T07:37:22+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T07:37:22+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T07:37:26+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
+2012-09-26T07:37:26+00:00 app[web.1]: [2012-09-26 09:37:26] INFO  WEBrick 1.3.1
+2012-09-26T07:37:26+00:00 app[web.1]: [2012-09-26 09:37:26] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
+2012-09-26T07:37:26+00:00 app[web.1]: [2012-09-26 09:37:26] INFO  WEBrick::HTTPServer#start: pid=2 port=18905
+2012-09-26T07:37:27+00:00 heroku[web.1]: State changed from starting to up
+2012-09-26T07:37:28+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2012-09-26T07:37:28+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2012-09-26T07:37:30+00:00 heroku[web.1]: Process exited with status 137
+2012-09-26T07:37:35+00:00 app[web.1]: 
+2012-09-26T07:37:35+00:00 app[web.1]: 
+2012-09-26T07:37:35+00:00 app[web.1]: Started GET "/afcd2e050a/248c8ee311/" for 120.63.161.245 at 2012-09-26 09:37:35 +0200
+2012-09-26T07:37:35+00:00 app[web.1]: refer urlhttp://simple-earth-5502.herokuapp.com/offers/promoteOffers
+2012-09-26T07:37:35+00:00 app[web.1]: 
+2012-09-26T07:37:35+00:00 app[web.1]: AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+2012-09-26T07:37:35+00:00 app[web.1]:   app/controllers/visitor_tracker_controller.rb:101:in `track'
+2012-09-26T07:37:35+00:00 app[web.1]: 
+2012-09-26T07:37:35+00:00 app[web.1]: 
+2012-09-26T07:37:35+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
+2012-09-26T07:37:35+00:00 app[web.1]:   Parameters: {"member_random_code"=>"afcd2e050a", "random_code"=>"248c8ee311"}
+2012-09-26T07:37:35+00:00 app[web.1]: Redirected to http://simple-earth-5502.herokuapp.com/
+2012-09-26T07:37:35+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/afcd2e050a/248c8ee311/ dyno=web.1 queue=0 wait=0ms service=466ms status=500 bytes=643
+2012-09-26T07:37:35+00:00 app[web.1]: Completed 500 Internal Server Error in 280ms
+2012-09-26T07:37:35+00:00 app[web.1]: Redirected to 

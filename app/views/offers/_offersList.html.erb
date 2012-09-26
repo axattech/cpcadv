@@ -173,7 +173,7 @@
 					<%= link_to "Share This Offer", 'javascript:void(0);', :onclick => "toggleShareLinkDiv('shareLink_#{index}');" %>
 					<div id="shareLink_<%= index %>" style="display: none">												
 						<% 
-							current_url = "http://#{request.host}/"	
+							current_url = "http://#{request.host}:3000/"	
 							random_code = offer.random_code		
 							objMember = Member.new	
 							member_random_code = objMember.getMemberDataById(@logged_user_id).random_code
