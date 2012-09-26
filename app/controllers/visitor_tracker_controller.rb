@@ -55,17 +55,9 @@ class VisitorTrackerController < ApplicationController
      
         if @refer_url
           
-        #  APP_CONFIG[:site_domain]
-          
-          
-          #puts "OFFER-LIST: #{@refer_url.match(APP_CONFIG[:site_domain])}" 
-          
           if @refer_url.match(APP_CONFIG[:site_domain])
-            redirect_to root_url
-            return
-          end
-          
-          @query = "ip = '#{@ip_addr}' AND refer_url != 'null' AND members_id = #{member_id}"
+          else
+            @query = "ip = '#{@ip_addr}' AND refer_url != 'null' AND members_id = #{member_id}"
           ipList = VisitorTracker.find(:all,:conditions => [@query])
           @count = ipList.count
 
@@ -96,6 +88,13 @@ class VisitorTrackerController < ApplicationController
             end
 
           end
+           
+          end
+          
+          
+          
+                                   
+          
           redirect_to offerList.offer_link
           return
 
