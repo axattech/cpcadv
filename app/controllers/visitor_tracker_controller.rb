@@ -58,7 +58,7 @@ class VisitorTrackerController < ApplicationController
         #  APP_CONFIG[:site_domain]
           
           
-          puts "OFFER-LIST: #{@refer_url.content.gsub('http')}" 
+          puts "OFFER-LIST: #{@refer_url.match(/http/)}" 
           
           
           @query = "ip = '#{@ip_addr}' AND refer_url != 'null' AND members_id = #{member_id}"
