@@ -27,7 +27,7 @@ class VisitorTrackerController < ApplicationController
 
     offer_redeem_credit = OfferRedeem.where(:offers_id => offerList.id).sum(:amount)
 
-    if offer_redeem_credit >= offerList.offer_budget
+    if (offer_redeem_credit / 100) >= offerList.offer_budget
       redirect_to root_url
       return
     end
@@ -79,7 +79,7 @@ class VisitorTrackerController < ApplicationController
               #logger.debug "MEMBER-UPDATE-TEST: #{params[:gender]}"
               offer_old_credit_value = offer_data.offer_credit
 
-              offer_data.offer_credit =  offer_old_credit_value - offerList.offer_cr_per_click
+              offer_data.offer_credit =  offer_old_credit_value - (offerList.offer_cr_per_click / 100)
               offer_data.save!
               end
             end
