@@ -99,3 +99,104 @@
 2012-09-26T11:48:47+00:00 app[web.1]: Completed 500 Internal Server Error in 34ms
 2012-09-26T11:48:47+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/e25cd570b4/add29d0ce7/ dyno=web.1 queue=0 wait=0ms service=1383ms status=500 bytes=643
 2012-09-26T11:48:48+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=0
+2012-09-26T11:48:47+00:00 app[web.1]: Compiled home.css  (0ms)  (pid 2)
+2012-09-26T11:48:47+00:00 app[web.1]: Compiled scaffolds.css  (8ms)  (pid 2)
+2012-09-26T11:48:47+00:00 app[web.1]:   Rendered home/_lhs.html.erb (34.5ms)
+2012-09-26T11:48:47+00:00 app[web.1]: Compiled offers.css  (1ms)  (pid 2)
+2012-09-26T11:48:47+00:00 app[web.1]:   Rendered offers/promoteAndSortOffers.html.erb (827.7ms)
+2012-09-26T11:48:47+00:00 app[web.1]: Compiled visitor_tracker.css  (1ms)  (pid 2)
+2012-09-26T11:48:47+00:00 app[web.1]: Completed 200 OK in 1131ms (Views: 804.7ms | ActiveRecord: 214.5ms)
+2012-09-26T11:48:47+00:00 app[web.1]: Compiled frontend.css  (638ms)  (pid 2)
+2012-09-26T11:48:47+00:00 app[web.1]:   Rendered home/_header.html.erb (698.7ms)
+2012-09-26T11:48:47+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/promoteOffers dyno=web.1 queue=0 wait=0ms service=1467ms status=304 bytes=0
+2012-09-26T11:48:47+00:00 app[web.1]: refer urlhttp://simple-earth-5502.herokuapp.com/promoteOffers
+2012-09-26T11:48:47+00:00 app[web.1]: NoMethodError (undefined method `content' for "http://simple-earth-5502.herokuapp.com/promoteOffers":String):
+2012-09-26T11:48:47+00:00 app[web.1]: 
+2012-09-26T11:48:47+00:00 app[web.1]:   app/controllers/visitor_tracker_controller.rb:61:in `track'
+2012-09-26T11:48:47+00:00 app[web.1]: 
+2012-09-26T11:48:47+00:00 app[web.1]: 
+2012-09-26T11:48:47+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
+2012-09-26T11:48:47+00:00 app[web.1]:   Parameters: {"member_random_code"=>"e25cd570b4", "random_code"=>"add29d0ce7"}
+2012-09-26T11:48:47+00:00 app[web.1]: Completed 500 Internal Server Error in 34ms
+2012-09-26T11:48:47+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/e25cd570b4/add29d0ce7/ dyno=web.1 queue=0 wait=0ms service=1383ms status=500 bytes=643
+2012-09-26T11:48:48+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=7ms status=200 bytes=0
+2012-09-26T11:53:18+00:00 heroku[slugc]: Slug compilation started
+2012-09-26T11:53:57+00:00 heroku[api]: Release v215 created by mandal.saroj.mail@gmail.com
+2012-09-26T11:53:57+00:00 heroku[api]: Deploy dab9270 by mandal.saroj.mail@gmail.com
+2012-09-26T11:53:58+00:00 heroku[web.1]: State changed from up to starting
+2012-09-26T11:53:58+00:00 heroku[slugc]: Slug compilation finished
+2012-09-26T11:54:00+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 10376`
+2012-09-26T11:54:01+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2012-09-26T11:54:02+00:00 app[web.1]: [2012-09-26 13:54:02] ERROR SignalException: SIGTERM
+2012-09-26T11:54:02+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2012-09-26T11:54:07+00:00 app[web.1]: => Booting WEBrick
+2012-09-26T11:54:07+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:10376
+2012-09-26T11:54:07+00:00 app[web.1]: => Call with -d to detach
+2012-09-26T11:54:07+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-09-26T11:54:07+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T11:54:07+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T11:54:07+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T11:54:11+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
+2012-09-26T11:54:12+00:00 app[web.1]: [2012-09-26 13:54:12] INFO  WEBrick 1.3.1
+2012-09-26T11:54:12+00:00 app[web.1]: [2012-09-26 13:54:12] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
+2012-09-26T11:54:12+00:00 app[web.1]: [2012-09-26 13:54:12] INFO  WEBrick::HTTPServer#start: pid=2 port=10376
+2012-09-26T11:54:12+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2012-09-26T11:54:12+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2012-09-26T11:54:13+00:00 heroku[web.1]: State changed from starting to up
+2012-09-26T11:54:14+00:00 heroku[web.1]: Process exited with status 137
+2012-09-26T11:55:19+00:00 app[web.1]: 
+2012-09-26T11:55:19+00:00 app[web.1]: 
+2012-09-26T11:55:19+00:00 app[web.1]: Started GET "/promoteOffers" for 120.63.161.245 at 2012-09-26 13:55:19 +0200
+2012-09-26T11:55:20+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled admin_user.css  (491ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: urlparam: 
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled application.css  (0ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Processing by OffersController#promoteAndSortOffers as HTML
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled categories.css  (3ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled credits_withdraw.css  (0ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled gooeymenu.css  (0ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled home.css  (1ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled members.css  (1ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled offers.css  (0ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled scaffolds.css  (8ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled share_offer.css  (1ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled frontend.css  (655ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]: Compiled visitor_tracker.css  (0ms)  (pid 2)
+2012-09-26T11:55:21+00:00 app[web.1]:   Rendered home/_header.html.erb (745.0ms)
+2012-09-26T11:55:21+00:00 app[web.1]:   Rendered home/_lhs.html.erb (20.2ms)
+2012-09-26T11:55:21+00:00 app[web.1]:   Rendered offers/_offersList.html.erb (48.7ms)
+2012-09-26T11:55:21+00:00 app[web.1]:   Rendered home/_footer.html.erb (0.2ms)
+2012-09-26T11:55:21+00:00 app[web.1]:   Rendered offers/promoteAndSortOffers.html.erb (802.2ms)
+2012-09-26T11:55:21+00:00 app[web.1]: Completed 200 OK in 1094ms (Views: 810.0ms | ActiveRecord: 130.2ms)
+2012-09-26T11:55:21+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/promoteOffers dyno=web.1 queue=0 wait=0ms service=1334ms status=200 bytes=5424
+2012-09-26T11:55:21+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/favicon.ico dyno=web.1 queue=0 wait=0ms service=5ms status=200 bytes=0
+2012-09-26T11:55:32+00:00 heroku[web.1]: State changed from up to starting
+2012-09-26T11:55:35+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2012-09-26T11:55:36+00:00 app[web.1]: [2012-09-26 13:55:36] ERROR SignalException: SIGTERM
+2012-09-26T11:55:36+00:00 app[web.1]: 	/app/vendor/ruby-1.9.2/lib/ruby/1.9.1/webrick/server.rb:90:in `select'
+2012-09-26T11:55:37+00:00 heroku[web.1]: Starting process with command `bundle exec rails server -p 38387`
+2012-09-26T11:55:43+00:00 app[web.1]: => Booting WEBrick
+2012-09-26T11:55:43+00:00 app[web.1]: => Rails 3.2.6 application starting in production on http://0.0.0.0:38387
+2012-09-26T11:55:43+00:00 app[web.1]: => Ctrl-C to shutdown server
+2012-09-26T11:55:43+00:00 app[web.1]: => Call with -d to detach
+2012-09-26T11:55:43+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T11:55:43+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T11:55:43+00:00 app[web.1]: DEPRECATION WARNING: You have Rails 2.3-style plugins in vendor/plugins! Support for these plugins will be removed in Rails 4.0. Move them out and bundle them in your Gemfile, or fold them in to your app as lib/myplugin/* and config/initializers/myplugin.rb. See the release notes for more on this: http://weblog.rubyonrails.org/2012/1/4/rails-3-2-0-rc2-has-been-released. (called from <top (required)> at /app/config/environment.rb:5)
+2012-09-26T11:55:46+00:00 heroku[web.1]: Error R12 (Exit timeout) -> At least one process failed to exit within 10 seconds of SIGTERM
+2012-09-26T11:55:46+00:00 heroku[web.1]: Stopping remaining processes with SIGKILL
+2012-09-26T11:55:46+00:00 app[web.1]: Connecting to database specified by DATABASE_URL
+2012-09-26T11:55:46+00:00 app[web.1]: [2012-09-26 13:55:46] INFO  WEBrick 1.3.1
+2012-09-26T11:55:46+00:00 app[web.1]: [2012-09-26 13:55:46] INFO  WEBrick::HTTPServer#start: pid=2 port=38387
+2012-09-26T11:55:46+00:00 app[web.1]: [2012-09-26 13:55:46] INFO  ruby 1.9.2 (2012-04-20) [x86_64-linux]
+2012-09-26T11:55:47+00:00 heroku[web.1]: State changed from starting to up
+2012-09-26T11:55:47+00:00 heroku[web.1]: Process exited with status 137
+2012-09-26T11:57:13+00:00 app[web.1]: 
+2012-09-26T11:57:13+00:00 app[web.1]: 
+2012-09-26T11:57:13+00:00 app[web.1]: Started GET "/e25cd570b4/add29d0ce7/" for 120.63.161.245 at 2012-09-26 13:57:13 +0200
+2012-09-26T11:57:13+00:00 app[web.1]: refer urlhttp://simple-earth-5502.herokuapp.com/promoteOffers
+2012-09-26T11:57:13+00:00 app[web.1]: OFFER-LIST: http
+2012-09-26T11:57:13+00:00 app[web.1]: Processing by VisitorTrackerController#track as HTML
+2012-09-26T11:57:13+00:00 app[web.1]: Redirected to http://www.google.com
+2012-09-26T11:57:13+00:00 app[web.1]: Completed 302 Found in 391ms (ActiveRecord: 179.3ms)
+2012-09-26T11:57:13+00:00 app[web.1]:   Parameters: {"member_random_code"=>"e25cd570b4", "random_code"=>"add29d0ce7"}
+2012-09-26T11:57:13+00:00 heroku[router]: GET simple-earth-5502.herokuapp.com/e25cd570b4/add29d0ce7/ dyno=web.1 queue=0 wait=0ms service=575ms status=302 bytes=87
