@@ -33,8 +33,8 @@ class Offer < ActiveRecord::Base
       return
      end
     
-    if offer_max_clicks_per_user * offer_cr_per_click > offer_budget
-       errors.add(:offer_max_clicks_per_user," multiply Offer credit per click shouldn't exceed offer budeget")
+    if offer_max_clicks_per_user * offer_cr_per_click > offer_budget * 100
+       errors.add(:offer_max_clicks_per_user," multiply Offer credit per click shouldn't exceed (offer budeget * 100)")
     end    
     
   end
