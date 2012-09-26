@@ -79,7 +79,7 @@ class VisitorTrackerController < ApplicationController
               #logger.debug "MEMBER-UPDATE-TEST: #{params[:gender]}"
               offer_old_credit_value = offer_data.offer_credit
 
-              offer_data.offer_credit =  offer_old_credit_value - (offerList.offer_cr_per_click / 100)
+              offer_data.offer_credit =  offer_old_credit_value - offerList.offer_cr_per_click
               offer_data.save!
               end
             end
