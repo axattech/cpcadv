@@ -30,7 +30,7 @@ class VisitorTrackerController < ApplicationController
     end
 
     if offerList
-      @refer_url = request.env[:REQUEST_URI]
+      @refer_url = request.env["HTTP_REFERER"]
 
       @req_uri = request.env['REQUEST_URI']
 
