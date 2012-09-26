@@ -44,8 +44,13 @@ class MembersController < ApplicationController
       @account = @aweber.account
 
       new_subscriber = {}
-      new_subscriber["email"] = params[:member][:username]
-      new_subscriber["name"] = params[:member][:email]
+      new_subscriber["email"] = params[:member][:email]
+      new_subscriber["name"] = params[:member][:username]
+      
+      
+      logger.debug "cpcemail: #{new_subscriber["email"]}" 
+      
+       
       @account.lists.find_by_name("cpclist").subscribers.create(new_subscriber)
      
       
