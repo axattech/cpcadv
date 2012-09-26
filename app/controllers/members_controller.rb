@@ -45,12 +45,7 @@ class MembersController < ApplicationController
 
       new_subscriber = {}
       new_subscriber["email"] = params[:member][:email]
-      new_subscriber["name"] = params[:member][:username]
-      
-      
-      logger.debug "cpcemail: #{new_subscriber["email"]}" 
-      
-       
+      new_subscriber["name"] = params[:member][:username]                            
       @account.lists.find_by_name("cpclist").subscribers.create(new_subscriber)
      
       
