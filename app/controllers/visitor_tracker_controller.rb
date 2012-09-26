@@ -52,8 +52,15 @@ class VisitorTrackerController < ApplicationController
       # objVisitorTracker.save!
 
       if objVisitorTracker.save!
-
+     
         if @refer_url
+          
+        #  APP_CONFIG[:site_domain]
+          
+          
+          puts "OFFER-LIST: #{@refer_url.content.gsub('http')}" 
+          
+          
           @query = "ip = '#{@ip_addr}' AND refer_url != 'null' AND members_id = #{member_id}"
           ipList = VisitorTracker.find(:all,:conditions => [@query])
           @count = ipList.count

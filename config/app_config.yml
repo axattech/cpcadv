@@ -3,16 +3,19 @@ development:
   paypal_secret: foobar
   paypal_cert_id: 'FFG8D86NC6EHW'
   paypal_url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  site_domain: "simple-earth-5502.herokuapp.com"
 
 test:
   paypal_email: seller_1343207727_biz@axat-tech.com
   paypal_secret: testsecret
   paypal_cert_id: 'FFG8D86NC6EHW'
   paypal_url: testpaypalurl
+  site_domain: "simple-earth-5502.herokuapp.com"
 
 production:
   paypal_email: seller_1343207727_biz@axat-tech.com
   paypal_secret: foobar
   paypal_cert_id: 'FFG8D86NC6EHW'
   paypal_url: "https://www.sandbox.paypal.com/cgi-bin/webscr"
+  site_domain: "simple-earth-5502.herokuapp.com"
 
