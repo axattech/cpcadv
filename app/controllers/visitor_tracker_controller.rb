@@ -13,6 +13,7 @@ class VisitorTrackerController < ApplicationController
       # redirect_to offerList.offer_link
       else
       redirect_to root_url
+      return
     return
     end
 
@@ -21,12 +22,14 @@ class VisitorTrackerController < ApplicationController
 
     if Date.today > end_date
       redirect_to root_url
+      return
     end
 
     offer_redeem_credit = OfferRedeem.where(:offers_id => offerList.id).sum(:amount)
 
     if offer_redeem_credit >= offerList.offer_budget
       redirect_to root_url
+      return
     end
 
     if offerList
@@ -87,12 +90,14 @@ class VisitorTrackerController < ApplicationController
 
         else
           redirect_to offerList.offer_link
+          return
         end
 
       end
 
     else
       redirect_to root_url
+      return
     return
 
     end
