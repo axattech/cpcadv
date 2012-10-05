@@ -31,34 +31,42 @@
        				<strong>Category</strong>: <%= Category.getcategoryname(offer.category) %>
        				<strong>&nbsp;Duration</strong>: <%= offer.offer_start_date %> - <%= offer.offer_end_date %>        				
        			</p>
-        </div>               			        			        				        				        				
-		 <div class="butlfta">
-			<h2>
-				<%
-					if offer.offer_status
-				%>
-						<%= link_to 'Reject Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>					
-				<%	else
-				%>
-						 <%= link_to 'Reject Offer','#', :onclick => 'javascript:void(0)' %>
-				<%	
-					end
-				%>
-			</h2>
-		</div>
-		<div class="butlft">
-    		<h2>
-    			<%
-					if offer.offer_status
-				%>						
-						<%= link_to 'Approve Offer','#', :onclick => 'javascript:void(0)' %>					
-				<%	else %>
-						 <%= link_to 'Approve Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
-				<%	
-					end
-				%>
-    		</h2>
-		</div>
+        </div>       
+        
+        <%
+        	if  offer.offer_edit_reapprove
+        %>        
+        		<div class="butlft">
+	    			<h2>
+	    				<%= link_to 'ReApprove Offer', "/admin/reoffers/#{offer.id}", method: :reapproveoffer, data: { confirm: 'Are you sure want to reapprove this offer?' } %>
+	    			</h2>
+				</div>        		        
+        <%
+        	end         
+        %>
+        <%
+        	if offer.offer_status
+        %>
+        	<div class="butlfta">
+					<h2>
+						<%= link_to 'Reject Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to reject this offer?' } %>
+					</h2>
+			</div>
+        <%
+        end
+        	if ((offer.offer_status == false) && (offer.offer_edit_reapprove == false))
+        %>
+        		<div class="butlft">
+	    			<h2>
+	    				<%= link_to 'Approve Offer', "/admin/offers/#{offer.id}", method: :approverejectoffer, data: { confirm: 'Are you sure want to approve this offer?' } %>
+	    			</h2>
+				</div>    
+        <%
+        	end         
+        %>
+        
+                			        			        				        				        				
+		 
         	
 		<% end %>						   
      

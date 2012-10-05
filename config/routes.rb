@@ -19,6 +19,8 @@ CpcadvApp::Application.routes.draw do
  
  post "/admin/offers/:id" => "offers#approverejectoffer"
  
+ post "/admin/reoffers/:id" => "offers#reapproveoffer"
+ 
   #resources :offers
 
   #resources :categories

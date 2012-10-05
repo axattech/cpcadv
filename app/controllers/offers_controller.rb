@@ -86,6 +86,10 @@ class OffersController < ApplicationController
 
     respond_to do |format|
       if @offer.update_attributes(params[:offer])
+        if @offer.offer_status
+           @offer.update_attribute(:offer_edit_reapprove, true)
+        end       
+        @offer.update_attribute(:offer_status, false)
         format.html { redirect_to @offer, notice: 'Offer was successfully updated.' }
         
          redirect_to :action=>'myOffers' 
@@ -113,6 +117,10 @@ class OffersController < ApplicationController
   def approverejectoffer
     @offer1 = Offer.find(params[:id])      
      if @offer1.offer_status
+       
+       if @offer1.offer_edit_reapprove
+        @offer1.update_attribute(:offer_edit_reapprove , "false")
+       end
        @offer1.update_attribute(:offer_status , "false")
        flash[:notice] = "You have successfully rejected offer"
      else
@@ -122,6 +130,20 @@ class OffersController < ApplicationController
     redirect_to :controller=>'offers', :action => 'index'    
     #flash[:notice] = ""     
   end
+  
+  def reapproveoffer    
+    @offer1 = Offer.find(params[:id])  
+     
+      @offer1.update_attribute(:offer_edit_reapprove, false)
+      @offer1.update_attribute(:offer_status, true)
+            
+        flash[:notice] = "You have successfully reapproved offer"
+     
+
+    redirect_to :controller=>'offers', :action => 'index'    
+  end
+  
+  
   
   def stopoffer    
      @offer1 = Offer.find(params[:id])       
