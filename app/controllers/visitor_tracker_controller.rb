@@ -62,8 +62,11 @@ class VisitorTrackerController < ApplicationController
           @count = ipList.count
 
           offer_max_clicks_per_user = offerList.offer_max_clicks_per_user
-
+          
+          puts "ip-count: #{@count}"
+        
           if @count == 1
+          puts "inside loop:"
             @query1 = "members_id = #{member_id}"
             findOfferRedeem =  OfferRedeem.find(:all,:conditions => [@query1])
             @total_count = findOfferRedeem.count
