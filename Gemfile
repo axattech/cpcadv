@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby '1.9.2'
-gem 'rails', '3.2.6'
+gem 'rails', '3.2.17'
 gem 'kaminari'
 
 # Bundle edge Rails instead:
