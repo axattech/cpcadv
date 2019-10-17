@@ -44,6 +44,6 @@ gem 'omniauth-twitter'
 gem 'aweber'
 
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "paperclip", "~> 2.3"
+gem "paperclip", "~> 4.3"
 gem 'jquery_datepicker'
 gem "nifty-generators", :group => :development
